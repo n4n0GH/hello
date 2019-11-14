@@ -34,3 +34,29 @@ https://github.com/n4n0GH/hello/tree/master/look-and-feel
 Rounding off the overall beautiful experience with the hello shader set.
 
 https://github.com/n4n0GH/hello/tree/master/kwin-effects
+
+## Donate
+
+People have asked me to donate because they enjoyed these tools. Here's how you can donate:
+
+1) Open your favorite search engine
+2) Type in "donate homeless in my area" or "donate kids in my area" or similar, you get the idea
+3) Donate whatever you would've given to me, to those organizations instead
+
+### Why can't I donate to you?
+
+It's not that I don't want or need the money, but I'm blessed enough to have a roof over my head, food to eat, am generally healthy and have access to machines that allow me to create. Your money can help people in need or projects that help people.
+
+If you live in Germany, here are some projects I personally have donated to and am a believer of:
+
+### Children's Hospice Sternenbrücke
+
+Providing help to families whose children are terminally ill, giving them a nice place to be in for the last moments of their short lives, easing the burden of the parents and even helping families after their child's untimely demise.
+
+https://sternenbruecke.de/jetzt-spenden/paypal
+
+### Streetmagazine Hinz&Kunzt
+
+Project to give homeless people a chance to reclaim their lives and get back on track. Similar to "Big Issue", but on a regional level.
+
+https://www.hinzundkunzt.de/helfen/online-spenden/
