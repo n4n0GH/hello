@@ -1,0 +1,6 @@
+File=breezewaysettingsdata.kcfg
+ClassName=InternalSettings
+NameSpace=Breezeway
+Singleton=false
+Mutators=true
+GlobalEnums=true

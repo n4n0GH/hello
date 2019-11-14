@@ -1,0 +1,31 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "n4n0@tuta.io",
+                "Name": "n4n0"
+            }
+        ],
+        "Category": "Appearance",
+        "Dependencies": [
+        ],
+        "Description": "Rounds the corners of all applications smoothly and draws a nice, thin accent line on the edge of each window to give it that little special something.",
+        "EnabledByDefault": true,
+        "Icon": "",
+        "Id": "kwin4_effect_helloshaders",
+        "License": "GPL",
+        "Name": "hello shaders",
+        "ServiceTypes": [
+            "KWin/Effect"
+        ],
+        "Version": "git"
+    },
+    "org.kde.kwin.effect": {
+        "video": "",
+        "exclusiveGroup": "",
+        "enabledByDefaultMethod": true
+    },
+    "X-KDE-Ordering": "5",
+    "X-Plasma-API": "",
+    "X-Plasma-MainScript": ""
+}
