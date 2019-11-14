@@ -1,10 +1,10 @@
-<p align="center"><img src="breezewaymod_icon.png" alt="BreezewayMod" width="100" height="100"></p>
+<p align="center"><img src="hello_icon.png" alt="hello" width="100" height="100"></p>
 
-<h1 align="center">BreezewayMod</h1>
+<h1 align="center">hello.</h1>
 
-**BreezewayMod** is a fork of the ![Breezeway](https://github.com/richard-kung/breezeway) window decoration, which aims to mimic macOS' window decorations, but with **power ups**.
+**hello** is a kwin window decoration, which aims to mimic macOS' appearance, but with **power ups**.
 
-It also works great with the ![KDE-Rounded-Corners](https://github.com/n4n0GH/KDE-Rounded-Corners) KWin script.
+It also works great with the ![hello shaders](https://github.com/n4n0GH/hello/kwin-effects) KWin effects.
 
 ## Preview
 
@@ -28,16 +28,7 @@ Looks great  with light and dark color schemes. Shown here with ![Arc](https://g
 
 ### Automated Installation
 
-Thanks to nice people on the internet, you can make use of easy and automated build processes. If your distribution is not listed here, [check out how to build from source](#manual-installation).
-
-Note: I don't maintain any of these so make sure you check out the package source before blindly installing them.
-
-#### Arch Linux / AUR
-
-```
-yay -S breezeway-mod-git
-```
-Source: https://aur.archlinux.org/packages/breezeway-mod-git/ by ToxicSalt
+TBA
 
 ### Manual Installation
 
@@ -55,17 +46,17 @@ Before proceeding with the actual installation process, make sure you have the f
 * gettext
 * pkg-config *(optional)*
 
-Download the [latest stable release](https://github.com/n4n0GH/breezeway-mod/releases) or clone this repository for bleeding edge builds:
+Download the [latest stable release](https://github.com/n4n0GH/hello/releases) or clone this repository for bleeding edge builds:
 
 ```
-git clone https://github.com/n4n0GH/breezeway-mod
+git clone https://github.com/n4n0GH/hello/window-decoration
 ```
-It's recommended to clone the repository to where you can leave the built directory, just in case you want to uninstall **BreezewayMod**. However, if you accidentally removed the directory, please check below for manually uninstallation instructions.
+It's recommended to clone the repository to where you can leave the built directory, just in case you want to uninstall **hello**. However, if you accidentally removed the directory, please check below for manually uninstallation instructions.
 
-Change to `breezeway-mod` directory and create a new directory called `build`:
+Change to `window-decoration` directory and create a new directory called `build`:
 
 ```
-cd breezeway-mod && mkdir build && cd build
+cd window-decoration && mkdir build && cd build
 ```
 
 To install, use `cmake`, `make` and `make install`:
@@ -92,23 +83,19 @@ sudo make uninstall
 If you removed the installation directory, you'll have to delete the following files and folders:
 
 ```
-/usr/lib64/cmake/BreezewayMod/BreezewayConfig.cmake
-/usr/lib64/cmake/BreezewayMod/BreezewayConfigVersion.cmake
-/usr/lib64/qt/plugins/org.kde.kdecoration2/breezewaydecoration.so
-/usr/share/kservices5/breezewaydecorationconfig.desktop
-/usr/lib64/libbreezewaycommon5.so.5.16.5
-/usr/lib64/libbreezewaycommon5.so.5
+/usr/lib64/cmake/hello/HelloConfig.cmake
+/usr/lib64/cmake/hello/HelloConfigVersion.cmake
+/usr/lib64/qt/plugins/org.kde.kdecoration2/hellodecoration.so
+/usr/share/kservices5/hellodecorationconfig.desktop
+/usr/lib64/libhellocommon5.so.5.16.5
+/usr/lib64/libhellocommon5.so.5
 ```
 
 ## Contribution
 
-If you have any questions regarding **BreezewayMod**, you are welcome to [open an issue](https://github.com/n4n0GH/breezeway-mod/issues).
+If you have any questions regarding **hello**, you are welcome to [open an issue](https://github.com/n4n0GH/hello/issues).
 
 ## FAQ
-
-**Q: What's the biggest differences between this theme and [Breezeway](https://github.com/richard-kung/breezeway)?**  
-
-A: As of now there are ![so many changes](https://github.com/richard-kung/breezeway/compare/master...n4n0GH:master) that it's fair to say it's a completely different theme.
 
 **Q: I can see this theme in the KDE store, but I can't install it through KDE's settings menu, what's up with that?**
 
@@ -125,8 +112,8 @@ A: There's a massive ongoing issue with the KDecoration2 framework which will tr
 
 **Q: But I really don't care about the glitches, I just want blur! How can I do this?**
 
-A: Find the `breezeway.json` file inside the `kdecoration` directory. [On line 12](https://github.com/n4n0GH/breezeway-mod/blob/master/kdecoration/breezeway.json#L12) you switch out `"blur": false,` with `"blur": true,` and then compile the theme according to the instructions. 
+A: Find the `hello.json` file inside the `kdecoration` directory. [On line 12](https://github.com/n4n0GH/hello/window-decoration/blob/master/kdecoration/breezeway.json#L12) you switch out `"blur": false,` with `"blur": true,` and then compile the theme according to the instructions. 
 
 **Q: Does this work on Wayland?**
 
-A: Maybe. Some functions may not work out of the box and if scaling is used the theme will most likely break. Once Wayland is stable on my own system, I'll get around to fix that though. But as of now you're on your own.
+A: Nyes. The theme will render with glitches and is not ready for Wayland yet. Maybe when Wayland works stable on my system I'll get around to fixing that.
