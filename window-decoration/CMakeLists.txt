@@ -1,4 +1,4 @@
-project(breezeway)
+project(hello)
 set(PROJECT_VERSION "5.16.5")
 set(PROJECT_VERSION_MAJOR 5)
 
@@ -20,27 +20,27 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 find_package(KDecoration2 REQUIRED)
 add_subdirectory(kdecoration)
 
-add_subdirectory(libbreezewaycommon)
+add_subdirectory(libhellocommon)
 
 find_package(KF5Package CONFIG REQUIRED)
 
 include(ECMSetupVersion)
-ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX BREEZEWAY
-                  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/BreezewayConfigVersion.cmake"
+ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX HELLO
+                  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/HelloConfigVersion.cmake"
                   )
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/BreezewayMod")
+set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/hello")
 
 include(ECMPackageConfigHelpers)
-ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/BreezewayConfig.cmake.in"
-                                  "${CMAKE_CURRENT_BINARY_DIR}/BreezewayConfig.cmake"
+ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/HelloConfig.cmake.in"
+                                  "${CMAKE_CURRENT_BINARY_DIR}/HelloConfig.cmake"
                                   PATH_VARS KDE_INSTALL_FULL_DATADIR
                                   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
                                   )
 
-install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/BreezewayConfig.cmake"
-               "${CMAKE_CURRENT_BINARY_DIR}/BreezewayConfigVersion.cmake"
+install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/HelloConfig.cmake"
+               "${CMAKE_CURRENT_BINARY_DIR}/HelloConfigVersion.cmake"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
        )
