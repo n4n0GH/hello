@@ -108,7 +108,7 @@ A: There's a massive ongoing issue with the KDecoration2 framework which will tr
 | Description | Showcase |
 | --- | --- |
 | This glitch in action. | ![](sierrabreeze.png?raw=true) |
-| BreezewayMod doesn't have that problem because it doesn't rely on blur features until KDecoration2 gets fixed. | ![](breezewaymod.png?raw=true) |
+| BreezewayMod doesn't have that problem because it doesn't rely on blur features until KDecoration2 gets fixed. | ![](hello.png?raw=true) |
 
 **Q: But I really don't care about the glitches, I just want blur! How can I do this?**
 
