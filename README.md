@@ -7,11 +7,11 @@ hello. is a compilation of various color-schemes, themes, icons and more for the
 
 | Package | WIP Status |
 | --- | --- |
-| **Color Scheme**<br/>A beautifully crafted set of color schemes, supporting light and dark modes alike.<br/>https://github.com/n4n0GH/hello/tree/master/color-scheme | 50% done |
-| **Application Style**<br/>Taking the best parts of KDE's own Breeze set and improving upon it subtly.<br/>https://github.com/n4n0GH/hello/tree/master/kstyle | 0% done |
-| **Window Decoration**<br/>Allowing for granular customization, yet looking absolutely astonishing in every setting.<br/>https://github.com/n4n0GH/hello/tree/master/window-decoration | 90% done |
-| **Plasma Theme**<br/>Completing your desktop experience with a well balanced and elegant Plasma look and feel.<br/>https://github.com/n4n0GH/hello/tree/master/look-and-feel | 0% done |
-| **Effects**<br/>Rounding off the overall beautiful experience with the hello shader set.<br/>https://github.com/n4n0GH/hello/tree/master/kwin-effects | 30% done |
+| [**Color Scheme**](https://github.com/n4n0GH/hello/tree/master/color-scheme)<br/>A beautifully crafted set of color schemes, supporting light and dark modes alike. | 50% done |
+| [**Application Style**](https://github.com/n4n0GH/hello/tree/master/kstyle)<br/>Taking the best parts of KDE's own Breeze set and improving upon it subtly. | 0% done |
+| [**Window Decoration**](https://github.com/n4n0GH/hello/tree/master/window-decoration)<br/>Allowing for granular customization, yet looking absolutely astonishing in every setting. | 90% done |
+| [**Plasma Theme**](https://github.com/n4n0GH/hello/tree/master/look-and-feel)<br/>Completing your desktop experience with a well balanced and elegant Plasma look and feel. | 0% done |
+| [**Effects**](https://github.com/n4n0GH/hello/tree/master/kwin-effects)<br/>Rounding off the overall beautiful experience with the hello shader set. | 30% done |
 
 ## Donate
 
