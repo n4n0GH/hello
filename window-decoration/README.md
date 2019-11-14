@@ -4,7 +4,7 @@
 
 **hello** is a kwin window decoration, which aims to mimic macOS' appearance, but with **power ups**.
 
-It also works great with the ![hello shaders](https://github.com/n4n0GH/hello/kwin-effects) KWin effects.
+It also works great with the ![hello shaders](https://github.com/n4n0GH/hello/tree/master/kwin-effects) KWin effects.
 
 ## Preview
 
