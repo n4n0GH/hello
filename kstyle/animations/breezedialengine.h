@@ -1,5 +1,5 @@
-#ifndef breezedialengine_h
-#define breezedialengine_h
+#ifndef hellodialengine_h
+#define hellodialengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,10 +20,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezedialdata.h"
-#include "breezewidgetstateengine.h"
+#include "hellodialdata.h"
+#include "hellowidgetstateengine.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* stores dial hovered action and timeLine

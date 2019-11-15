@@ -1,5 +1,5 @@
-#ifndef breezestyle_h
-#define breezestyle_h
+#ifndef hellostyle_h
+#define hellostyle_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,15 +20,15 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "config-breeze.h"
-#include "breezehelper.h"
+#include "hello.h"
+#include "config-hello.h"
+#include "hellohelper.h"
 
-#if BREEZE_HAVE_KSTYLE
+#if hello_HAVE_KSTYLE
 #include <KStyle>
 #endif
 
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
 #include "kstylekde4compat.h"
 #endif
 
@@ -49,12 +49,12 @@
 
 #include <functional>
 
-namespace BreezePrivate
+namespace helloPrivate
 {
     class TabBarData;
 }
 
-namespace Breeze
+namespace hello
 {
 
     class Animations;
@@ -66,20 +66,20 @@ namespace Breeze
     class SplitterFactory;
     class WidgetExplorer;
     class WindowManager;
-    #if !BREEZE_USE_KDE4
+    #if !hello_USE_KDE4
     class BlurHelper;
     #endif
 
     //* convenience typedef for base class
-    #if BREEZE_USE_KDE4
+    #if hello_USE_KDE4
     using ParentStyleClass = KStyleKDE4Compat;
-    #elif !BREEZE_HAVE_KSTYLE
+    #elif !hello_HAVE_KSTYLE
     using ParentStyleClass = QCommonStyle;
     #else
     using ParentStyleClass = KStyle;
     #endif
 
-    //* base class for breeze style
+    //* base class for hello style
     /** it is responsible to draw all the primitives to be displayed on screen, on request from Qt paint engine */
     class Style: public ParentStyleClass
     {
@@ -174,7 +174,7 @@ namespace Breeze
         protected:
 
         //* standard icons
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         QIcon standardIcon( StandardPixmap pixmap, const QStyleOption* option = nullptr, const QWidget* widget = nullptr) const
         { return standardIconImplementation( pixmap, option, widget ); }
         #else
@@ -501,7 +501,7 @@ namespace Breeze
         //* keyboard accelerators
         Mnemonics* _mnemonics = nullptr;
 
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         //* blur helper
         BlurHelper* _blurHelper = nullptr;
         #endif
@@ -522,7 +522,7 @@ namespace Breeze
         WidgetExplorer* _widgetExplorer = nullptr;
 
         //* tabbar data
-        BreezePrivate::TabBarData* _tabBarData = nullptr;
+        helloPrivate::TabBarData* _tabBarData = nullptr;
 
         //* icon hash
         using IconCache = QHash<StandardPixmap, QIcon>;

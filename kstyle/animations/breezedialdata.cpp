@@ -17,12 +17,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezedialdata.h"
+#include "hellodialdata.h"
 
 #include <QHoverEvent>
 #include <QDial>
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________

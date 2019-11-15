@@ -1,5 +1,5 @@
-#ifndef breezestyleconfig_h
-#define breezestyleconfig_h
+#ifndef hellostyleconfig_h
+#define hellostyleconfig_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,12 +20,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "ui_breezestyleconfig.h"
+#include "ui_hellostyleconfig.h"
 
-namespace Breeze
+namespace hello
 {
 
-    class StyleConfig: public QWidget, Ui::BreezeStyleConfig
+    class StyleConfig: public QWidget, Ui::helloStyleConfig
     {
 
         Q_OBJECT

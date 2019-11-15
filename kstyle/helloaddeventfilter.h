@@ -1,5 +1,5 @@
-#ifndef breezeaddeventfilter_h
-#define breezeaddeventfilter_h
+#ifndef helloaddeventfilter_h
+#define helloaddeventfilter_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -23,7 +23,7 @@
 #include <QObject>
 #include <QEvent>
 
-namespace Breeze
+namespace hello
 {
 
     class AddEventFilter: public QObject

@@ -18,13 +18,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeshadowhelper.h"
+#include "helloshadowhelper.h"
 
-#include "breeze.h"
-#include "breezeboxshadowrenderer.h"
-#include "breezehelper.h"
-#include "breezepropertynames.h"
-#include "breezestyleconfigdata.h"
+#include "hello.h"
+#include "helloboxshadowrenderer.h"
+#include "hellohelper.h"
+#include "hellopropertynames.h"
+#include "hellostyleconfigdata.h"
 
 #include <QDockWidget>
 #include <QEvent>
@@ -35,11 +35,11 @@
 #include <QToolBar>
 #include <QTextStream>
 
-#if BREEZE_HAVE_X11
+#if hello_HAVE_X11
 #include <QX11Info>
 #endif
 
-#if BREEZE_HAVE_KWAYLAND
+#if hello_HAVE_KWAYLAND
 #include <KWayland/Client/buffer.h>
 #include <KWayland/Client/connection_thread.h>
 #include <KWayland/Client/registry.h>
@@ -50,8 +50,8 @@
 
 namespace
 {
-    using Breeze::CompositeShadowParams;
-    using Breeze::ShadowParams;
+    using hello::CompositeShadowParams;
+    using hello::ShadowParams;
 
     const CompositeShadowParams s_shadowParams[] = {
         // None
@@ -79,7 +79,7 @@ namespace
     };
 }
 
-namespace Breeze
+namespace hello
 {
 
     const char ShadowHelper::netWMShadowAtomName[] ="_KDE_NET_WM_SHADOW";
@@ -119,7 +119,7 @@ namespace Breeze
     ShadowHelper::~ShadowHelper()
     {
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         if( Helper::isX11() )
         { foreach( const quint32& value, _pixmaps  ) xcb_free_pixmap( Helper::connection(), value ); }
         #endif
@@ -129,7 +129,7 @@ namespace Breeze
     //_______________________________________________________
     void ShadowHelper::initializeWayland()
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( !Helper::isWayland() ) return;
 
         using namespace KWayland::Client;
@@ -160,7 +160,7 @@ namespace Breeze
     //______________________________________________
     void ShadowHelper::reset()
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         if( Helper::isX11() )
         { foreach( const quint32& value, _pixmaps  ) xcb_free_pixmap( Helper::connection(), value ); }
         #endif
@@ -221,7 +221,7 @@ namespace Breeze
         if( Helper::isWayland() )
         {
 
-            #if BREEZE_HAVE_KWAYLAND
+            #if hello_HAVE_KWAYLAND
             QWidget* widget( static_cast<QWidget*>( object ) );
             if( event->type() == QEvent::Paint )
             {
@@ -323,7 +323,7 @@ namespace Breeze
         painter.setBrush(Qt::black);
         painter.setCompositionMode(QPainter::CompositionMode_DestinationOut);
         painter.drawRoundedRect(
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
             outerRect.adjusted(margins.left(), margins.top(), -margins.right(), -margins.bottom()),
 #else
             outerRect - margins,
@@ -401,7 +401,7 @@ namespace Breeze
         */
 
         // create atom
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         if( !_atom && Helper::isX11() ) _atom = _helper.createAtom( QLatin1String( netWMShadowAtomName ) );
         #endif
 
@@ -439,7 +439,7 @@ namespace Breeze
         explicitly and draw the source pixmap on it.
         */
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
 
         const int width( source.width() );
         const int height( source.height() );
@@ -493,7 +493,7 @@ namespace Breeze
     //_______________________________________________________
     bool ShadowHelper::installX11Shadows( QWidget* widget )
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         #ifndef QT_NO_XRENDER
 
         // create pixmap handles if needed
@@ -523,7 +523,7 @@ namespace Breeze
     //_______________________________________________________
     bool ShadowHelper::installWaylandShadows( QWidget* widget )
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( widget->windowHandle()->parent() ) return false;
         if( !_shadowManager || !_shmPool ) return false;
 
@@ -590,7 +590,7 @@ namespace Breeze
             widget->getContentsMargins(nullptr, &top, nullptr, &bottom);
 
             // Need to decrement default size further due to extra hard coded round corner.
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
             margins.setLeft(margins.left() - 1);
             margins.setTop(margins.top() - 1);
             margins.setRight(margins.right() - 1);
@@ -608,7 +608,7 @@ namespace Breeze
             }
         }
 
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
         const qreal dpr = _helper.devicePixelRatio(_shadowTiles.pixmap(0));
         margins.setLeft(margins.left() * dpr);
         margins.setTop(margins.top() * dpr);
@@ -632,7 +632,7 @@ namespace Breeze
     //_______________________________________________________
     void ShadowHelper::uninstallX11Shadows( QWidget* widget ) const
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         xcb_delete_property( Helper::connection(), widget->winId(), _atom);
         #else
         Q_UNUSED( widget )
@@ -643,7 +643,7 @@ namespace Breeze
     //_______________________________________________________
     void ShadowHelper::uninstallWaylandShadows( QWidget* widget ) const
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( widget->windowHandle() && widget->windowHandle()->parent() ) return;
         if( !_shadowManager ) return;
 

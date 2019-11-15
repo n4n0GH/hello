@@ -1,5 +1,5 @@
-#ifndef breezemnemonics_h
-#define breezemnemonics_h
+#ifndef hellostyleplugin_h
+#define hellostyleplugin_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,50 +20,32 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include <QEvent>
-#include <QObject>
-#include <QApplication>
+#include <QStylePlugin>
 
-#include "breezestyleconfigdata.h"
-
-namespace Breeze
+namespace hello
 {
 
-    class Mnemonics: public QObject
+    class StylePlugin : public QStylePlugin
     {
 
         Q_OBJECT
 
+        #if QT_VERSION >= 0x050000
+        Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QStyleFactoryInterface" FILE "hello.json" )
+        #endif
+
         public:
 
         //* constructor
-        explicit Mnemonics( QObject* parent ):
-            QObject( parent )
-            {}
+        explicit StylePlugin(QObject *parent = nullptr):
+            QStylePlugin(parent)
+        {}
 
-        //* set mode
-        void setMode( int );
+        //* returns list of valid keys
+        QStringList keys() const;
 
-        //* event filter
-        bool eventFilter( QObject*, QEvent* ) override;
-
-        //* true if mnemonics are enabled
-        bool enabled() const
-        { return _enabled; }
-
-        //* alignment flag
-        int textFlags() const
-        { return _enabled ? Qt::TextShowMnemonic : Qt::TextHideMnemonic; }
-
-        protected:
-
-        //* set enable state
-        void setEnabled( bool );
-
-        private:
-
-        //* enable state
-        bool _enabled = true;
+        //* create style
+        QStyle* create( const QString& ) override;
 
     };
 

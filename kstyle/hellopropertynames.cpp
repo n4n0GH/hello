@@ -1,6 +1,3 @@
-#ifndef breezepropertynames_h
-#define breezepropertynames_h
-
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
  *                                                                       *
@@ -21,21 +18,18 @@
  *************************************************************************/
 
 
-namespace Breeze
+#include "hellopropertynames.h"
+
+namespace hello
 {
 
-    struct PropertyNames
-    {
-        static const char noAnimations[];
-        static const char noWindowGrab[];
-        static const char netWMForceShadow[];
-        static const char netWMSkipShadow[];
-        static const char sidePanelView[];
-        static const char toolButtonAlignment[];
-        static const char menuTitle[];
-        static const char alteredBackground[];
-    };
+    const char PropertyNames::noAnimations[] = "_kde_no_animations";
+    const char PropertyNames::noWindowGrab[] = "_kde_no_window_grab";
+    const char PropertyNames::netWMForceShadow[] = "_KDE_NET_WM_FORCE_SHADOW";
+    const char PropertyNames::netWMSkipShadow[] = "_KDE_NET_WM_SKIP_SHADOW";
+    const char PropertyNames::sidePanelView[] = "_kde_side_panel_view";
+    const char PropertyNames::toolButtonAlignment[] = "_kde_toolButton_alignment";
+    const char PropertyNames::menuTitle[] = "_hello_toolButton_menutitle";
+    const char PropertyNames::alteredBackground[] = "_hello_altered_background";
 
 }
-
-#endif

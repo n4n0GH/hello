@@ -1,5 +1,5 @@
-#ifndef breezescrollbar_data_h
-#define breezescrollbar_data_h
+#ifndef helloscrollbar_data_h
+#define helloscrollbar_data_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezewidgetstatedata.h"
+#include "hellowidgetstatedata.h"
 
 #include <QStyle>
 
-namespace Breeze
+namespace hello
 {
 
     //* scrollbar data

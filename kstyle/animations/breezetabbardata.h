@@ -1,5 +1,5 @@
-#ifndef breezetabbar_data_h
-#define breezetabbar_data_h
+#ifndef hellotabbar_data_h
+#define hellotabbar_data_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeanimationdata.h"
+#include "helloanimationdata.h"
 
 #include <QTabBar>
 
-namespace Breeze
+namespace hello
 {
 
     //* tabbars

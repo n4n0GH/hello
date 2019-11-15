@@ -17,11 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezetileset.h"
+#include "hellotileset.h"
 
 #include <QPainter>
 
-namespace Breeze
+namespace hello
 {
 
     //___________________________________________________________

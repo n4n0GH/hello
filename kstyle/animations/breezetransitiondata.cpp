@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// breezetransitiondata.cpp
+// hellotransitiondata.cpp
 // data container for generic transitions
 // -------------------
 //
@@ -24,9 +24,9 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezetransitiondata.h"
+#include "hellotransitiondata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //_________________________________________________________________

@@ -17,10 +17,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezesplitterproxy.h"
+#include "hellosplitterproxy.h"
 
-#include "breeze.h"
-#include "breezestyleconfigdata.h"
+#include "hello.h"
+#include "hellostyleconfigdata.h"
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -48,7 +48,7 @@
 #endif
 #endif
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________________

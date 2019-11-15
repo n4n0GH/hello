@@ -1,5 +1,5 @@
-#ifndef breezeanimations_h
-#define breezeanimations_h
+#ifndef helloanimations_h
+#define helloanimations_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,20 +20,20 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezebusyindicatorengine.h"
-#include "breezedialengine.h"
-#include "breezeheaderviewengine.h"
-#include "breezescrollbarengine.h"
-#include "breezespinboxengine.h"
-#include "breezestackedwidgetengine.h"
-#include "breezetabbarengine.h"
-#include "breezetoolboxengine.h"
-#include "breezewidgetstateengine.h"
+#include "hellobusyindicatorengine.h"
+#include "hellodialengine.h"
+#include "helloheaderviewengine.h"
+#include "helloscrollbarengine.h"
+#include "hellospinboxengine.h"
+#include "hellostackedwidgetengine.h"
+#include "hellotabbarengine.h"
+#include "hellotoolboxengine.h"
+#include "hellowidgetstateengine.h"
 
 #include <QObject>
 #include <QList>
 
-namespace Breeze
+namespace hello
 {
 
     //* stores engines

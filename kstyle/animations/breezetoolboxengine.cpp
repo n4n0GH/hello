@@ -18,9 +18,9 @@
  *************************************************************************/
 
 
-#include "breezetoolboxengine.h"
+#include "hellotoolboxengine.h"
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________

@@ -17,7 +17,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezescrollbardata.h"
+#include "helloscrollbardata.h"
 
 #include <QHoverEvent>
 #include <QScrollBar>
@@ -25,7 +25,7 @@
 
 Q_GUI_EXPORT QStyleOptionSlider qt_qscrollbarStyleOption(QScrollBar*);
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________

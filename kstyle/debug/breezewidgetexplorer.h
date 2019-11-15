@@ -1,5 +1,5 @@
-#ifndef breezewidgetexplorer_h
-#define breezewidgetexplorer_h
+#ifndef hellowidgetexplorer_h
+#define hellowidgetexplorer_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -26,7 +26,7 @@
 #include <QSet>
 #include <QWidget>
 
-namespace Breeze
+namespace hello
 {
 
     //* print widget's and parent's information on mouse click

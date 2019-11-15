@@ -1,5 +1,5 @@
-#ifndef breezespinboxengine_h
-#define breezespinboxengine_h
+#ifndef hellospinboxengine_h
+#define hellospinboxengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezespinboxdata.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "hellospinboxdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* handle spinbox arrows hover effect

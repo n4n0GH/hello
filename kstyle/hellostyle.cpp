@@ -17,20 +17,20 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezestyle.h"
+#include "hellostyle.h"
 
-#include "breeze.h"
-#include "breezeanimations.h"
-#include "breezeframeshadow.h"
-#include "breezemdiwindowshadow.h"
-#include "breezemnemonics.h"
-#include "breezepropertynames.h"
-#include "breezeshadowhelper.h"
-#include "breezesplitterproxy.h"
-#include "breezestyleconfigdata.h"
-#include "breezewidgetexplorer.h"
-#include "breezewindowmanager.h"
-#include "breezeblurhelper.h"
+#include "hello.h"
+#include "helloanimations.h"
+#include "helloframeshadow.h"
+#include "hellomdiwindowshadow.h"
+#include "hellomnemonics.h"
+#include "hellopropertynames.h"
+#include "helloshadowhelper.h"
+#include "hellosplitterproxy.h"
+#include "hellostyleconfigdata.h"
+#include "hellowidgetexplorer.h"
+#include "hellowindowmanager.h"
+#include "helloblurhelper.h"
 
 #include <KColorUtils>
 
@@ -60,11 +60,11 @@
 #include <QTreeView>
 #include <QWidgetAction>
 
-#if BREEZE_HAVE_QTQUICK
+#if hello_HAVE_QTQUICK
 #include <QQuickWindow>
 #endif
 
-namespace BreezePrivate
+namespace helloPrivate
 {
 
     // needed to keep track of tabbars when being dragged
@@ -93,7 +93,7 @@ namespace BreezePrivate
         private:
 
         //* pointer to target tabBar
-        Breeze::WeakPointer<const QWidget> _tabBar;
+        hello::WeakPointer<const QWidget> _tabBar;
 
     };
 
@@ -107,7 +107,7 @@ namespace BreezePrivate
         explicit ComboBoxItemDelegate( QAbstractItemView* parent ):
             QItemDelegate( parent ),
             _proxy( parent->itemDelegate() ),
-            _itemMargin( Breeze::Metrics::ItemView_ItemMarginWidth )
+            _itemMargin( hello::Metrics::ItemView_ItemMarginWidth )
         {}
 
         //* paint
@@ -136,7 +136,7 @@ namespace BreezePrivate
         private:
 
         //* proxy
-        Breeze::WeakPointer<QAbstractItemDelegate> _proxy;
+        hello::WeakPointer<QAbstractItemDelegate> _proxy;
 
         //* margin
         int _itemMargin;
@@ -144,21 +144,21 @@ namespace BreezePrivate
     };
 
     //_______________________________________________________________
-    #if !BREEZE_USE_KDE4
+    #if !hello_USE_KDE4
     bool isProgressBarHorizontal( const QStyleOptionProgressBar* option )
     {  return option && ( (option->state & QStyle::State_Horizontal ) || option->orientation == Qt::Horizontal ); }
     #endif
 
 }
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________________________
     Style::Style():
 
-        #if BREEZE_USE_KDE4
-        _helper( new Helper( "breeze" ) )
+        #if hello_USE_KDE4
+        _helper( new Helper( "hello" ) )
         #else
         _helper( new Helper( StyleConfigData::self()->sharedConfig() ) )
         #endif
@@ -167,7 +167,7 @@ namespace Breeze
         , _animations( new Animations( this ) )
         , _mnemonics( new Mnemonics( this ) )
 
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         , _blurHelper( new BlurHelper( this ) )
         #endif
 
@@ -176,25 +176,25 @@ namespace Breeze
         , _mdiWindowShadowFactory( new MdiWindowShadowFactory( this ) )
         , _splitterFactory( new SplitterFactory( this ) )
         , _widgetExplorer( new WidgetExplorer( this ) )
-        , _tabBarData( new BreezePrivate::TabBarData( this ) )
-        #if BREEZE_HAVE_KSTYLE||BREEZE_USE_KDE4
+        , _tabBarData( new helloPrivate::TabBarData( this ) )
+        #if hello_HAVE_KSTYLE||hello_USE_KDE4
         , SH_ArgbDndWindow( newStyleHint( QStringLiteral( "SH_ArgbDndWindow" ) ) )
         , CE_CapacityBar( newControlElement( QStringLiteral( "CE_CapacityBar" ) ) )
         #endif
     {
 
-        // use DBus connection to update on breeze configuration change
+        // use DBus connection to update on hello configuration change
         auto dbus = QDBusConnection::sessionBus();
         dbus.connect( QString(),
-            QStringLiteral( "/BreezeStyle" ),
-            QStringLiteral( "org.kde.Breeze.Style" ),
+            QStringLiteral( "/helloStyle" ),
+            QStringLiteral( "org.kde.hello.Style" ),
             QStringLiteral( "reparseConfiguration" ), this, SLOT(configurationChanged()) );
 
         dbus.connect( QString(),
-            QStringLiteral( "/BreezeDecoration" ),
-            QStringLiteral( "org.kde.Breeze.Style" ),
+            QStringLiteral( "/helloDecoration" ),
+            QStringLiteral( "org.kde.hello.Style" ),
             QStringLiteral( "reparseConfiguration" ), this, SLOT(configurationChanged()) );
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         #if QT_VERSION < 0x050D00 // Check if Qt version < 5.13
         this->addEventFilter(qApp);
         #else
@@ -337,7 +337,7 @@ namespace Breeze
 
             setTranslucentBackground( widget );
 
-            #if !BREEZE_USE_KDE4
+            #if !hello_USE_KDE4
             if ( _helper->hasAlphaChannel( widget ) && StyleConfigData::menuOpacity() < 100 ) {
                 _blurHelper->registerWidget( widget->window() );
             }
@@ -354,7 +354,7 @@ namespace Breeze
             {
                 auto itemView( comboBox->view() );
                 if( itemView && itemView->itemDelegate() && itemView->itemDelegate()->inherits( "QComboBoxDelegate" ) )
-                { itemView->setItemDelegate( new BreezePrivate::ComboBoxItemDelegate( itemView ) ); }
+                { itemView->setItemDelegate( new helloPrivate::ComboBoxItemDelegate( itemView ) ); }
             }
 
         } else if( widget->inherits( "QComboBoxPrivateContainer" ) ) {
@@ -455,7 +455,7 @@ namespace Breeze
         _windowManager->unregisterWidget( widget );
         _splitterFactory->unregisterWidget( widget );
 
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         _blurHelper->unregisterWidget( widget );
         #endif
 
@@ -891,7 +891,7 @@ namespace Breeze
 
         StyleControl fcn;
 
-        #if BREEZE_HAVE_KSTYLE||BREEZE_USE_KDE4
+        #if hello_HAVE_KSTYLE||hello_USE_KDE4
         if( element == CE_CapacityBar )
         {
             fcn = &Style::drawProgressBarControl;
@@ -1355,7 +1355,7 @@ namespace Breeze
     {
 
         // reload
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         StyleConfigData::self()->readConfig();
         #else
         StyleConfigData::self()->load();
@@ -1506,11 +1506,11 @@ namespace Breeze
         const bool textVisible( progressBarOption->textVisible );
         const bool busy( progressBarOption->minimum == 0 && progressBarOption->maximum == 0 );
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal( !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal );
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         #endif
 
         // copy rectangle and adjust
@@ -1558,15 +1558,15 @@ namespace Breeze
         if( busy ) return rect;
 
         // get orientation
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal( !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal );
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         #endif
 
         // check inverted appearance
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const bool inverted( progressBarOption2 ? progressBarOption2->invertedAppearance : false );
         #else
         const bool inverted( progressBarOption->invertedAppearance );
@@ -1628,11 +1628,11 @@ namespace Breeze
         if( !textVisible || busy ) return QRect();
 
         // get direction and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal( !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal );
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         #endif
         if( !horizontal ) return QRect();
 
@@ -1688,7 +1688,7 @@ namespace Breeze
     {
 
         // cast option and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto tabOption( qstyleoption_cast<const QStyleOptionTabV3*>( option ) );
         #else
         const auto tabOption( qstyleoption_cast<const QStyleOptionTab*>( option ) );
@@ -1736,7 +1736,7 @@ namespace Breeze
     {
 
         // cast option and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto tabOption( qstyleoption_cast<const QStyleOptionTabV3*>( option ) );
         #else
         const auto tabOption( qstyleoption_cast<const QStyleOptionTab*>( option ) );
@@ -2864,11 +2864,11 @@ namespace Breeze
         const auto progressBarOption( qstyleoption_cast<const QStyleOptionProgressBar*>( option ) );
         if( !progressBarOption ) return contentsSize;
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal( !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal );
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         #endif
 
         // make local copy
@@ -2943,7 +2943,7 @@ namespace Breeze
         const auto tabOption( qstyleoption_cast<const QStyleOptionTab*>( option ) );
         const bool hasText( tabOption && !tabOption->text.isEmpty() );
         const bool hasIcon( tabOption && !tabOption->icon.isNull() );
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto tabOptionV3( qstyleoption_cast<const QStyleOptionTabV3*>( option ) );
         const bool hasLeftButton( tabOptionV3 && !tabOptionV3->leftButtonSize.isEmpty() );
         const bool hasRightButton( tabOptionV3 && !tabOptionV3->leftButtonSize.isEmpty() );
@@ -3221,7 +3221,7 @@ namespace Breeze
         if( !frameOption ) return true;
 
         // no frame for flat groupboxes
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         QStyleOptionFrameV2 frameOption2( *frameOption );
         if( frameOption2.features & QStyleOptionFrameV2::Flat ) return true;
         #else
@@ -3250,7 +3250,7 @@ namespace Breeze
     {
 
         // cast option and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto tabOption( qstyleoption_cast<const QStyleOptionTabWidgetFrameV2*>( option ) );
         #else
         const auto tabOption( qstyleoption_cast<const QStyleOptionTabWidgetFrame*>( option ) );
@@ -3708,7 +3708,7 @@ namespace Breeze
         const bool hasAlpha( _helper->hasAlphaChannel( widget ) );
         auto background( _helper->frameBackgroundColor( palette ) );
 
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         if ( hasAlpha ) {
             background.setAlphaF(StyleConfigData::menuOpacity() / 100.0);
         }
@@ -3743,7 +3743,7 @@ namespace Breeze
     {
 
         // cast option and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto viewItemOption = qstyleoption_cast<const QStyleOptionViewItemV4*>( option );
         #else
         const auto viewItemOption = qstyleoption_cast<const QStyleOptionViewItem*>( option );
@@ -3766,7 +3766,7 @@ namespace Breeze
 
         const bool hasCustomBackground = viewItemOption->backgroundBrush.style() != Qt::NoBrush && !( state & State_Selected );
         const bool hasSolidBackground = !hasCustomBackground || viewItemOption->backgroundBrush.style() == Qt::SolidPattern;
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const bool hasAlternateBackground( viewItemOption->features & QStyleOptionViewItemV2::Alternate );
         #else
         const bool hasAlternateBackground( viewItemOption->features & QStyleOptionViewItem::Alternate );
@@ -4596,7 +4596,7 @@ namespace Breeze
                 QWindow *window = nullptr;
                 if (widget && widget->window()) {
                     window = widget->window()->windowHandle();
-#if BREEZE_HAVE_QTQUICK
+#if hello_HAVE_QTQUICK
                 } else if (QQuickItem *quickItem = qobject_cast<QQuickItem *>(option->styleObject)) {
                     window = quickItem->window();
 #endif
@@ -4963,7 +4963,7 @@ namespace Breeze
         if( !progressBarOption ) return true;
 
         // render groove
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         QStyleOptionProgressBarV2 progressBarOption2 = *progressBarOption;
         #else
         QStyleOptionProgressBar progressBarOption2 = *progressBarOption;
@@ -5025,12 +5025,12 @@ namespace Breeze
         const auto& palette( option->palette );
 
         // get direction
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal = !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal;
         const bool inverted( progressBarOption2 ? progressBarOption2->invertedAppearance : false );
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         const bool inverted( progressBarOption->invertedAppearance );
         #endif
         bool reverse = horizontal && option->direction == Qt::RightToLeft;
@@ -5101,11 +5101,11 @@ namespace Breeze
         if( !progressBarOption ) return true;
 
         // get direction and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto progressBarOption2( qstyleoption_cast<const QStyleOptionProgressBarV2*>( option ) );
         const bool horizontal = !progressBarOption2 || progressBarOption2->orientation == Qt::Horizontal;
         #else
-        const bool horizontal( BreezePrivate::isProgressBarHorizontal( progressBarOption ) );
+        const bool horizontal( helloPrivate::isProgressBarHorizontal( progressBarOption ) );
         #endif
         if( !horizontal ) return true;
 
@@ -5335,7 +5335,7 @@ namespace Breeze
     {
 
         // cast option and check
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto frameOpt = qstyleoption_cast<const QStyleOptionFrameV3*>( option );
         #else
         const auto frameOpt = qstyleoption_cast<const QStyleOptionFrame*>( option );
@@ -5941,7 +5941,7 @@ namespace Breeze
         const bool reverseLayout( option->direction == Qt::RightToLeft );
 
         // cast to v2 to check vertical bar
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         const auto v2 = qstyleoption_cast<const QStyleOptionDockWidgetV2*>( option );
         const bool verticalTitleBar( v2 ? v2->verticalTitleBar : false );
         #else
@@ -7198,7 +7198,7 @@ namespace Breeze
     //____________________________________________________________________
     bool Style::isQtQuickControl( const QStyleOption* option, const QWidget* widget ) const
     {
-        #if QT_VERSION >= 0x050000 && BREEZE_HAVE_QTQUICK
+        #if QT_VERSION >= 0x050000 && hello_HAVE_QTQUICK
         const bool is = (widget == nullptr) && option && option->styleObject && option->styleObject->inherits( "QQuickItem" );
         if ( is ) _windowManager->registerQuickItem( static_cast<QQuickItem*>( option->styleObject ) );
         return is;

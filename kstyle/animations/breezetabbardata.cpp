@@ -18,7 +18,7 @@
  *************************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
-// breezetabbardata.cpp
+// hellotabbardata.cpp
 // data container for QTabBar animations
 // -------------------
 //
@@ -43,12 +43,12 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezetabbardata.h"
+#include "hellotabbardata.h"
 
 #include <QHoverEvent>
 #include <QTabBar>
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________

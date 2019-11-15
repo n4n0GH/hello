@@ -17,9 +17,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezespinboxdata.h"
+#include "hellospinboxdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //________________________________________________

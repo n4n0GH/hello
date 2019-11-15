@@ -17,16 +17,16 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezewidgetexplorer.h"
+#include "hellowidgetexplorer.h"
 
-#include "breeze.h"
+#include "hello.h"
 
 #include <QTextStream>
 #include <QApplication>
 #include <QMouseEvent>
 #include <QPainter>
 
-namespace Breeze
+namespace hello
 {
 
     //________________________________________________
@@ -71,7 +71,7 @@ namespace Breeze
 //             QString type( _eventTypes[event->type()] );
 //             if( !type.isEmpty() )
 //             {
-//                 QTextStream( stdout ) << "Breeze::WidgetExplorer::eventFilter - widget: " << object << " (" << object->metaObject()->className() << ")";
+//                 QTextStream( stdout ) << "hello::WidgetExplorer::eventFilter - widget: " << object << " (" << object->metaObject()->className() << ")";
 //                 QTextStream( stdout ) << " type: " << type  << endl;
 //             }
 //         }
@@ -105,7 +105,7 @@ namespace Breeze
                 if( !widget ) return false;
 
                 QTextStream( stdout )
-                    << "Breeze::WidgetExplorer::eventFilter -"
+                    << "hello::WidgetExplorer::eventFilter -"
                     << " event: " << event << " type: " << eventType( event->type() )
                     << " widget: " << widgetInformation( widget )
                     << endl;

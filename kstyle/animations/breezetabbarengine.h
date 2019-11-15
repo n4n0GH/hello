@@ -1,5 +1,5 @@
-#ifndef breezetabbarengine_h
-#define breezetabbarengine_h
+#ifndef hellotabbarengine_h
+#define hellotabbarengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,12 +20,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezetabbardata.h"
+#include "hello.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "hellotabbardata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* stores tabbar hovered action and timeLine

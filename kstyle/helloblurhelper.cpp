@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// breezeblurhelper.cpp
+// helloblurhelper.cpp
 // handle regions passed to kwin for blurring
 // -------------------
 //
@@ -28,15 +28,15 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezeblurhelper.h"
-#include "breezestyleconfigdata.h"
+#include "helloblurhelper.h"
+#include "hellostyleconfigdata.h"
 
 #include <KWindowEffects>
 
 #include <QEvent>
 #include <QVector>
 
-namespace Breeze
+namespace hello
 {
     //___________________________________________________________
     BlurHelper::BlurHelper(QObject* parent):
@@ -89,7 +89,7 @@ namespace Breeze
     //___________________________________________________________
     void BlurHelper::update(QWidget* widget) const
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         /*
         directly from bespin code. Supposedly prevent playing with some 'pseudo-widgets'
         that have winId matching some other -random- window

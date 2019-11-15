@@ -1,5 +1,5 @@
-#ifndef breezedial_data_h
-#define breezedial_data_h
+#ifndef hellodial_data_h
+#define hellodial_data_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,9 +20,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezewidgetstatedata.h"
+#include "hellowidgetstatedata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* dial data

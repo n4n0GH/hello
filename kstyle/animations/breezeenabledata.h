@@ -1,5 +1,5 @@
-#ifndef breezeenable_data_h
-#define breezeenable_data_h
+#ifndef helloenable_data_h
+#define helloenable_data_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,9 +20,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezewidgetstatedata.h"
+#include "hellowidgetstatedata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* Enable data

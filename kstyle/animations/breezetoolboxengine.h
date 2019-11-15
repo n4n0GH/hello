@@ -1,5 +1,5 @@
-#ifndef breezetoolboxengine_h
-#define breezetoolboxengine_h
+#ifndef hellotoolboxengine_h
+#define hellotoolboxengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezewidgetstatedata.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "hellowidgetstatedata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* QToolBox animation engine

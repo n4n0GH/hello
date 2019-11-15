@@ -1,7 +1,7 @@
-#ifndef breezetransitionwidget_h
-#define breezetransitionwidget_h
+#ifndef hellotransitionwidget_h
+#define hellotransitionwidget_h
 //////////////////////////////////////////////////////////////////////////////
-// breezetransitionwidget.h
+// hellotransitionwidget.h
 // stores event filters and maps widgets to transitions for transitions
 // -------------------
 //
@@ -26,14 +26,14 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezeanimation.h"
-#include "breeze.h"
+#include "helloanimation.h"
+#include "hello.h"
 
 #include <QWidget>
 
 #include <cmath>
 
-namespace Breeze
+namespace hello
 {
 
     //* temporary widget used to perform smooth transition between one widget state and another

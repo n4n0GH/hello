@@ -18,7 +18,7 @@
  *************************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
-// breezewindowmanager.cpp
+// hellowindowmanager.cpp
 // pass some window mouse press/release/move event actions to window manager
 // -------------------
 //
@@ -46,9 +46,9 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezewindowmanager.h"
-#include "breezepropertynames.h"
-#include "breezehelper.h"
+#include "hellowindowmanager.h"
+#include "hellopropertynames.h"
+#include "hellohelper.h"
 
 #include <QComboBox>
 #include <QDialog>
@@ -80,17 +80,17 @@
 #include <QWindow>
 #endif
 
-#if BREEZE_HAVE_QTQUICK
+#if hello_HAVE_QTQUICK
 // needed to enable dragging from QQuickWindows
 #include <QQuickItem>
 #include <QQuickWindow>
 #endif
 
-#if BREEZE_HAVE_X11
+#if hello_HAVE_X11
 #include <QX11Info>
 #include <xcb/xcb.h>
 
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
 #include <NETRootInfo>
 #else
 #include <NETWM>
@@ -98,7 +98,7 @@
 
 #endif
 
-#if BREEZE_HAVE_KWAYLAND
+#if hello_HAVE_KWAYLAND
 #include <KWayland/Client/connection_thread.h>
 #include <KWayland/Client/pointer.h>
 #include <KWayland/Client/registry.h>
@@ -122,7 +122,7 @@ namespace Util
     }
 }
 
-namespace Breeze
+namespace hello
 {
 
     //* provide application-wise event filter
@@ -179,7 +179,7 @@ namespace Breeze
         bool appMouseEvent( QObject*, QEvent* event )
         {
 
-            #if BREEZE_USE_KDE4
+            #if hello_USE_KDE4
             // store target window (see later)
             QWidget* window( _parent->_target.data()->window() );
             #else
@@ -193,7 +193,7 @@ namespace Breeze
             QMouseEvent mouseEvent( QEvent::MouseButtonRelease, _parent->_dragPoint, Qt::LeftButton, Qt::LeftButton, Qt::NoModifier );
             qApp->sendEvent( _parent->_target.data(), &mouseEvent );
 
-            #if BREEZE_USE_KDE4
+            #if hello_USE_KDE4
             if( event->type() == QEvent::MouseMove )
             {
                 /*
@@ -251,7 +251,7 @@ namespace Breeze
     //_______________________________________________________
     void WindowManager::initializeWayland()
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( !Helper::isWayland() ) return;
         if( _seat )  return;
 
@@ -280,7 +280,7 @@ namespace Breeze
     //_______________________________________________________
     void WindowManager::waylandHasPointerChanged(bool hasPointer)
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         Q_ASSERT( _seat );
         if( hasPointer )
         {
@@ -320,7 +320,7 @@ namespace Breeze
 
     }
 
-    #if BREEZE_HAVE_QTQUICK
+    #if hello_HAVE_QTQUICK
     //_____________________________________________________________
     void WindowManager::registerQuickItem( QQuickItem* item )
     {
@@ -391,7 +391,7 @@ namespace Breeze
 
             case QEvent::MouseMove:
             if ( object == _target.data()
-                #if BREEZE_HAVE_QTQUICK
+                #if hello_HAVE_QTQUICK
                 || object == _quickTarget.data()
                 #endif
                ) return mouseMoveEvent( object, event );
@@ -399,7 +399,7 @@ namespace Breeze
 
             case QEvent::MouseButtonRelease:
             if ( _target
-                #if BREEZE_HAVE_QTQUICK
+                #if hello_HAVE_QTQUICK
                 || _quickTarget
                 #endif
                ) return mouseReleaseEvent( object, event );
@@ -422,12 +422,12 @@ namespace Breeze
         {
 
             _dragTimer.stop();
-            #if BREEZE_USE_KDE4
+            #if hello_USE_KDE4
             if( _target )
             { startDrag( _target.data()->window(), _globalDragPoint ); }
             #else
             if( _target ) startDrag( _target.data()->window()->windowHandle(), _globalDragPoint );
-            #if BREEZE_HAVE_QTQUICK
+            #if hello_HAVE_QTQUICK
             else if( _quickTarget ) startDrag( _quickTarget.data()->window(), _globalDragPoint );
             #endif
             #endif
@@ -446,7 +446,7 @@ namespace Breeze
 
         // cast event and check buttons/modifiers
         auto mouseEvent = static_cast<QMouseEvent*>( event );
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         if (mouseEvent->source() != Qt::MouseEventNotSynthesized)
         { return false; }
         #endif
@@ -457,7 +457,7 @@ namespace Breeze
         if( isLocked() ) return false;
         else setLocked( true );
 
-        #if BREEZE_HAVE_QTQUICK
+        #if hello_HAVE_QTQUICK
         // check QQuickItem - we can immediately start drag, because QQuickWindow's contentItem
         // only receives mouse events that weren't handled by children
         if( auto item = qobject_cast<QQuickItem*>( object ) )
@@ -514,7 +514,7 @@ namespace Breeze
 
         // cast event and check drag distance
         auto mouseEvent = static_cast<QMouseEvent*>( event );
-        #if !BREEZE_USE_KDE4
+        #if !hello_USE_KDE4
         if (mouseEvent->source() != Qt::MouseEventNotSynthesized)
         { return false; }
         #endif
@@ -767,7 +767,7 @@ namespace Breeze
             // gather options to retrieve checkbox subcontrol rect
             QStyleOptionGroupBox opt;
             opt.initFrom( groupBox );
-            #if BREEZE_USE_KDE4
+            #if hello_USE_KDE4
             if( groupBox->isFlat() ) opt.features |= QStyleOptionFrameV2::Flat;
             #else
             if( groupBox->isFlat() ) opt.features |= QStyleOptionFrame::Flat;
@@ -852,7 +852,7 @@ namespace Breeze
         }
 
         _target.clear();
-        #if BREEZE_HAVE_QTQUICK
+        #if hello_HAVE_QTQUICK
         _quickTarget.clear();
         #endif
         if( _dragTimer.isActive() ) _dragTimer.stop();
@@ -891,11 +891,11 @@ namespace Breeze
     //_______________________________________________________
     void WindowManager::startDragX11( Window* window, const QPoint& position )
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         // connection
         auto connection( Helper::connection() );
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         auto net_connection = QX11Info::display();
         const QPoint native = position;
         #else
@@ -920,7 +920,7 @@ namespace Breeze
     //_______________________________________________________
     void WindowManager::startDragWayland( Window* window, const QPoint& )
     {
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( !_seat ) {
             return;
         }
@@ -942,14 +942,14 @@ namespace Breeze
     bool WindowManager::supportWMMoveResize() const
     {
 
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
         if( Helper::isWayland() )
         {
             return true;
         }
         #endif
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         return Helper::isX11();
         #else
         return false;

@@ -1,5 +1,5 @@
-#ifndef breezeheaderview_data_h
-#define breezeheaderview_data_h
+#ifndef helloheaderview_data_h
+#define helloheaderview_data_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,10 +20,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeanimationdata.h"
+#include "helloanimationdata.h"
 #include <QHeaderView>
 
-namespace Breeze
+namespace hello
 {
 
     //* headerviews

@@ -1,8 +1,8 @@
-#ifndef breezestackedwidgetengine_h
-#define breezestackedwidgetengine_h
+#ifndef hellostackedwidgetengine_h
+#define hellostackedwidgetengine_h
 
 //////////////////////////////////////////////////////////////////////////////
-// breezestackedwidgetengine.h
+// hellostackedwidgetengine.h
 // stores event filters and maps widgets to animations
 // -------------------
 //
@@ -27,11 +27,11 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezestackedwidgetdata.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "hellostackedwidgetdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* used for simple widgets

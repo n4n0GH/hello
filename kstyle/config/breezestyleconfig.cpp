@@ -18,26 +18,26 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezestyleconfig.h"
+#include "hellostyleconfig.h"
 
-#include "../breeze.h"
-#include "../config-breeze.h"
-#include "breezestyleconfigdata.h"
+#include "../hello.h"
+#include "../config-hello.h"
+#include "hellostyleconfigdata.h"
 
 #include <QDBusMessage>
 #include <QDBusConnection>
 
-#if !BREEZE_USE_KDE4
+#if !hello_USE_KDE4
 #include <Kdelibs4Migration>
 #endif
 
 extern "C"
 {
     Q_DECL_EXPORT QWidget* allocate_kstyle_config(QWidget* parent)
-    { return new Breeze::StyleConfig(parent); }
+    { return new hello::StyleConfig(parent); }
 }
 
-namespace Breeze
+namespace hello
 {
 
     //__________________________________________________________________
@@ -88,7 +88,7 @@ namespace Breeze
         StyleConfigData::setWindowDragMode( _windowDragMode->currentIndex() );
         StyleConfigData::setMenuOpacity( _menuOpacity->value() );
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         StyleConfigData::self()->writeConfig();
         #else
         StyleConfigData::self()->save();
@@ -97,12 +97,12 @@ namespace Breeze
         Kdelibs4Migration migration;
         const QString kde4ConfigDirPath = migration.saveLocation("config");
 
-        QScopedPointer<KConfig> kde4Config(StyleConfigData::self()->config()->copyTo(kde4ConfigDirPath+"/breezerc", nullptr));
+        QScopedPointer<KConfig> kde4Config(StyleConfigData::self()->config()->copyTo(kde4ConfigDirPath+"/hellorc", nullptr));
         kde4Config->sync();
         #endif
 
         // emit dbus signal
-        QDBusMessage message( QDBusMessage::createSignal( QStringLiteral( "/BreezeStyle" ),  QStringLiteral( "org.kde.Breeze.Style" ), QStringLiteral( "reparseConfiguration" ) ) );
+        QDBusMessage message( QDBusMessage::createSignal( QStringLiteral( "/helloStyle" ),  QStringLiteral( "org.kde.hello.Style" ), QStringLiteral( "reparseConfiguration" ) ) );
         QDBusConnection::sessionBus().send(message);
 
     }
@@ -118,7 +118,7 @@ namespace Breeze
     void StyleConfig::reset()
     {
         // reparse configuration
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         StyleConfigData::self()->readConfig();
         #else
         StyleConfigData::self()->load();

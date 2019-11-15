@@ -1,5 +1,5 @@
-#ifndef breezeshadowhelper_h
-#define breezeshadowhelper_h
+#ifndef helloshadowhelper_h
+#define helloshadowhelper_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,19 +20,19 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezetileset.h"
-#include "config-breeze.h"
+#include "hellotileset.h"
+#include "config-hello.h"
 
 #include <QObject>
 #include <QPointer>
 #include <QMap>
 #include <QMargins>
 
-#if BREEZE_HAVE_X11
+#if hello_HAVE_X11
 #include <xcb/xcb.h>
 #endif
 
-#if BREEZE_HAVE_KWAYLAND
+#if hello_HAVE_KWAYLAND
 namespace KWayland
 {
     namespace Client
@@ -44,7 +44,7 @@ namespace KWayland
 }
 #endif
 
-namespace Breeze
+namespace hello
 {
 
     //* forward declaration
@@ -199,7 +199,7 @@ namespace Breeze
         //* pixmaps
         QVector<quint32> _pixmaps;
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
 
         //* graphical context
         xcb_gcontext_t _gc = 0;
@@ -209,7 +209,7 @@ namespace Breeze
 
         #endif
 
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
 
         //* registered widgets to wayland surface mappings
         QMap<QWidget*, KWayland::Client::Surface *> _widgetSurfaces;

@@ -1,8 +1,8 @@
-#ifndef breezeblurhelper_h
-#define breezeblurhelper_h
+#ifndef helloblurhelper_h
+#define helloblurhelper_h
 
 //////////////////////////////////////////////////////////////////////////////
-// breezeblurhelper.h
+// helloblurhelper.h
 // handle regions passed to kwin for blurring
 // -------------------
 //
@@ -31,17 +31,17 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breeze.h"
-#include "breezehelper.h"
+#include "hello.h"
+#include "hellohelper.h"
 
 #include <QHash>
 #include <QObject>
 
-#if BREEZE_HAVE_X11
+#if hello_HAVE_X11
 #include <xcb/xcb.h>
 #endif
 
-namespace Breeze
+namespace hello
 {
     class BlurHelper: public QObject
     {

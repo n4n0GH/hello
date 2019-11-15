@@ -1,5 +1,5 @@
-#ifndef breezewidgetstatedata_h
-#define breezewidgetstatedata_h
+#ifndef hellowidgetstatedata_h
+#define hellowidgetstatedata_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,9 +20,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezegenericdata.h"
+#include "hellogenericdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* handle widget state (hover/focus/enable) changes

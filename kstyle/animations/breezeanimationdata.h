@@ -1,5 +1,5 @@
-#ifndef breeze_animationdata_h
-#define breeze_animationdata_h
+#ifndef hello_animationdata_h
+#define hello_animationdata_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,7 +20,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeanimation.h"
+#include "helloanimation.h"
 
 #include <QEvent>
 #include <QObject>
@@ -28,7 +28,7 @@
 
 #include <cmath>
 
-namespace Breeze
+namespace hello
 {
 
     //* base class

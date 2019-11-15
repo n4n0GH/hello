@@ -18,19 +18,19 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezestyleconfigmodule.h"
+#include "hellostyleconfigmodule.h"
 
 #include <KPluginFactory>
 
 
 K_PLUGIN_FACTORY(
-    BreezeStyleConfigFactory,
-    registerPlugin<Breeze::ConfigurationModule>(QStringLiteral("kcmodule"));
+    helloStyleConfigFactory,
+    registerPlugin<hello::ConfigurationModule>(QStringLiteral("kcmodule"));
 )
 
-#include "breezestyleconfigmodule.moc"
+#include "hellostyleconfigmodule.moc"
 
-namespace Breeze
+namespace hello
 {
 
     //_______________________________________________________________________

@@ -1,8 +1,8 @@
-#ifndef breezestackedwidget_datah
-#define breezestackedwidget_datah
+#ifndef hellostackedwidget_datah
+#define hellostackedwidget_datah
 
 //////////////////////////////////////////////////////////////////////////////
-// breezestackedwidgetdata.h
+// hellostackedwidgetdata.h
 // data container for QStackedWidget transition
 // -------------------
 //
@@ -27,11 +27,11 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezetransitiondata.h"
+#include "hellotransitiondata.h"
 
 #include <QStackedWidget>
 
-namespace Breeze
+namespace hello
 {
 
     //* generic data

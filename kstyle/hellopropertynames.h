@@ -1,5 +1,5 @@
-#ifndef breezestyleplugin_h
-#define breezestyleplugin_h
+#ifndef hellopropertynames_h
+#define hellopropertynames_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,33 +20,20 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include <QStylePlugin>
 
-namespace Breeze
+namespace hello
 {
 
-    class StylePlugin : public QStylePlugin
+    struct PropertyNames
     {
-
-        Q_OBJECT
-
-        #if QT_VERSION >= 0x050000
-        Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QStyleFactoryInterface" FILE "breeze.json" )
-        #endif
-
-        public:
-
-        //* constructor
-        explicit StylePlugin(QObject *parent = nullptr):
-            QStylePlugin(parent)
-        {}
-
-        //* returns list of valid keys
-        QStringList keys() const;
-
-        //* create style
-        QStyle* create( const QString& ) override;
-
+        static const char noAnimations[];
+        static const char noWindowGrab[];
+        static const char netWMForceShadow[];
+        static const char netWMSkipShadow[];
+        static const char sidePanelView[];
+        static const char toolButtonAlignment[];
+        static const char menuTitle[];
+        static const char alteredBackground[];
     };
 
 }

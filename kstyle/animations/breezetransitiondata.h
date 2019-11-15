@@ -1,8 +1,8 @@
-#ifndef breezetransitiondata_h
-#define breezetransitiondata_h
+#ifndef hellotransitiondata_h
+#define hellotransitiondata_h
 
 //////////////////////////////////////////////////////////////////////////////
-// breezetransitiondata.h
+// hellotransitiondata.h
 // data container for generic transitions
 // -------------------
 //
@@ -27,13 +27,13 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezetransitionwidget.h"
+#include "hellotransitionwidget.h"
 
 #include <QObject>
 #include <QTime>
 #include <QWidget>
 
-namespace Breeze
+namespace hello
 {
 
     //* generic data

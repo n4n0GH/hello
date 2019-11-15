@@ -17,9 +17,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeanimations.h"
-#include "breezepropertynames.h"
-#include "breezestyleconfigdata.h"
+#include "helloanimations.h"
+#include "hellopropertynames.h"
+#include "hellostyleconfigdata.h"
 
 #include <QAbstractItemView>
 #include <QComboBox>
@@ -36,7 +36,7 @@
 #include <QToolBox>
 #include <QToolButton>
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________

@@ -1,5 +1,5 @@
-#ifndef breezemdiwindowshadow_h
-#define breezemdiwindowshadow_h
+#ifndef hellomdiwindowshadow_h
+#define hellomdiwindowshadow_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -28,9 +28,9 @@
 #include <QPaintEvent>
 #include <QPointer>
 
-#include "breezetileset.h"
+#include "hellotileset.h"
 
-namespace Breeze
+namespace hello
 {
 
     class ShadowHelper;

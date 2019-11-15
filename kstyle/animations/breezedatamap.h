@@ -1,5 +1,5 @@
-#ifndef breezedatamap_h
-#define breezedatamap_h
+#ifndef hellodatamap_h
+#define hellodatamap_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,13 +20,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
+#include "hello.h"
 
 #include <QObject>
 #include <QMap>
 #include <QPaintDevice>
 
-namespace Breeze
+namespace hello
 {
 
     //* data map

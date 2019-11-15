@@ -1,5 +1,5 @@
-#ifndef breezeframeshadow_h
-#define breezeframeshadow_h
+#ifndef helloframeshadow_h
+#define helloframeshadow_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,9 +20,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "breezeaddeventfilter.h"
-#include "breezehelper.h"
+#include "hello.h"
+#include "helloaddeventfilter.h"
+#include "hellohelper.h"
 
 #include <QEvent>
 #include <QObject>
@@ -32,7 +32,7 @@
 #include <QPaintEvent>
 #include <KColorScheme>
 
-namespace Breeze
+namespace hello
 {
 
     //* shadow manager

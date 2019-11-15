@@ -17,9 +17,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeframeshadow.h"
+#include "helloframeshadow.h"
 
-#include "breeze.h"
+#include "hello.h"
 
 #include <QDebug>
 #include <QAbstractScrollArea>
@@ -31,7 +31,7 @@
 
 #include <KColorUtils>
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________________________________

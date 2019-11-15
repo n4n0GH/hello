@@ -1,5 +1,5 @@
-#ifndef breezewidgetstateengine_h
-#define breezewidgetstateengine_h
+#ifndef hellowidgetstateengine_h
+#define hellowidgetstateengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,12 +20,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezewidgetstatedata.h"
+#include "hello.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "hellowidgetstatedata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* used for simple widgets

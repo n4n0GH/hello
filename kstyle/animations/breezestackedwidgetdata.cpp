@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// breezestackedwidgetdata.cpp
+// hellostackedwidgetdata.cpp
 // data container for QStackedWidget transition
 // -------------------
 //
@@ -24,9 +24,9 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezestackedwidgetdata.h"
+#include "hellostackedwidgetdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________________

@@ -17,10 +17,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezehelper.h"
+#include "hellohelper.h"
 
-#include "breeze.h"
-#include "breezestyleconfigdata.h"
+#include "hello.h"
+#include "hellostyleconfigdata.h"
 
 #include <KColorUtils>
 #include <KWindowSystem>
@@ -28,13 +28,13 @@
 #include <QApplication>
 #include <QPainter>
 
-#if BREEZE_HAVE_X11 && QT_VERSION < 0x050000
+#if hello_HAVE_X11 && QT_VERSION < 0x050000
 #include <X11/Xlib-xcb.h>
 #endif
 
 #include <algorithm>
 
-namespace Breeze
+namespace hello
 {
 
     //* contrast for arrow and treeline rendering
@@ -46,7 +46,7 @@ namespace Breeze
     { init(); }
 
     //____________________________________________________________________
-    #if BREEZE_USE_KDE4
+    #if hello_USE_KDE4
     Helper::Helper( const QByteArray& name ):
         _componentData( name, nullptr, KComponentData::SkipMainComponentRegistration ),
         _config( _componentData.config() )
@@ -1412,7 +1412,7 @@ namespace Breeze
     //______________________________________________________________________________
     bool Helper::isX11()
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         #if QT_VERSION >= 0x050000
         static const bool s_isX11 = KWindowSystem::isPlatformX11();
         return s_isX11;
@@ -1510,7 +1510,7 @@ namespace Breeze
     bool Helper::compositingActive() const
     {
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
         if( isX11() )
         {
             // direct call to X
@@ -1554,7 +1554,7 @@ namespace Breeze
         #endif
     }
 
-    #if BREEZE_HAVE_X11
+    #if hello_HAVE_X11
 
     //____________________________________________________________________
     xcb_connection_t* Helper::connection()
@@ -1593,7 +1593,7 @@ namespace Breeze
     //____________________________________________________________________
     void Helper::init()
     {
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
 
         if( isX11() )
         {

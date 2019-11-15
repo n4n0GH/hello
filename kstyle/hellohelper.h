@@ -1,5 +1,5 @@
-#ifndef breeze_helper_h
-#define breeze_helper_h
+#ifndef hello_helper_h
+#define hello_helper_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -21,30 +21,30 @@
  *************************************************************************/
 
 
-#include "breeze.h"
-#include "breezeanimationdata.h"
-#include "config-breeze.h"
+#include "hello.h"
+#include "helloanimationdata.h"
+#include "config-hello.h"
 
 #include <KColorScheme>
 #include <KSharedConfig>
 
-#if BREEZE_USE_KDE4
+#if hello_USE_KDE4
 #include <KComponentData>
 #endif
 
 #include <QPainterPath>
 #include <QWidget>
 
-#if BREEZE_HAVE_X11
+#if hello_HAVE_X11
 #include <QX11Info>
 #include <xcb/xcb.h>
 #endif
 
-namespace Breeze
+namespace hello
 {
 
-    //* breeze style helper class.
-    /** contains utility functions used at multiple places in both breeze style and breeze window decoration */
+    //* hello style helper class.
+    /** contains utility functions used at multiple places in both hello style and hello window decoration */
     class Helper
     {
         public:
@@ -52,7 +52,7 @@ namespace Breeze
         //* constructor
         explicit Helper( KSharedConfig::Ptr );
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         //* constructor
         explicit Helper( const QByteArray& );
         #endif
@@ -292,7 +292,7 @@ namespace Breeze
         //*@name X11 utilities
         //@{
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
 
         //* get xcb connection
         static xcb_connection_t* connection();
@@ -321,7 +321,7 @@ namespace Breeze
 
         private:
 
-        #if BREEZE_USE_KDE4
+        #if hello_USE_KDE4
         //* component data
         KComponentData _componentData;
         #endif
@@ -344,7 +344,7 @@ namespace Breeze
         QColor _inactiveTitleBarTextColor;
         //@}
 
-        #if BREEZE_HAVE_X11
+        #if hello_HAVE_X11
 
         //* atom used for compositing manager
         xcb_atom_t _compositingManagerAtom;

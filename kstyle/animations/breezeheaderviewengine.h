@@ -1,5 +1,5 @@
-#ifndef breezeheaderviewengine_h
-#define breezeheaderviewengine_h
+#ifndef helloheaderviewengine_h
+#define helloheaderviewengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezebaseengine.h"
-#include "breezedatamap.h"
-#include "breezeheaderviewdata.h"
+#include "hellobaseengine.h"
+#include "hellodatamap.h"
+#include "helloheaderviewdata.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* stores headerview hovered action and timeLine

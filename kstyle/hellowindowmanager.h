@@ -1,5 +1,5 @@
-#ifndef breezewindowmanager_h
-#define breezewindowmanager_h
+#ifndef hellowindowmanager_h
+#define hellowindowmanager_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,9 +20,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "breezestyleconfigdata.h"
-#include "config-breeze.h"
+#include "hello.h"
+#include "hellostyleconfigdata.h"
+#include "config-hello.h"
 
 #include <QEvent>
 
@@ -33,11 +33,11 @@
 #include <QString>
 #include <QWidget>
 
-#if BREEZE_HAVE_QTQUICK
+#if hello_HAVE_QTQUICK
 #include <QQuickItem>
 #endif
 
-#if BREEZE_HAVE_KWAYLAND
+#if hello_HAVE_KWAYLAND
 namespace KWayland
 {
     namespace Client
@@ -48,7 +48,7 @@ namespace KWayland
 }
 #endif
 
-namespace Breeze
+namespace hello
 {
 
     class WindowManager: public QObject
@@ -68,7 +68,7 @@ namespace Breeze
         //* register widget
         void registerWidget( QWidget* );
 
-        #if BREEZE_HAVE_QTQUICK
+        #if hello_HAVE_QTQUICK
         //* register quick item
         void registerQuickItem( QQuickItem* );
         #endif
@@ -286,7 +286,7 @@ namespace Breeze
         /** Weak pointer is used in case the target gets deleted while drag is in progress */
         WeakPointer<QWidget> _target;
 
-        #if BREEZE_HAVE_QTQUICK
+        #if hello_HAVE_QTQUICK
         WeakPointer<QQuickItem> _quickTarget;
         #endif
 
@@ -306,7 +306,7 @@ namespace Breeze
         //* application event filter
         QObject* _appEventFilter = nullptr;
 
-        #if BREEZE_HAVE_KWAYLAND
+        #if hello_HAVE_KWAYLAND
 
         //* The Wayland seat object which needs to be passed to move requests.
         KWayland::Client::Seat* _seat = nullptr;

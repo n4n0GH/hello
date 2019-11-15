@@ -17,12 +17,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezemnemonics.h"
+#include "hellomnemonics.h"
 
 #include <QKeyEvent>
 #include <QWidget>
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________

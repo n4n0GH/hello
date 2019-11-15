@@ -1,5 +1,5 @@
-#ifndef breezescrollbarengine_h
-#define breezescrollbarengine_h
+#ifndef helloscrollbarengine_h
+#define helloscrollbarengine_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,10 +20,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezescrollbardata.h"
-#include "breezewidgetstateengine.h"
+#include "helloscrollbardata.h"
+#include "hellowidgetstateengine.h"
 
-namespace Breeze
+namespace hello
 {
 
     //* stores scrollbar hovered action and timeLine

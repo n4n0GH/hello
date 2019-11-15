@@ -18,22 +18,22 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezestyleplugin.h"
-#include "breezestyle.h"
+#include "hellostyleplugin.h"
+#include "hellostyle.h"
 
 #include <QApplication>
 
 #if QT_VERSION < 0x050000
-Q_EXPORT_PLUGIN2( breeze-qt, Breeze::StylePlugin )
+Q_EXPORT_PLUGIN2( hello-qt, hello::StylePlugin )
 #endif
 
-namespace Breeze
+namespace hello
 {
 
     //_________________________________________________
     QStyle* StylePlugin::create( const QString &key )
     {
-        if( key.toLower() == QStringLiteral( "breeze" ) )
+        if( key.toLower() == QStringLiteral( "hello" ) )
         {
             return new Style;
         }
@@ -42,6 +42,6 @@ namespace Breeze
 
     //_________________________________________________
     QStringList StylePlugin::keys() const
-    { return QStringList( QStringLiteral( "Breeze" ) ); }
+    { return QStringList( QStringLiteral( "hello" ) ); }
 
 }

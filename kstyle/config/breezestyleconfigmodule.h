@@ -1,5 +1,5 @@
-#ifndef breezestyleconfigmodule_h
-#define breezestyleconfigmodule_h
+#ifndef hellostyleconfigmodule_h
+#define hellostyleconfigmodule_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,11 +20,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezestyleconfig.h"
+#include "hellostyleconfig.h"
 
 #include <KCModule>
 
-namespace Breeze
+namespace hello
 {
 
     //* configuration module

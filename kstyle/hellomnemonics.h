@@ -1,3 +1,6 @@
+#ifndef hellomnemonics_h
+#define hellomnemonics_h
+
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
  *                                                                       *
@@ -17,4 +20,53 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezeaddeventfilter.h"
+#include <QEvent>
+#include <QObject>
+#include <QApplication>
+
+#include "hellostyleconfigdata.h"
+
+namespace hello
+{
+
+    class Mnemonics: public QObject
+    {
+
+        Q_OBJECT
+
+        public:
+
+        //* constructor
+        explicit Mnemonics( QObject* parent ):
+            QObject( parent )
+            {}
+
+        //* set mode
+        void setMode( int );
+
+        //* event filter
+        bool eventFilter( QObject*, QEvent* ) override;
+
+        //* true if mnemonics are enabled
+        bool enabled() const
+        { return _enabled; }
+
+        //* alignment flag
+        int textFlags() const
+        { return _enabled ? Qt::TextShowMnemonic : Qt::TextHideMnemonic; }
+
+        protected:
+
+        //* set enable state
+        void setEnabled( bool );
+
+        private:
+
+        //* enable state
+        bool _enabled = true;
+
+    };
+
+}
+
+#endif

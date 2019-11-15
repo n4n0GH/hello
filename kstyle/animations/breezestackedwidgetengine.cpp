@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// breezestackedwidgetengine.cpp
+// hellostackedwidgetengine.cpp
 // stores event filters and maps widgets to animations
 // -------------------
 //
@@ -24,9 +24,9 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezestackedwidgetengine.h"
+#include "hellostackedwidgetengine.h"
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________

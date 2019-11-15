@@ -17,11 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezedialengine.h"
+#include "hellodialengine.h"
 
 #include <QEvent>
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________

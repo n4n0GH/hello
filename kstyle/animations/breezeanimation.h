@@ -1,5 +1,5 @@
-#ifndef breezeanimation_h
-#define breezeanimation_h
+#ifndef helloanimation_h
+#define helloanimation_h
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
  *                                                                       *
@@ -19,12 +19,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
+#include "hello.h"
 
 #include <QPropertyAnimation>
 #include <QVariant>
 
-namespace Breeze
+namespace hello
 {
 
     class Animation: public QPropertyAnimation

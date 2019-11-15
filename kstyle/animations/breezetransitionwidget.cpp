@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////
-// breezetransitionwidget.cpp
+// hellotransitionwidget.cpp
 // stores event filters and maps widgets to transitions for transitions
 // -------------------
 //
@@ -24,14 +24,14 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezetransitionwidget.h"
+#include "hellotransitionwidget.h"
 
 #include <QPainter>
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QTextStream>
 
-namespace Breeze
+namespace hello
 {
 
     //________________________________________________

@@ -18,7 +18,7 @@
  *************************************************************************/
 
 //////////////////////////////////////////////////////////////////////////////
-// breezeheaderviewdata.cpp
+// helloheaderviewdata.cpp
 // data container for QHeaderView animations
 // -------------------
 //
@@ -43,12 +43,12 @@
 // IN THE SOFTWARE.
 //////////////////////////////////////////////////////////////////////////////
 
-#include "breezeheaderviewdata.h"
+#include "helloheaderviewdata.h"
 
 #include <QHoverEvent>
 #include <QTextStream>
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________

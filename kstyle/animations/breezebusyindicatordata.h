@@ -1,5 +1,5 @@
-#ifndef breezebusyindicatordata_h
-#define breezebusyindicatordata_h
+#ifndef hellobusyindicatordata_h
+#define hellobusyindicatordata_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -22,7 +22,7 @@
 
 #include <QObject>
 
-namespace Breeze
+namespace hello
 {
 
     class BusyIndicatorData: public QObject

@@ -17,19 +17,19 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezemdiwindowshadow.h"
+#include "hellomdiwindowshadow.h"
 
-#include "breeze.h"
-#include "breezeboxshadowrenderer.h"
-#include "breezeshadowhelper.h"
-#include "breezestyleconfigdata.h"
+#include "hello.h"
+#include "helloboxshadowrenderer.h"
+#include "helloshadowhelper.h"
+#include "hellostyleconfigdata.h"
 
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QPainter>
 #include <QTextStream>
 
-namespace Breeze
+namespace hello
 {
 
     //____________________________________________________________________

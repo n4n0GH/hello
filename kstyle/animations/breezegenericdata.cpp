@@ -17,11 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezegenericdata.h"
+#include "hellogenericdata.h"
 
 #include <QTextStream>
 
-namespace Breeze
+namespace hello
 {
 
     //______________________________________________

@@ -17,13 +17,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breezebusyindicatorengine.h"
+#include "hellobusyindicatorengine.h"
 
-#include "breeze.h"
+#include "hello.h"
 
 #include <QVariant>
 
-namespace Breeze
+namespace hello
 {
 
     //_______________________________________________

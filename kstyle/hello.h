@@ -1,5 +1,5 @@
-#ifndef breeze_h
-#define breeze_h
+#ifndef hello_h
+#define hello_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -25,7 +25,7 @@
 #include <QScopedPointer>
 #include <QWeakPointer>
 
-namespace Breeze
+namespace hello
 {
 
     //*@name convenience typedef
@@ -248,8 +248,8 @@ namespace Breeze
 
 }
 
-Q_DECLARE_OPERATORS_FOR_FLAGS( Breeze::AnimationModes )
-Q_DECLARE_OPERATORS_FOR_FLAGS( Breeze::Corners )
-Q_DECLARE_OPERATORS_FOR_FLAGS( Breeze::Sides )
+Q_DECLARE_OPERATORS_FOR_FLAGS( hello::AnimationModes )
+Q_DECLARE_OPERATORS_FOR_FLAGS( hello::Corners )
+Q_DECLARE_OPERATORS_FOR_FLAGS( hello::Sides )
 
 #endif

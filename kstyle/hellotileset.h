@@ -1,5 +1,5 @@
-#ifndef breezetileset_h
-#define breezetileset_h
+#ifndef hellotileset_h
+#define hellotileset_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -30,7 +30,7 @@
 tilesets are collections of stretchable pixmaps corresponding to a given widget corners, sides, and center.
 corner pixmaps are never stretched. center pixmaps are
 */
-namespace Breeze
+namespace hello
 {
     class TileSet
     {
@@ -120,6 +120,6 @@ namespace Breeze
 
 }
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(Breeze::TileSet::Tiles)
+Q_DECLARE_OPERATORS_FOR_FLAGS(hello::TileSet::Tiles)
 
 #endif //TILESET_H

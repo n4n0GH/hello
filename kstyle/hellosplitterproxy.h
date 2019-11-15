@@ -1,5 +1,5 @@
-#ifndef breezesplitterproxy_h
-#define breezesplitterproxy_h
+#ifndef hellosplitterproxy_h
+#define hellosplitterproxy_h
 
 /*************************************************************************
  * Copyright (C) 2014 by Hugo Pereira Da Costa <hugo.pereira@free.fr>    *
@@ -20,8 +20,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  *************************************************************************/
 
-#include "breeze.h"
-#include "breezeaddeventfilter.h"
+#include "hello.h"
+#include "helloaddeventfilter.h"
 
 #include <QEvent>
 #include <QHoverEvent>
@@ -31,7 +31,7 @@
 #include <QSplitterHandle>
 #include <QWidget>
 
-namespace Breeze
+namespace hello
 {
 
     class SplitterProxy;
