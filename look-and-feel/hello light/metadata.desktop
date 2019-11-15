@@ -1,0 +1,23 @@
+[Desktop Entry]
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+Name=hello light
+
+X-KDE-PluginInfo-Author=n4n0
+X-KDE-PluginInfo-Email=n4n0@tuta.io
+X-KDE-PluginInfo-Name=com.github.n4n0GH.hello
+X-KDE-PluginInfo-Version=
+X-KDE-PluginInfo-Website=https://github.com/n4n0GH/hello
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=CCPL:by-sa
+X-KDE-PluginInfo-EnabledByDefault=true
+
+X-KPackage-Dependencies=kns://colorschemes.knsrc/api.kde-look.org/1336584
+
+X-KDE-fallbackPackage=org.kde.breeze.desktop
+
+[ContrastEffect]
+enabled=false
+contrast=0.2
+intensity=0.4
+saturation=1.7
