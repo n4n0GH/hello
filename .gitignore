@@ -1,3 +1,4 @@
-kwin-effects/qt5build/
-kwin-effects/.vscode/ 
+.vscode/ 
 
+qt5build/
+build/
