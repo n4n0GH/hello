@@ -1,6 +1,8 @@
 project(hello-color-scheme)
 
-install(FILES
-        HelloDark.colors
-        HelloLight.colors
+set(COLOR_THEMES
+    HelloDark.colors
+    HelloLight.colors)
+
+install(FILES ${COLOR_THEMES}
         DESTINATION "${CMAKE_INSTALL_PREFIX}/share/color-schemes")
