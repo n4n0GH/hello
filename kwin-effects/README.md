@@ -15,7 +15,7 @@ sudo dnf install git cmake gcc-c++ extra-cmake-modules qt5-qttools-devel qt5-qtt
 # Installation
 Clone the repository and change into the new directory:
 ```
-git clone https://github.com/n4n0GH/hello-shaders && cd hello-shaders
+git clone https://github.com/n4n0GH/hello/tree/master/kwin-effects && cd kwin-effects
 ```
 Run all necessary commands to prepare the compilation:
 ```

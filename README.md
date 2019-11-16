@@ -10,7 +10,7 @@ hello. is a compilation of various color-schemes, themes, icons and more for the
 | [**Color Scheme**](https://github.com/n4n0GH/hello/tree/master/color-scheme)<br/>A beautifully crafted set of color schemes, supporting light and dark modes alike. | 90% done |
 | [**Application Style**](https://github.com/n4n0GH/hello/tree/master/kstyle)<br/>Taking the best parts of KDE's own Breeze set and improving upon it subtly. | 0% done |
 | [**Window Decoration**](https://github.com/n4n0GH/hello/tree/master/window-decoration)<br/>Allowing for granular customization, yet looking absolutely astonishing in every setting. | 90% done |
-| [**Plasma Theme**](https://github.com/n4n0GH/hello/tree/master/look-and-feel)<br/>Completing your desktop experience with a well balanced and elegant Plasma theme, complementing your light or dark color scheme. | 90% done |
+| [**Plasma Theme**](https://github.com/n4n0GH/hello/tree/master/plasma-theme)<br/>Completing your desktop experience with a well balanced and elegant Plasma theme, complementing your light or dark color scheme. | 90% done |
 | [**Effects**](https://github.com/n4n0GH/hello/tree/master/kwin-effects)<br/>Rounding off the overall beautiful experience with the hello shader set. | 30% done |
 
 ## Donate
