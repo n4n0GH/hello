@@ -1,3 +1,0 @@
-/usr/lib64/qt5/plugins/kwin/effects/plugins/kwin4_effect_helloshaders.so
-/usr/share/kwin/shaders/1.40/helloshaders.frag
-/usr/share/kwin/shaders/1.10/helloshaders.frag
