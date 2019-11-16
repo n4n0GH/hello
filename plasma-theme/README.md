@@ -1,8 +1,8 @@
 # hello Plasma
-Complete the hello. desktop experience with these Plasma designs, matching the hello. colorschemes.
+Complete the hello. desktop experience with this Plasma design, matching the hello. colorschemes.
 
 ## Installation
-Copy the folders to your local Plasma theme directory:
+Copy the folder to your local Plasma theme directory:
 
 ```
 ~/.local/share/plasma/desktoptheme
