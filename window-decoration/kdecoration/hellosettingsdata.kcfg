@@ -191,6 +191,27 @@
       <default>false</default>
     </entry>
 
+    <!-- custom button colors -->
+    <entry name="ButtonCustomColor" type = "Bool">
+      <default>true</default>
+    </entry>
+
+    <entry name="CustomCloseColor" type = "Color">
+      <default>242, 80, 86</default>
+    </entry>
+
+    <entry name="CustomMinColor" type = "Color">
+      <default>252, 190, 7</default>
+    </entry>
+
+    <entry name="CustomMaxColor" type = "Color">
+      <default>19, 209, 61</default>
+    </entry>
+
+    <entry name="CustomOtherColor" type = "Color">
+      <default>79, 186, 244</default>
+    </entry>
+
     <!-- exceptions -->
     <!-- custom title color -->
     <entry name="CustomColorBoxEx" type = "Bool">

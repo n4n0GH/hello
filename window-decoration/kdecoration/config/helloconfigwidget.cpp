@@ -64,6 +64,13 @@ namespace Hello
         connect( m_ui.customColorSelect, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.drawHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
 
+        // use custom color for buttons or not
+        connect( m_ui.buttonCustomColor, SIGNAL(clicked()), SLOT(updateChanged()) );
+        connect( m_ui.customCloseColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customMinColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customMaxColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customOtherColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+
         // track animations changes
         connect( m_ui.animationsEnabled, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.animationsDuration, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
@@ -106,6 +113,12 @@ namespace Hello
         m_ui.customColorBox->setChecked( m_internalSettings->customColorBox() );
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
+
+        m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
+        m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
+        m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
+        m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
+        m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
 
         // load shadows
         if( m_internalSettings->shadowSize() <= InternalSettings::ShadowVeryLarge ) m_ui.shadowSize->setCurrentIndex( m_internalSettings->shadowSize() );
@@ -151,6 +164,12 @@ namespace Hello
         m_internalSettings->setCustomColorBox( m_ui.customColorBox->isChecked() );
         m_internalSettings->setCustomColorSelect( m_ui.customColorSelect->color() );
         m_internalSettings->setDrawHighlight( m_ui.drawHighlight->isChecked() );
+
+        m_internalSettings->setButtonCustomColor( m_ui.buttonCustomColor->isChecked() );
+        m_internalSettings->setCustomCloseColor( m_ui.customCloseColor->color() );
+        m_internalSettings->setCustomMinColor( m_ui.customMinColor->color() );
+        m_internalSettings->setCustomMaxColor( m_ui.customMaxColor->color() );
+        m_internalSettings->setCustomOtherColor( m_ui.customOtherColor->color() );
 
         m_internalSettings->setShadowSize( m_ui.shadowSize->currentIndex() );
         m_internalSettings->setShadowStrength( qRound( qreal(m_ui.shadowStrength->value()*255)/100 ) );
@@ -210,6 +229,12 @@ namespace Hello
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
 
+        m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
+        m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
+        m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
+        m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
+        m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
+
         m_ui.shadowSize->setCurrentIndex( m_internalSettings->shadowSize() );
         m_ui.shadowStrength->setValue( qRound(qreal(m_internalSettings->shadowStrength()*100)/255 ) );
         m_ui.shadowColor->setColor( m_internalSettings->shadowColor() );
@@ -244,6 +269,13 @@ namespace Hello
         else if( m_ui.customColorBox->isChecked() != m_internalSettings->customColorBox() ) modified = true;
         else if( m_ui.customColorSelect->color() != m_internalSettings->customColorSelect() ) modified = true;
         else if( m_ui.drawHighlight->isChecked() != m_internalSettings->drawHighlight() ) modified = true;
+
+        // custom button colors
+        else if( m_ui.buttonCustomColor->isChecked() != m_internalSettings->buttonCustomColor() ) modified = true;
+        else if( m_ui.customCloseColor->color() != m_internalSettings->customCloseColor() ) modified = true;
+        else if( m_ui.customMinColor->color() != m_internalSettings->customMinColor() ) modified = true;
+        else if( m_ui.customMaxColor->color() != m_internalSettings->customMaxColor() ) modified = true;
+        else if( m_ui.customOtherColor->color() != m_internalSettings->customOtherColor() ) modified = true; 
 
         // animations
         else if( m_ui.animationsEnabled->isChecked() !=  m_internalSettings->animationsEnabled() ) modified = true;

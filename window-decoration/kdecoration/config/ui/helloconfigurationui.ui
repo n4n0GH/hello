@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>587</width>
-    <height>583</height>
+    <height>457</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -74,7 +74,7 @@
             <x>0</x>
             <y>0</y>
             <width>547</width>
-            <height>689</height>
+            <height>879</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
@@ -384,10 +384,10 @@
               <string>Buttons</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="3" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <item row="4" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_15">
                 <item>
-                 <widget class="QLabel" name="label_11">
+                 <widget class="QLabel" name="label_17">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>1</horstretch>
@@ -400,18 +400,18 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="alwaysShowButtonIcons">
+                 <widget class="QCheckBox" name="buttonCustomColor">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>2</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="whatsThis">
-                   <string extracomment="Opt to always show the icons inside the window buttons instead of only showing them on hover."/>
-                  </property>
                   <property name="text">
-                   <string>Always show button icons</string>
+                   <string>Use default button colors</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -481,6 +481,234 @@
                 </item>
                </layout>
               </item>
+              <item row="1" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="labelButtonSpacing">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Spacing:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="buttonSpacing">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="Choose your preferred spacing for the window buttons."/>
+                  </property>
+                  <property name="currentText">
+                   <string>Small</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Small</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Regular</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wide</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="alwaysShowButtonIcons">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="Opt to always show the icons inside the window buttons instead of only showing them on hover."/>
+                  </property>
+                  <property name="text">
+                   <string>Always show button icons</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="7" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="labelCustomMin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Minimize:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="KColorButton" name="customMinColor">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="color">
+                   <color>
+                    <red>252</red>
+                    <green>190</green>
+                    <blue>7</blue>
+                   </color>
+                  </property>
+                  <property name="defaultColor">
+                   <color>
+                    <red>252</red>
+                    <green>190</green>
+                    <blue>7</blue>
+                   </color>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="8" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="labelCustomMax">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Maximize:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="KColorButton" name="customMaxColor">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="color">
+                   <color>
+                    <red>19</red>
+                    <green>209</green>
+                    <blue>61</blue>
+                   </color>
+                  </property>
+                  <property name="defaultColor">
+                   <color>
+                    <red>19</red>
+                    <green>209</green>
+                    <blue>61</blue>
+                   </color>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="6" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="labelCustomClose">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Close:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="KColorButton" name="customCloseColor">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="color">
+                   <color>
+                    <red>242</red>
+                    <green>80</green>
+                    <blue>86</blue>
+                   </color>
+                  </property>
+                  <property name="defaultColor">
+                   <color>
+                    <red>242</red>
+                    <green>80</green>
+                    <blue>86</blue>
+                   </color>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
               <item row="2" column="0">
                <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <item>
@@ -535,10 +763,13 @@
                 </item>
                </layout>
               </item>
-              <item row="1" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QLabel" name="labelButtonSpacing">
+              <item row="9" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_19">
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="labelCustomOther">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>1</horstretch>
@@ -546,45 +777,35 @@
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>Spacing:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   <string>Other:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="buttonSpacing">
+                 <widget class="KColorButton" name="customOtherColor">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>2</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose your preferred spacing for the window buttons."/>
+                  <property name="color">
+                   <color>
+                    <red>79</red>
+                    <green>186</green>
+                    <blue>244</blue>
+                   </color>
                   </property>
-                  <property name="currentText">
-                   <string>Small</string>
+                  <property name="defaultColor">
+                   <color>
+                    <red>79</red>
+                    <green>186</green>
+                    <blue>244</blue>
+                   </color>
                   </property>
-                  <item>
-                   <property name="text">
-                    <string>Small</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Regular</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Wide</string>
-                   </property>
-                  </item>
                  </widget>
                 </item>
                </layout>
@@ -1079,54 +1300,23 @@
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QScrollArea" name="scrollArea_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: &quot;white&quot;;</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_2">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>563</width>
-            <height>454</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_10">
-           <property name="leftMargin">
-            <number>6</number>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-           <property name="topMargin">
-            <number>0</number>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="rightMargin">
-            <number>6</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item row="0" column="0" alignment="Qt::AlignTop">
-            <widget class="QLabel" name="label_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+           <property name="text">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -1135,18 +1325,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Noto Sans';&quot;&gt;Thanks to &lt;/span&gt;&lt;span style=&quot; font-family:'Noto Sans'; font-weight:600;&quot;&gt;Richard Kung&lt;/span&gt;&lt;span style=&quot; font-family:'Noto Sans';&quot;&gt; for making the &amp;quot;Breezeway&amp;quot; theme which got me started making hello.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Noto Sans';&quot;&gt;Also many thanks to the many people who contributed code, found bugs and helped in other ways.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Noto Sans';&quot;&gt;2019 was a weird year.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="wordWrap">
-              <bool>true</bool>
-             </property>
-             <property name="openExternalLinks">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -1167,6 +1368,36 @@ p, li { white-space: pre-wrap; }
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>borderRadius</tabstop>
+  <tabstop>drawBorderOnMaximizedWindows</tabstop>
+  <tabstop>drawSizeGrip</tabstop>
+  <tabstop>titleAlignment</tabstop>
+  <tabstop>titleBarHeight</tabstop>
+  <tabstop>matchTitleBarColor</tabstop>
+  <tabstop>customColorBox</tabstop>
+  <tabstop>customColorSelect</tabstop>
+  <tabstop>drawBackgroundGradient</tabstop>
+  <tabstop>drawTitleBarSeparator</tabstop>
+  <tabstop>buttonSize</tabstop>
+  <tabstop>buttonSpacing</tabstop>
+  <tabstop>buttonMargin</tabstop>
+  <tabstop>alwaysShowButtonIcons</tabstop>
+  <tabstop>buttonCustomColor</tabstop>
+  <tabstop>customCloseColor</tabstop>
+  <tabstop>customMinColor</tabstop>
+  <tabstop>customMaxColor</tabstop>
+  <tabstop>customOtherColor</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>animationsEnabled</tabstop>
+  <tabstop>animationsDuration</tabstop>
+  <tabstop>shadowSize</tabstop>
+  <tabstop>shadowStrength</tabstop>
+  <tabstop>shadowColor</tabstop>
+  <tabstop>inactiveShadowBehaviour</tabstop>
+  <tabstop>drawHighlight</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
  <resources>
   <include location="about.qrc"/>
  </resources>
@@ -1178,12 +1409,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>108</x>
-     <y>194</y>
+     <x>308</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>141</x>
-     <y>229</y>
+     <x>341</x>
+     <y>144</y>
     </hint>
    </hints>
   </connection>
@@ -1194,12 +1425,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>148</x>
-     <y>382</y>
+     <x>346</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
-     <x>414</x>
-     <y>383</y>
+     <x>567</x>
+     <y>432</y>
     </hint>
    </hints>
   </connection>
@@ -1216,6 +1447,134 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>386</x>
      <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customCloseColor</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>386</x>
+     <y>733</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>770</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelCustomClose</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>739</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>770</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customMinColor</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>739</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>551</x>
+     <y>813</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customMaxColor</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>446</x>
+     <y>736</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>845</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customOtherColor</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>513</x>
+     <y>736</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>887</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelCustomMin</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>735</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>820</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelCustomMax</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>425</x>
+     <y>739</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>844</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonCustomColor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelCustomOther</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>733</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>890</y>
     </hint>
    </hints>
   </connection>

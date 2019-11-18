@@ -366,6 +366,13 @@ namespace Hello
     QColor Button::foregroundColor() const
     {
         auto d = qobject_cast<Decoration*>( decoration() );
+        
+        auto s = d->internalSettings()->buttonCustomColor();
+        QColor customCloseColor = d->internalSettings()->customCloseColor();
+        QColor customMinColor = d->internalSettings()->customMinColor();
+        QColor customMaxColor = d->internalSettings()->customMaxColor();
+        QColor customOtherColor = d->internalSettings()->customOtherColor();
+
         if( !d ) {
 
             return QColor();
@@ -383,13 +390,17 @@ namespace Hello
             if ( c->isActive() ){
                 QColor color;
                 if( type() == DecorationButtonType::Close ) {
-                    color.setRgb(colorClose);
+                    if(s){ color.setRgb(colorClose);
+                    } else { color = customCloseColor; }
                 } else if( type() == DecorationButtonType::Maximize ) {
-                    color.setRgb(colorMaximize);
+                    if(s){ color.setRgb(colorMaximize);
+                    } else { color = customMaxColor; }
                 } else if( type() == DecorationButtonType::Minimize ) {
-                    color.setRgb(colorMinimize);
+                    if(s){ color.setRgb(colorMinimize);
+                    } else { color = customMinColor; }
                 } else {
-                    color.setRgb(colorOther);
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customOtherColor; }
                 }
                 return color.lighter(40);
             } else {
@@ -410,13 +421,17 @@ namespace Hello
 
             QColor color;
             if( type() == DecorationButtonType::Close ) {
-                color.setRgb(colorClose);
+                if(s){ color.setRgb(colorClose);
+                } else { color = customCloseColor; }
             } else if( type() == DecorationButtonType::Maximize ) {
-                color.setRgb(colorMaximize);
+                if(s){ color.setRgb(colorMaximize);
+                } else { color = customMaxColor; }
             } else if( type() == DecorationButtonType::Minimize ) {
-                color.setRgb(colorMinimize);
+                if(s){ color.setRgb(colorMinimize);
+                } else { color = customMinColor; }
             } else {
-                color.setRgb(colorOther);
+                if(s){ color.setRgb(colorOther);
+                } else { color = customOtherColor; }
             }
             return KColorUtils::mix( color, color.lighter(60), m_opacity );
 
@@ -445,17 +460,28 @@ namespace Hello
         }
 
         auto c = d->client().data();
+
+        auto s = d->internalSettings()->buttonCustomColor();
+        QColor customCloseColor = d->internalSettings()->customCloseColor();
+        QColor customMinColor = d->internalSettings()->customMinColor();
+        QColor customMaxColor = d->internalSettings()->customMaxColor();
+        QColor customOtherColor = d->internalSettings()->customOtherColor();
+
         if( isPressed() ) {
 
             QColor color;
             if( type() == DecorationButtonType::Close ) {
-                color.setRgb(colorClose);
+                if(s){ color.setRgb(colorClose); 
+                } else { color = customCloseColor; }
             } else if( type() == DecorationButtonType::Maximize ) {
-                color.setRgb(colorMaximize);
+                if(s){ color.setRgb(colorMaximize); 
+                } else { color = customMaxColor; }
             } else if( type() == DecorationButtonType::Minimize ) {
-                color.setRgb(colorMinimize);
+                if(s){ color.setRgb(colorMinimize);
+                } else { color = customMinColor; }
             } else {
-                color.setRgb(colorOther);
+                if(s){ color.setRgb(colorOther);
+                } else { color = customOtherColor; }
             }
             return KColorUtils::mix( color, QColor(colorSymbol), 0.3 );
 
@@ -488,7 +514,8 @@ namespace Hello
                         return color.lighter(145);
                     }
                 } else {
-                    color.setRgb(colorClose);
+                    if(s) { color.setRgb(colorClose);
+                    } else { color = customCloseColor; }
                 }
             } else if( type() == DecorationButtonType::Maximize ) {
                 if(!c->isMaximizeable()){
@@ -501,7 +528,8 @@ namespace Hello
                         return color.lighter(145);
                     }
                 } else {
-                    color.setRgb(colorMaximize);
+                    if(s){ color.setRgb(colorMaximize);                  
+                    } else { color = customMaxColor; }
                 }
             } else if( type() == DecorationButtonType::Minimize ) {
                 if(!c->isMinimizeable()){
@@ -514,10 +542,12 @@ namespace Hello
                         return color.lighter(145);
                     } 
                 } else {
-                    color.setRgb(colorMinimize);
+                    if(s){ color.setRgb(colorMinimize);
+                    } else { color = customMinColor; }
                 }
             } else {
-                color.setRgb(colorOther);
+                if(s){ color.setRgb(colorOther);
+                } else { color = customOtherColor; }
             }
             return color;
 
