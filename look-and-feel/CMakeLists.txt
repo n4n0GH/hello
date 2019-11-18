@@ -1,4 +1,4 @@
-project(hello-look-and-feel)
+project(hello-plasma)
 
 set(THEMES
     "hello dark"
