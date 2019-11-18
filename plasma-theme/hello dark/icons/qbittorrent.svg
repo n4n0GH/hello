@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" width="22" height="22" version="1.1" style="enable-background:new">
+ <defs>
+  <linearGradient id="linearGradient5606" osb:paint="solid">
+   <stop id="stop5608" offset="0" style="stop-color:#000000"/>
+  </linearGradient>
+ </defs>
+ <g id="qbittorrent" transform="translate(-504.00018,-200)">
+  <path d="m 504.00018,200 22,0 0,22 -22,0 z" style="opacity:0"/>
+  <path d="m 515.00018,203 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 1,2 1,0 0,4.50391 a 2.5,2.5 0 0 1 1.5,-0.50391 2.5,2.5 0 0 1 2.5,2.5 2.5,2.5 0 0 1 -2.5,2.5 2.5,2.5 0 0 1 -1.5,-0.50195 l 0,0.50195 -1,0 0,-2.5 0,-6.5 z m -4.5,4 a 2.5,2.5 0 0 1 1.5,0.50195 l 0,-0.50195 1,0 0,2.5 0,6.5 -1,0 0,-4.50391 a 2.5,2.5 0 0 1 -1.5,0.50391 2.5,2.5 0 0 1 -2.5,-2.5 2.5,2.5 0 0 1 2.5,-2.5 z m 0,1 a 1.5,1.5 0 0 0 -1.5,1.5 1.5,1.5 0 0 0 1.5,1.5 1.5,1.5 0 0 0 1.5,-1.5 1.5,1.5 0 0 0 -1.5,-1.5 z m 7,0 a 1.5,1.5 0 0 0 -1.5,1.5 1.5,1.5 0 0 0 1.5,1.5 1.5,1.5 0 0 0 1.5,-1.5 1.5,1.5 0 0 0 -1.5,-1.5 z" style="fill:#d3dae3"/>
+ </g>
+</svg>
