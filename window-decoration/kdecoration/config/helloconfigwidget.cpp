@@ -63,6 +63,7 @@ namespace Hello
         connect( m_ui.customColorBox, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.customColorSelect, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.drawHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
+        connect( m_ui.drawTitleHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
 
         // use custom color for buttons or not
         connect( m_ui.buttonCustomColor, SIGNAL(clicked()), SLOT(updateChanged()) );
@@ -113,6 +114,7 @@ namespace Hello
         m_ui.customColorBox->setChecked( m_internalSettings->customColorBox() );
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
+        m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
 
         m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
@@ -164,6 +166,7 @@ namespace Hello
         m_internalSettings->setCustomColorBox( m_ui.customColorBox->isChecked() );
         m_internalSettings->setCustomColorSelect( m_ui.customColorSelect->color() );
         m_internalSettings->setDrawHighlight( m_ui.drawHighlight->isChecked() );
+        m_internalSettings->setDrawTitleHighlight( m_ui.drawTitleHighlight->isChecked() );
 
         m_internalSettings->setButtonCustomColor( m_ui.buttonCustomColor->isChecked() );
         m_internalSettings->setCustomCloseColor( m_ui.customCloseColor->color() );
@@ -228,6 +231,7 @@ namespace Hello
         m_ui.customColorBox->setChecked( m_internalSettings->customColorBox() );
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
+        m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
 
         m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
@@ -269,6 +273,7 @@ namespace Hello
         else if( m_ui.customColorBox->isChecked() != m_internalSettings->customColorBox() ) modified = true;
         else if( m_ui.customColorSelect->color() != m_internalSettings->customColorSelect() ) modified = true;
         else if( m_ui.drawHighlight->isChecked() != m_internalSettings->drawHighlight() ) modified = true;
+        else if( m_ui.drawTitleHighlight->isChecked() != m_internalSettings->drawTitleHighlight() ) modified = true;
 
         // custom button colors
         else if( m_ui.buttonCustomColor->isChecked() != m_internalSettings->buttonCustomColor() ) modified = true;

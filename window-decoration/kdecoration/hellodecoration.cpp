@@ -618,6 +618,7 @@ namespace Hello
         const auto c = client().data();
         const QRect titleRect(QPoint(0, 0), QSize(size().width(), borderTop()));
         const QColor titleBarColor = (  this->titleBarColor() );
+        auto l = m_internalSettings->drawTitleHighlight();
 
         if ( !titleRect.intersects(repaintRegion) ) return;
 
@@ -633,8 +634,12 @@ namespace Hello
             const int gv = y > 128? 95: 90;
             const int lightfactor = c->isActive()? lfv: 100;
             QLinearGradient gradient( 0, 0, 0, titleRect.height() );
-            gradient.setColorAt(0.0, titleBarColor.lighter(185) );
-            gradient.setColorAt(0.04, titleBarColor.lighter(lightfactor));
+            if(l){
+                gradient.setColorAt(0.0, titleBarColor.lighter(185) );
+                gradient.setColorAt(0.04, titleBarColor.lighter(lightfactor));
+            } else {
+                gradient.setColorAt(0.0, titleBarColor.lighter(lightfactor));
+            }
             gradient.setColorAt(0.8, titleBarColor.lighter(gv));
             painter->setBrush(gradient);
 
@@ -642,8 +647,12 @@ namespace Hello
         // and titlebar color
         } else {
             QLinearGradient gradient(0, 0, 0, titleRect.height());
-            gradient.setColorAt(0.0, titleBarColor.lighter(185));
-            gradient.setColorAt(0.04, titleBarColor);
+            if(l){
+                gradient.setColorAt(0.0, titleBarColor.lighter(185));
+                gradient.setColorAt(0.04, titleBarColor);
+            } else {
+                gradient.setColorAt(0.0, titleBarColor);
+            }
             painter->setBrush(gradient);
 
         }

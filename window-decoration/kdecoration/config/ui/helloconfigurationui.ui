@@ -72,7 +72,7 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-202</y>
             <width>547</width>
             <height>879</height>
            </rect>
@@ -102,10 +102,10 @@
               <string>Titlebar</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
-              <item row="12" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item row="10" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <item>
-                 <widget class="QLabel" name="label_8">
+                 <widget class="QLabel" name="label_7">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>1</horstretch>
@@ -118,7 +118,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="drawBackgroundGradient">
+                 <widget class="QCheckBox" name="customColorBox">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>2</horstretch>
@@ -126,43 +126,10 @@
                    </sizepolicy>
                   </property>
                   <property name="whatsThis">
-                   <string extracomment="Draw a subtle gradient across the titlebar."/>
+                   <string extracomment="Use a custom color for all window's titlebars."/>
                   </property>
                   <property name="text">
-                   <string>Draw titlebar background gradient</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="11" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <widget class="QLabel" name="label_10">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="KColorButton" name="customColorSelect">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Select the color for all titlebars to use."/>
+                   <string>Use custom color</string>
                   </property>
                  </widget>
                 </item>
@@ -209,6 +176,79 @@
                     <string>Extended</string>
                    </property>
                   </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="9" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="labelMatchTitleBarColor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Match color:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="matchTitleBarColor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Color scheme</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Window (scheme)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="11" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="KColorButton" name="customColorSelect">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="Select the color for all titlebars to use."/>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -302,50 +342,10 @@
                 </item>
                </layout>
               </item>
-              <item row="9" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_8">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelMatchTitleBarColor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Match color:</string>
-                  </property>
-                 </widget>
-                </item>
+              <item row="12" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
                 <item>
-                 <widget class="QComboBox" name="matchTitleBarColor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Color scheme</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Window (scheme)</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="10" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <item>
-                 <widget class="QLabel" name="label_7">
+                 <widget class="QLabel" name="label_8">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>1</horstretch>
@@ -358,7 +358,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="customColorBox">
+                 <widget class="QCheckBox" name="drawBackgroundGradient">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>2</horstretch>
@@ -366,10 +366,10 @@
                    </sizepolicy>
                   </property>
                   <property name="whatsThis">
-                   <string extracomment="Use a custom color for all window's titlebars."/>
+                   <string extracomment="Draw a subtle gradient across the titlebar."/>
                   </property>
                   <property name="text">
-                   <string>Use custom color</string>
+                   <string>Draw titlebar background gradient</string>
                   </property>
                  </widget>
                 </item>
@@ -1187,7 +1187,7 @@
           <string>Window Highlight</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="1">
+          <item row="1" column="1">
            <widget class="QCheckBox" name="drawHighlight">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -1199,11 +1199,11 @@
              <string extracomment="This will draw a 1 pixel line around the inside of each window, to add further contrast. Will only work with borders all around the window. Use the 'hello shaders' KWin plugin to enable this effect without borders."/>
             </property>
             <property name="text">
-             <string>Draw thin highlight line</string>
+             <string>Draw thin highlight line around window</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
+          <item row="1" column="0">
            <widget class="QLabel" name="label_13">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1213,6 +1213,16 @@
             </property>
             <property name="text">
              <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="drawTitleHighlight">
+            <property name="text">
+             <string>Draw thin highlight line on titlebar</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
