@@ -321,6 +321,7 @@ namespace Hello
                         QPointF( 9, 4 ),
                         QPointF( 14, 9 ) });
 
+                    
                     painter->drawPolyline(  QVector<QPointF> {
                         QPointF( 4, 13 ),
                         QPointF( 9, 8 ),
@@ -339,18 +340,47 @@ namespace Hello
 
                 case DecorationButtonType::ContextHelp:
                 {
-                    QPainterPath path;
-                    // move cursor to x 5, y 6
-                    path.moveTo( 5, 6 );
-                    // construct path arc to (x 5, y 3.5, width 8, height 5), angle 180, sweep length -180
-                    path.arcTo( QRectF( 5, 3.5, 8, 5 ), 180, -180 );
-                    // construct path cubic bezier from current position to x 9, y 11.5 with modifiers at
-                    // x 12.5, y 9.5 and x 9, y 7.5
-                    path.cubicTo( QPointF(12.5, 9.5), QPointF( 9, 7.5 ), QPointF( 9, 11.5 ) );
-                    // follow finished path with brush
-                    painter->drawPath( path );
-                    // this draws the dot of the question mark
-                    painter->drawRect( QRectF( 9, 15, 0.5, 0.5 ) );
+                    // I know what you're thinking but for some reason
+                    // a simple QRect does not scale so yeah, polygons
+                    pen.setJoinStyle( Qt::BevelJoin );
+                    pen.setCapStyle( Qt::SquareCap );
+                    // eyes
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 4, 5 ),
+                        QPointF( 5, 5 ),
+                        QPointF( 5, 8 ),
+                        QPointF( 4, 8 )} );
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF(14, 5),
+                        QPointF(15, 5),
+                        QPointF(15, 8),
+                        QPointF(14, 8)} );
+                    // nose
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 10, 7 ),
+                        QPointF( 10.5, 7 ),
+                        QPointF( 10.5, 12 ),
+                        QPointF( 8, 12 ),
+                        QPointF( 8, 11 ),
+                        QPointF( 10, 11 )} );
+                    // mouth
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 5, 13 ),
+                        QPointF( 6, 13 ),
+                        QPointF( 6, 14 ),
+                        QPointF( 5, 14 )} );
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 7, 15 ),
+                        QPointF( 12, 15 ),
+                        QPointF( 12, 16 ),
+                        QPointF( 7, 16 )} );
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 13, 13 ),
+                        QPointF( 14, 13 ),
+                        QPointF( 14, 14 ),
+                        QPointF( 13, 14 )} );
+                    pen.setJoinStyle( Qt::RoundJoin );
+                    pen.setCapStyle( Qt::RoundCap );
                     break;
                 }
 
