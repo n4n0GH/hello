@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>483</height>
+    <width>419</width>
+    <height>579</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>419</width>
+    <height>579</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>419</width>
+    <height>579</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -23,8 +35,24 @@
       <string>Window Identification</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="exceptionEditor">
+        <property name="whatsThis">
+         <string extracomment="Use the name of the application you want to target, or complex regular expressions to target different states of the same window."/>
+        </property>
+        <property name="showClearButton" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
        <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>&amp;Matching window property: </string>
         </property>
@@ -36,31 +64,14 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Regular expression &amp;to match: </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-        <property name="buddy">
-         <cstring>exceptionEditor</cstring>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="1" colspan="2">
-       <widget class="QLineEdit" name="exceptionEditor">
-        <property name="whatsThis">
-         <string extracomment="Use the name of the application you want to target, or complex regular expressions to target different states of the same window."/>
-        </property>
-        <property name="showClearButton" stdset="0">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="exceptionType">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="whatsThis">
          <string extracomment="Choose the selection method to target your specific window. In most cases the class name will yield better results."/>
         </property>
@@ -76,13 +87,29 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="0" colspan="3">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Regular expression &amp;to match: </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>exceptionEditor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
        <widget class="QPushButton" name="detectDialogButton">
         <property name="whatsThis">
          <string extracomment="Click this button to turn your mouse into a cross hair and then click and select the window you want to target, to easily get window identification."/>
         </property>
         <property name="text">
          <string>Detect Window Properties</string>
+        </property>
+        <property name="icon">
+         <iconset theme="search"/>
         </property>
        </widget>
       </item>
@@ -95,27 +122,7 @@
       <string>Decoration Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="4" column="1">
-       <widget class="KColorButton" name="customColorSelectEx">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="whatsThis">
-         <string extracomment="Use the color picker to select a color you want to use. May also be used to grab pixel colors from your screen."/>
-        </property>
-       </widget>
-      </item>
       <item row="5" column="0">
-       <widget class="QCheckBox" name="forceBrightFonts">
-        <property name="whatsThis">
-         <string extracomment="Override the font matching algorithm by forcing the titlebar to use bright font colors."/>
-        </property>
-        <property name="text">
-         <string>Force bright title bar fonts</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
        <widget class="QCheckBox" name="customColorBoxEx">
         <property name="whatsThis">
          <string extracomment="Enable using a custom color for the target window's title bar."/>
@@ -124,14 +131,20 @@
          <locale language="English" country="Germany"/>
         </property>
         <property name="text">
-         <string>Custom title bar color:</string>
+         <string>Custom title bar color</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="0">
        <widget class="QComboBox" name="borderSizeComboBox">
         <property name="enabled">
          <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="whatsThis">
          <string extracomment="Select a custom border size for the target window."/>
@@ -183,18 +196,14 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="borderSizeCheckBox">
-        <property name="whatsThis">
-         <string extracomment="Enable a custom border size override."/>
-        </property>
-        <property name="text">
-         <string>Border size:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
+      <item row="3" column="0">
        <widget class="QCheckBox" name="hideTitleBar">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="whatsThis">
          <string extracomment="Force to hide the title bar on the target window."/>
         </property>
@@ -203,7 +212,37 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="0" colspan="2">
+      <item row="6" column="0">
+       <widget class="KColorButton" name="customColorSelectEx">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="whatsThis">
+         <string extracomment="Use the color picker to select a color you want to use. May also be used to grab pixel colors from your screen."/>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QCheckBox" name="invertSeparator">
+        <property name="whatsThis">
+         <string extracomment="This inverts the global settings for title bar separators. If the global setting is turned on, the target window will not use separators if this is active, and vice versa."/>
+        </property>
+        <property name="text">
+         <string>Invert global separator settings</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QCheckBox" name="forceBrightFonts">
+        <property name="whatsThis">
+         <string extracomment="Override the font matching algorithm by forcing the titlebar to use bright font colors."/>
+        </property>
+        <property name="text">
+         <string>Force bright title bar fonts</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
        <widget class="QCheckBox" name="invertGradient">
         <property name="whatsThis">
          <string extracomment="This inverts the global settings for title bar gradients. If the global setting is turned on, the target window will not use gradients if this is active, and vice versa."/>
@@ -213,13 +252,26 @@
         </property>
        </widget>
       </item>
-      <item row="7" column="0" colspan="2">
-       <widget class="QCheckBox" name="invertSeparator">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="borderSizeCheckBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="whatsThis">
-         <string extracomment="This inverts the global settings for title bar separators. If the global setting is turned on, the target window will not use separators if this is active, and vice versa."/>
+         <string extracomment="Enable a custom border size override."/>
         </property>
         <property name="text">
-         <string>Invert global separator settings</string>
+         <string>Custom border size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="borderColors">
+        <property name="text">
+         <string>Paint window background with titlebar color</string>
         </property>
        </widget>
       </item>

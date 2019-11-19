@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>587</width>
-    <height>457</height>
+    <height>489</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -72,7 +72,7 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-202</y>
+            <y>0</y>
             <width>547</width>
             <height>879</height>
            </rect>
@@ -894,39 +894,6 @@
                 </item>
                </layout>
               </item>
-              <item row="3" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <item>
-                 <widget class="QLabel" name="label_4">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="If selected, maximized windows will use the border radius settings even when maximized."/>
-                  </property>
-                  <property name="text">
-                   <string>Draw border on maximized windows</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
               <item row="4" column="0">
                <layout class="QHBoxLayout" name="horizontalLayout_13">
                 <item>
@@ -955,6 +922,39 @@
                   </property>
                   <property name="text">
                    <string>Add handle to resize windows with no border</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>1</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>2</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="If selected, maximized windows will use the border radius settings even when maximized."/>
+                  </property>
+                  <property name="text">
+                   <string>Draw border on maximized windows</string>
                   </property>
                  </widget>
                 </item>

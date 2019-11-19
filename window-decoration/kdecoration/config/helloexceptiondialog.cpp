@@ -53,6 +53,7 @@ namespace Hello
         connect( m_ui.exceptionType, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
         connect( m_ui.exceptionEditor, SIGNAL(textChanged(QString)), SLOT(updateChanged()) );
         connect( m_ui.borderSizeComboBox, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
+        connect( m_ui.borderColors, SIGNAL(clicked()), SLOT(updateChanged()) );
         
         // check for custom titlebar color
         connect( m_ui.customColorBoxEx, SIGNAL(clicked()), SLOT(updateChanged()) );
@@ -86,6 +87,7 @@ namespace Hello
         m_ui.exceptionEditor->setText( m_exception->exceptionPattern() );
         m_ui.borderSizeComboBox->setCurrentIndex( m_exception->borderSize() );
         m_ui.hideTitleBar->setChecked( m_exception->hideTitleBar() );
+        m_ui.borderColors->setChecked( m_exception->borderColors() );
         
         m_ui.customColorBoxEx->setChecked( m_exception->customColorBoxEx() );
         m_ui.customColorSelectEx->setColor( m_exception->customColorSelectEx() );
@@ -113,6 +115,7 @@ namespace Hello
         m_exception->setForceBrightFonts( m_ui.forceBrightFonts->isChecked() );
         m_exception->setInvertGradient( m_ui.invertGradient->isChecked() );
         m_exception->setInvertSeparator( m_ui.invertSeparator->isChecked() );
+        m_exception->setBorderColors( m_ui.borderColors->isChecked() );
 
         // mask
         unsigned int mask = None;
@@ -138,6 +141,7 @@ namespace Hello
         else if( m_exception->forceBrightFonts() != m_ui.forceBrightFonts->isChecked() ) modified = true;
         else if( m_exception->invertGradient() != m_ui.invertGradient->isChecked() ) modified = true;
         else if( m_exception->invertSeparator() != m_ui.invertSeparator->isChecked() ) modified = true;
+        else if( m_exception->borderColors() != m_ui.borderColors->isChecked() ) modified = true;
         else
         {
             // check mask

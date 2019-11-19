@@ -117,6 +117,7 @@ namespace Hello
         inline bool invertGradient() const;
         inline bool invertSeparator() const;
         inline bool drawHighlight() const;
+        inline bool borderColors() const;
         //@}
 
         public Q_SLOTS:
@@ -230,6 +231,9 @@ namespace Hello
 
     bool Decoration::drawHighlight() const
     { return m_internalSettings->drawHighlight(); }
+
+    bool Decoration::borderColors() const
+    { return m_internalSettings->borderColors(); }
 
 }
 

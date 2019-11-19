@@ -238,6 +238,10 @@
       <default>false</default>
     </entry>
 
+    <entry name="BorderColors" type = "Bool">
+      <default>false</default>
+    </entry>
+
     <!-- window specific settings -->
     <entry name="ExceptionType" type="Enum">
       <choices>

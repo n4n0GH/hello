@@ -66,6 +66,7 @@ namespace Hello
             configuration->setForceBrightFonts( exception.forceBrightFonts() );
             configuration->setInvertGradient( exception.invertGradient() );
             configuration->setInvertSeparator( exception.invertSeparator() );
+            configuration->setBorderColors( exception.borderColors() );
             
             // append to exceptions
             _exceptions.append( configuration );
@@ -104,7 +105,7 @@ namespace Hello
     {
 
         // list of items to be written
-        QStringList keys = { "Enabled", "ExceptionPattern", "ExceptionType", "HideTitleBar", "Mask", "BorderSize", "CustomColorBoxEx", "CustomColorSelectEx", "ForceBrightFonts", "InvertGradient", "InvertSeparator"};
+        QStringList keys = { "Enabled", "ExceptionPattern", "ExceptionType", "HideTitleBar", "Mask", "BorderSize", "CustomColorBoxEx", "CustomColorSelectEx", "ForceBrightFonts", "InvertGradient", "InvertSeparator", "BorderColors"};
 
         // write all items
         foreach( auto key, keys )
