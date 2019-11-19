@@ -4,7 +4,7 @@ project(hello)
 set(WITH_COLOR_SCHEME      yes CACHE BOOL "Build with color-scheme")
 set(WITH_KSTYLE            no  CACHE BOOL "Build with kstyle")
 set(WITH_KWIN_EFFECTS      yes CACHE BOOL "Build with kwin-effects")
-set(WITH_PLASMA            yes CACHE BOOL "Build with plasma theme")
+set(WITH_PLASMA_THEME      yes CACHE BOOL "Build with plasma theme")
 set(WITH_WINDOW_DECORATION yes CACHE BOOL "Build with window-decoration")
 
 if(WITH_COLOR_SCHEME)
@@ -19,7 +19,7 @@ if(WITH_KWIN_EFFECTS)
   add_subdirectory(kwin-effects)
 endif()
 
-if(WITH_PLASMA)
+if(WITH_PLASMA_THEME)
   add_subdirectory(plasma-theme)
 endif()
 
