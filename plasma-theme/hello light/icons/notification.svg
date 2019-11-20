@@ -40,8 +40,8 @@
      id="namedview47"
      showgrid="true"
      inkscape:zoom="8"
-     inkscape:cx="2.343098"
-     inkscape:cy="19.281189"
+     inkscape:cx="12.655598"
+     inkscape:cy="8.906189"
      inkscape:current-layer="svg"
      showguides="true"
      inkscape:guide-bbox="true">
@@ -145,23 +145,27 @@
   <path
      id="expander-bottom"
      d="m -18,23 2,-2 2,2 z"
-        class="ColorScheme-Text"
-     style="fill:currentColor" />
+     class="ColorScheme-Text"
+     style="fill:currentColor"
+     inkscape:connector-curvature="0" />
   <path
      id="expander-top"
      d="m -18,17 2,2 2,-2 z"
-      class="ColorScheme-Text"
-     style="fill:currentColor" />
+     class="ColorScheme-Text"
+     style="fill:currentColor"
+     inkscape:connector-curvature="0" />
   <path
      id="expander-right"
      d="m -13,18 -2,2 2,2 z"
-      class="ColorScheme-Text"
-     style="fill:currentColor" />
+     class="ColorScheme-Text"
+     style="fill:currentColor"
+     inkscape:connector-curvature="0" />
   <path
      id="expander-left"
      d="m -19,18 2,2 -2,2 z"
-      class="ColorScheme-Text"
-     style="fill:currentColor" />
+     class="ColorScheme-Text"
+     style="fill:currentColor"
+     inkscape:connector-curvature="0" />
   <g
      id="notification-inactive">
     <rect
@@ -181,7 +185,7 @@
          width="2"
          id="rect906"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
       <rect
          y="6"
          x="7"
@@ -189,7 +193,7 @@
          width="12"
          id="rect906-3"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1.22474492;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
       <rect
          y="10"
          x="3"
@@ -197,7 +201,7 @@
          width="2"
          id="rect906-6"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
       <rect
          y="10.003156"
          x="7"
@@ -205,7 +209,7 @@
          width="9"
          id="rect906-3-7"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1.06066024;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="3"
@@ -213,7 +217,7 @@
          width="2"
          id="rect906-6-5"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="7"
@@ -221,7 +225,7 @@
          width="11.999999"
          id="rect906-3-7-3"
          class="ColorScheme-Text"
-         style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1.2247448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill:#d3dae3" />
+         style="fill:currentColor" />
     </g>
     <g
        id="g23"
@@ -255,7 +259,7 @@
          width="2"
          id="rect906-62-3"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="6"
          x="7"
@@ -263,7 +267,7 @@
          width="12"
          id="rect906-3-9-6"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.22474492;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="10"
          x="3"
@@ -271,7 +275,7 @@
          width="2"
          id="rect906-6-1-0"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="10.003156"
          x="7"
@@ -279,7 +283,7 @@
          width="9"
          id="rect906-3-7-2-6"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.06066024;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="3"
@@ -287,7 +291,7 @@
          width="2"
          id="rect906-6-5-7-2"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="7"
@@ -295,7 +299,7 @@
          width="12.000001"
          id="rect906-3-7-3-0-6"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.22474504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
     </g>
     <path
        d="m 11,-37 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z m -1,1 v 6 h 2 v -6 z m 1,7 c -0.453152,0 -1,0.518427 -1,0.980469 C 10,-25.557488 10.546848,-25 11,-25 c 0.453152,0 1,-0.557488 1,-1.019531 C 12,-26.481573 11.453152,-27 11,-27 Z"
@@ -324,7 +328,7 @@
          width="2"
          id="rect906-62"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="6"
          x="7"
@@ -332,7 +336,7 @@
          width="12"
          id="rect906-3-9"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.22474492;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="10"
          x="3"
@@ -340,7 +344,7 @@
          width="2"
          id="rect906-6-1"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="10.003156"
          x="7"
@@ -348,7 +352,7 @@
          width="9"
          id="rect906-3-7-2"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.06066024;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="3"
@@ -356,7 +360,7 @@
          width="2"
          id="rect906-6-5-7"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
       <rect
          y="14"
          x="7"
@@ -364,7 +368,7 @@
          width="12"
          id="rect906-3-7-3-0"
          class="ColorScheme-Text"
-         style="opacity:1;fill:#d3dae3;fill-opacity:1;stroke:none;stroke-width:1.2247448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:currentColor" />
     </g>
     <path
        d="m 51,-37 a 8,8 0 0 0 -8,8 8,8 0 0 0 8,8 8,8 0 0 0 8,-8 8,8 0 0 0 -8,-8 z m 0,2 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
