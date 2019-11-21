@@ -255,20 +255,12 @@ namespace Hello
                         if( backgroundColor.isValid() )
                         {
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 8, 8, 2, 2 ) );
+                            painter->drawEllipse( QRectF( 5, 5, 8, 8 ) );
                         }
 
                     } else {
 
-                        painter->drawPolygon( QVector<QPointF> {
-                            QPointF( 6.5, 8.5 ),
-                            QPointF( 12, 3 ),
-                            QPointF( 15, 6 ),
-                            QPointF( 9.5, 11.5 )} );
-
-                        painter->setPen( pen );
-                        painter->drawLine( QPointF( 5.5, 7.5 ), QPointF( 10.5, 12.5 ) );
-                        painter->drawLine( QPointF( 12, 6 ), QPointF( 4.5, 13.5 ) );
+                        painter->drawEllipse( QRectF( 7, 7, 4, 4 ) );
                     }
                     break;
                 }
@@ -278,20 +270,24 @@ namespace Hello
 
                     if (isChecked())
                     {
-
-                        painter->drawLine( QPointF( 4, 5.5 ), QPointF( 14, 5.5 ) );
-                        painter->drawPolyline( QVector<QPointF> {
-                            QPointF( 4, 8 ),
-                            QPointF( 9, 13 ),
-                            QPointF( 14, 8 )} );
+                        painter->drawPolygon( QVector<QPointF>{
+                            QPointF( 6, 7 ),
+                            QPointF( 9, 4 ),
+                            QPointF( 12, 7 )} );
+                        painter->drawPolygon( QVector<QPointF>{
+                            QPointF( 6, 11 ),
+                            QPointF( 12, 11 ),
+                            QPointF( 9, 14 )} );
 
                     } else {
-
-                        painter->drawLine( QPointF( 4, 5.5 ), QPointF( 14, 5.5 ) );
-                        painter->drawPolyline(  QVector<QPointF> {
-                            QPointF( 4, 13 ),
-                            QPointF( 9, 8 ),
-                            QPointF( 14, 13 ) });
+                        painter->drawPolygon( QVector<QPointF>{
+                            QPointF( 6, 4 ),
+                            QPointF( 12, 4 ),
+                            QPointF( 9, 7 )} );
+                        painter->drawPolygon( QVector<QPointF>{
+                            QPointF( 6, 14 ),
+                            QPointF( 9, 11 ),
+                            QPointF( 12, 14 )} );
                     }
 
                     break;
@@ -300,85 +296,60 @@ namespace Hello
 
                 case DecorationButtonType::KeepBelow:
                 {
-
-                    painter->drawPolyline(  QVector<QPointF> {
-                        QPointF( 4, 5 ),
-                        QPointF( 9, 10 ),
-                        QPointF( 14, 5 ) });
-
-                    painter->drawPolyline(  QVector<QPointF> {
-                        QPointF( 4, 9 ),
-                        QPointF( 9, 14 ),
-                        QPointF( 14, 9 ) });
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 6, 6 ),
+                        QPointF( 12, 6 ),
+                        QPointF( 9, 9 ) 
+                    });
+                    painter->drawPolyline( QVector<QPointF> {
+                        QPointF( 6, 10 ),
+                        QPointF( 9, 13 ),
+                        QPointF( 12, 10)
+                    });
                     break;
 
                 }
 
                 case DecorationButtonType::KeepAbove:
                 {
-                    painter->drawPolyline(  QVector<QPointF> {
-                        QPointF( 4, 9 ),
-                        QPointF( 9, 4 ),
-                        QPointF( 14, 9 ) });
-
-                    
-                    painter->drawPolyline(  QVector<QPointF> {
-                        QPointF( 4, 13 ),
-                        QPointF( 9, 8 ),
-                        QPointF( 14, 13 ) });
+                    painter->drawPolygon( QVector<QPointF>{
+                        QPointF( 6, 12 ),
+                        QPointF( 9, 9 ),
+                        QPointF( 12, 12 )} );
+                    painter->drawPolyline( QVector<QPointF> {
+                        QPointF( 6, 8 ),
+                        QPointF( 9, 5 ),
+                        QPointF( 12, 8)
+                    });
                     break;
                 }
 
 
                 case DecorationButtonType::ApplicationMenu:
                 {
-                    painter->drawRect( QRectF( 3.5, 4.5, 11, 1 ) );
-                    painter->drawRect( QRectF( 3.5, 8.5, 11, 1 ) );
-                    painter->drawRect( QRectF( 3.5, 12.5, 11, 1 ) );
+                    painter->drawLine( 5, 6, 13, 6 );
+                    painter->drawLine( 5, 9, 13, 9 );
+                    painter->drawLine( 5, 12, 13, 12 );
                     break;
                 }
 
                 case DecorationButtonType::ContextHelp:
                 {
-                    // I know what you're thinking but for some reason
-                    // a simple QRect does not scale so yeah, polygons
                     pen.setJoinStyle( Qt::BevelJoin );
                     pen.setCapStyle( Qt::SquareCap );
                     // eyes
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF( 4, 5 ),
-                        QPointF( 5, 5 ),
-                        QPointF( 5, 8 ),
-                        QPointF( 4, 8 )} );
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF(14, 5),
-                        QPointF(15, 5),
-                        QPointF(15, 8),
-                        QPointF(14, 8)} );
+                    painter->drawLine(6, 6, 6, 8);
+                    painter->drawLine(13, 6, 13, 8);
                     // nose
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF( 10, 7 ),
-                        QPointF( 10.5, 7 ),
-                        QPointF( 10.5, 12 ),
-                        QPointF( 8, 12 ),
-                        QPointF( 8, 11 ),
-                        QPointF( 10, 11 )} );
+                    painter->drawPolyline( QVector<QPointF> {
+                        QPointF( 10, 7),
+                        QPointF( 10, 10),
+                        QPointF( 9, 10)
+                    });
                     // mouth
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF( 5, 13 ),
-                        QPointF( 6, 13 ),
-                        QPointF( 6, 14 ),
-                        QPointF( 5, 14 )} );
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF( 7, 15 ),
-                        QPointF( 12, 15 ),
-                        QPointF( 12, 16 ),
-                        QPointF( 7, 16 )} );
-                    painter->drawPolygon( QVector<QPointF>{
-                        QPointF( 13, 13 ),
-                        QPointF( 14, 13 ),
-                        QPointF( 14, 14 ),
-                        QPointF( 13, 14 )} );
+                    painter->drawPoint(6, 12);
+                    painter->drawPoint(13, 12);
+                    painter->drawLine(7, 13, 12, 13);
                     pen.setJoinStyle( Qt::RoundJoin );
                     pen.setCapStyle( Qt::RoundCap );
                     break;
