@@ -28,7 +28,12 @@ Looks great  with light and dark color schemes. Shown here with ![Arc](https://g
 
 ### Automated Installation
 
-TBA
+#### Ubuntu > 18.04
+```
+sudo add-apt-repository ppa:krisives/kde-hello
+sudo apt install kde-hello
+```
+Made and maintained by [krisives](https://github.com/krisives)
 
 ### Manual Installation
 
