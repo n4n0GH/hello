@@ -13,6 +13,56 @@ hello. is a compilation of various color-schemes, themes, icons and more for the
 | [**Plasma Theme**](https://github.com/n4n0GH/hello/tree/master/plasma-theme)<br/>Completing your desktop experience with a well balanced and elegant Plasma theme, complementing your light or dark color scheme. | 90% done |
 | [**Effects**](https://github.com/n4n0GH/hello/tree/master/kwin-effects)<br/>Rounding off the overall beautiful experience with the hello shader set. | 30% done |
 
+## Installation
+
+### Build Dependencies
+
+To build the packages you have to install some build-tools for your system first. If you already built something from source chances are you might have some of those installed.
+
+#### Ubuntu
+```
+sudo apt install build-essential libkf5config-dev libkdecorations2-dev libqt5x11extras5-dev qtdeclarative5-dev extra-cmake-modules libkf5guiaddons-dev libkf5configwidgets-dev libkf5windowsystem-dev libkf5coreaddons-dev gettext
+```
+
+#### Arch Linux
+```
+sudo pacman -S cmake extra-cmake-modules kdecoration qt5-declarative qt5-x11extras
+```
+
+#### Fedora
+```
+sudo dnf install cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "cmake(Qt5DBus)" "cmake(Qt5X11Extras)" "cmake(KF5GuiAddons)" "cmake(KF5WindowSystem)" "cmake(KF5I18n)" "cmake(KDecoration2)" "cmake(KF5CoreAddons)" "cmake(KF5ConfigWidgets)"
+```
+
+If your system is not listed above or there are packages missing in this list, please open an issue or pull request so it can be fixed.
+
+### Automated Installation
+
+#### Gentoo ebuild
+Thanks to [therealfarfetchd](https://github.com/therealfarfetchd) for providing https://github.com/therealfarfetchd/ebuilds/tree/master/kde-misc/hello which includes the entire project.
+
+### Manual Installation
+Clone the repository and create the build directory:
+```
+git clone https://github.com/n4n0GH/hello
+cd hello && mkdir build && cd build
+```
+
+Start building with cmake:
+```
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+sudo make install
+```
+
+Finally restart KWin and Plasma to clear their cache:
+```
+kwin_x11 --replace &
+plasmashell --replace &
+```
+
+You should now be able to use KDE's system settings to enable and modify the theme.
+
 ## Donate
 
 People have asked me to donate because they enjoyed these tools. Here's how you can donate:
