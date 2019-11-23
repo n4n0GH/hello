@@ -248,7 +248,7 @@ namespace Hello
                         painter->drawEllipse( QRectF( 3, 3, 12, 12 ) );
 
                         // center dot
-                        QColor backgroundColor( this->backgroundColor() );
+                        QColor backgroundColor( colorSymbol );
                         auto d = qobject_cast<Decoration*>( decoration() );
                         if( !backgroundColor.isValid() && d ) backgroundColor = d->titleBarColor();
 
@@ -382,7 +382,7 @@ namespace Hello
 
             return QColor(colorSymbol);
 
-        } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove || type() == DecorationButtonType::Shade ) && isChecked() ) {
+        } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove || type() == DecorationButtonType::Shade || type() == DecorationButtonType::OnAllDesktops ) && isChecked() ) {
 
             return d->titleBarColor();
 
@@ -486,7 +486,7 @@ namespace Hello
             }
             return KColorUtils::mix( color, QColor(colorSymbol), 0.3 );
 
-        } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove || type() == DecorationButtonType::Shade ) && isChecked() ) {
+        } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove || type() == DecorationButtonType::Shade || type() == DecorationButtonType::OnAllDesktops ) && isChecked() ) {
 
             return d->fontColor();
 
