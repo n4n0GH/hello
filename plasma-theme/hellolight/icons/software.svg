@@ -38,9 +38,9 @@
      inkscape:window-height="480"
      id="namedview33"
      showgrid="false"
-     inkscape:zoom="10.727273"
-     inkscape:cx="76.021186"
-     inkscape:cy="10.067797"
+     inkscape:zoom="7.5853273"
+     inkscape:cx="29.961921"
+     inkscape:cy="11.16884"
      inkscape:current-layer="svg4153" />
   <defs
      id="defs4157">
@@ -74,12 +74,12 @@
        id="path4159"
        class="ColorScheme-Highlight"
        d="m 10,7 0,5 2,0 0,-5 -2,0 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
     <path
        id="path4148"
        class="ColorScheme-Highlight"
        d="m 11,13 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
   <g
      id="software-updates-additional">
@@ -140,12 +140,12 @@
        id="path4151"
        class="ColorScheme-Highlight"
        d="m 10,7 0,5 2,0 0,-5 -2,0 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
     <path
        id="path4206"
        class="ColorScheme-Highlight"
        d="m 11,13 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
   <g
      id="software-updates-inactive"
@@ -188,11 +188,11 @@
        id="path4177"
        class="ColorScheme-Highlight"
        d="m 10,7 0,5 2,0 0,-5 -2,0 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
     <path
        id="path4200"
        class="ColorScheme-Highlight"
        d="m 11,13 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
 </svg>

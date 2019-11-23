@@ -39,8 +39,8 @@
      id="namedview9"
      showgrid="false"
      inkscape:zoom="10.727273"
-     inkscape:cx="-7.5042373"
-     inkscape:cy="11"
+     inkscape:cx="0.65254217"
+     inkscape:cy="11.279661"
      inkscape:current-layer="svg" />
   <defs
      id="defs81">
@@ -70,6 +70,6 @@
        cx="7"
        cy="18"
        r="2"
-       style="opacity:1;fill:#315bef;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

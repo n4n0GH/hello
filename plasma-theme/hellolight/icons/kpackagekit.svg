@@ -39,7 +39,7 @@
      id="namedview27"
      showgrid="false"
      inkscape:zoom="7.5853273"
-     inkscape:cx="40.339538"
+     inkscape:cx="7.5130046"
      inkscape:cy="14.400699"
      inkscape:current-layer="svg" />
   <defs
@@ -73,12 +73,12 @@
        id="path4159"
        class="ColorScheme-Highlight"
        d="m 10,7 0,5 2,0 0,-5 -2,0 z"
-       style="opacity:0.99999999;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:0.99999999;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
     <path
        id="path4148"
        class="ColorScheme-Highlight"
        d="m 11,13 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
-       style="opacity:0.99999999;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:0.99999999;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
   <g
      id="kpackagekit-updates"
@@ -140,12 +140,12 @@
        id="path4167"
        class="ColorScheme-Highlight"
        d="m 10,7 0,5 2,0 0,-5 -2,0 z"
-       style="opacity:0.99999999;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:0.99999999;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
     <path
        id="path4206"
        class="ColorScheme-Highlight"
        d="m 11,13 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
-       style="opacity:0.99999999;fill:#315bef;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       style="opacity:0.99999999;fill:#da4453;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
   <g
      id="kpackagekit-inactive"

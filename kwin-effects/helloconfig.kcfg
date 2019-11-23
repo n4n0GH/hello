@@ -1,0 +1,5 @@
+File=hellosettings.kcfg
+ClassName=HelloConfig
+NameSpace=KWin
+Singleton=true
+Mutators=true

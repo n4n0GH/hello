@@ -40,8 +40,8 @@
      id="namedview18"
      showgrid="false"
      inkscape:zoom="10.727273"
-     inkscape:cx="3.9618644"
-     inkscape:cy="26.288136"
+     inkscape:cx="-14.635593"
+     inkscape:cy="26.288137"
      inkscape:current-layer="svg7384" />
   <defs
      id="defs7386">
@@ -87,7 +87,7 @@
        id="path7"
        class="ColorScheme-Highlight"
        d="m 16,-10 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1" />
   </g>
   <g
      id="mail-mark-unread-new"
@@ -105,6 +105,6 @@
        id="path4170"
        class="ColorScheme-Highlight"
        d="m 16,-10 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
-       style="opacity:1;fill:#315bef;fill-opacity:1" />
+       style="opacity:1;fill:#da4453;fill-opacity:1" />
   </g>
 </svg>
