@@ -407,27 +407,29 @@ namespace Hello
                     if(s){ color.setRgb(colorOther);
                     } else { color = customOtherColor; }
                 }
-                return color.lighter(40);
+
+                int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
+                if ( y > 128 ) { return color.lighter(40); 
+                } else if ( y == 0 ) { return Qt::white;
+                } else { return color.lighter(240); }
 
             } else if ( c->isActive() && v ){
 
                 QColor color;
-                const QRgb whiteIcon = 0xFFFFFFFF;
                 color = d->titleBarColor();
                 int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
-                QColor iconColor ( f ? whiteIcon : y >= 128 ? color.lighter(40) : whiteIcon );
+                QColor iconColor ( f ? Qt::white : y >= 128 ? color.lighter(40) : Qt::white );
                 return iconColor;
 
             } else if ( !c->isActive() && v) {
-                
+        
                 QColor color;
                 color = d->titleBarColor();
-                const QRgb white = 0xFFFFFFFF;
                 int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
-                QColor newColor ( f ? white : y > 128 ? color.lighter(40) : white );
+                QColor newColor ( f ? Qt::white : y > 128 ? color.lighter(40) : Qt::white );
                 return KColorUtils::mix(
                     f ? color.lighter(140) : y > 128 ? newColor.lighter(140) : color.lighter(140),
-                    white,
+                    Qt::white,
                     m_opacity );
 
             } else {
