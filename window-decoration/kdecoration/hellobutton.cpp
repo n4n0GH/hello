@@ -407,11 +407,12 @@ namespace Hello
                     if(s){ color.setRgb(colorOther);
                     } else { color = customOtherColor; }
                 }
-
-                int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
-                if ( y > 128 ) { return color.lighter(40); 
-                } else if ( y == 0 ) { return Qt::white;
-                } else { return color.lighter(240); }
+                if( !s ) {
+                    int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
+                    if ( y > 128 ) { return color.lighter(40); 
+                    } else if ( y == 0 ) { return Qt::white;
+                    } else { return color.lighter(240); }
+                } else { return color.lighter(40); }
 
             } else if ( c->isActive() && v ){
 
