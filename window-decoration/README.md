@@ -54,14 +54,14 @@ Before proceeding with the actual installation process, make sure you have the f
 Download the [latest stable release](https://github.com/n4n0GH/hello/releases) or clone this repository for bleeding edge builds:
 
 ```
-git clone https://github.com/n4n0GH/hello/window-decoration
+git clone https://github.com/n4n0GH/hello
 ```
 It's recommended to clone the repository to where you can leave the built directory, just in case you want to uninstall **hello**. However, if you accidentally removed the directory, please check below for manually uninstallation instructions.
 
 Change to `window-decoration` directory and create a new directory called `build`:
 
 ```
-cd window-decoration && mkdir build && cd build
+cd hello/window-decoration && mkdir build && cd build
 ```
 
 To install, use `cmake`, `make` and `make install`:
