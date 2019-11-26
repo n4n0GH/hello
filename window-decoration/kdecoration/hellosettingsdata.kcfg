@@ -195,6 +195,11 @@
       <default>true</default>
     </entry>
 
+    <!-- only draw button icon glyphs -->
+    <entry name="OnlyUseIcons" type = "Bool">
+      <default>false</default>
+    </entry>
+
     <!-- custom button colors -->
     <entry name="ButtonCustomColor" type = "Bool">
       <default>true</default>

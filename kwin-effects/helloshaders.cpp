@@ -72,10 +72,23 @@ HelloShadersEffect::HelloShadersEffect() : KWin::Effect(), m_shader(0)
             m_shader->setUniform(sampler, 0);
             KWin::ShaderManager::instance()->popShader();
             connect(KWin::effects, &KWin::EffectsHandler::windowMaximizedStateChanged, this, &HelloShadersEffect::windowMaximizedStateChanged);
+            connect(KWin::effects, &KWin::EffectsHandler::windowAdded, this, &HelloShadersEffect::windowMaximizedStart);
         }
     }
     else
         deleteLater();
+}
+
+void HelloShadersEffect::windowMaximizedStart(KWin::EffectWindow *w)
+{
+    // logic:
+    // if isMaximized(){
+    //  applyEffect = NULL;
+    // } else { applyEffect = w; }
+    // problem:
+    // how to construct isMaximized()?
+    // how is it done in the decorations?
+    // can that be copied to the effects?
 }
 
 void HelloShadersEffect::windowMaximizedStateChanged(KWin::EffectWindow *w, bool horizontal, bool vertical)
@@ -188,13 +201,13 @@ HelloShadersEffect::reconfigure(ReconfigureFlags flags)
 {
     Q_UNUSED(flags)
     m_alpha = 63;
-    setRoundness(5);
+    setRoundness(5);    // TODO: make this dynamic through settings
 }
 
 void
 HelloShadersEffect::prePaintWindow(KWin::EffectWindow *w, KWin::WindowPrePaintData &data, int time)
 {
-
+    // TODO: make exclusion list customizable through settings
     if (!m_shader->isValid()
             || (w->windowClass().contains("plasma", Qt::CaseInsensitive) 
                 && !w->isNormalWindow() 

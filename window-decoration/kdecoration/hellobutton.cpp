@@ -374,6 +374,9 @@ namespace Hello
         QColor customMaxColor = d->internalSettings()->customMaxColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
 
+        auto v = d->internalSettings()->onlyUseIcons();
+        auto f = d->internalSettings()->forceBrightFonts();
+
         if( !d ) {
 
             return QColor();
@@ -386,9 +389,10 @@ namespace Hello
 
             return d->titleBarColor();
 
-        } else if( d->internalSettings()->alwaysShowButtonIcons() || isHovered() ){
+        } else if( d->internalSettings()->alwaysShowButtonIcons() || v || isHovered() ){
+
             auto c = d->client().data();
-            if ( c->isActive() ){
+            if ( c->isActive() && !v ){
                 QColor color;
                 if( type() == DecorationButtonType::Close ) {
                     if(s){ color.setRgb(colorClose);
@@ -404,6 +408,28 @@ namespace Hello
                     } else { color = customOtherColor; }
                 }
                 return color.lighter(40);
+
+            } else if ( c->isActive() && v ){
+
+                QColor color;
+                const QRgb whiteIcon = 0xFFFFFFFF;
+                color = d->titleBarColor();
+                int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
+                QColor iconColor ( f ? whiteIcon : y >= 128 ? color.lighter(40) : whiteIcon );
+                return iconColor;
+
+            } else if ( !c->isActive() && v) {
+                
+                QColor color;
+                color = d->titleBarColor();
+                const QRgb white = 0xFFFFFFFF;
+                int y = (0.2126*color.red())+(0.7152*color.green())+(0.0722*color.blue());
+                QColor newColor ( f ? white : y > 128 ? color.lighter(40) : white );
+                return KColorUtils::mix(
+                    f ? color.lighter(140) : y > 128 ? newColor.lighter(140) : color.lighter(140),
+                    white,
+                    m_opacity );
+
             } else {
                 QColor color;
                 color = d->titleBarColor();
@@ -444,6 +470,7 @@ namespace Hello
         // } 
         else {
 
+
             return backgroundColor();
 
         }
@@ -454,6 +481,8 @@ namespace Hello
     QColor Button::backgroundColor() const
     {
         auto d = qobject_cast<Decoration*>( decoration() );
+        
+
         if( !d ) {
 
             return QColor();
@@ -462,13 +491,14 @@ namespace Hello
 
         auto c = d->client().data();
 
+        auto v = d->internalSettings()->onlyUseIcons();
         auto s = d->internalSettings()->buttonCustomColor();
         QColor customCloseColor = d->internalSettings()->customCloseColor();
         QColor customMinColor = d->internalSettings()->customMinColor();
         QColor customMaxColor = d->internalSettings()->customMaxColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
 
-        if( isPressed() ) {
+        if( isPressed() && !v ) {
 
             QColor color;
             if( type() == DecorationButtonType::Close ) {
@@ -486,11 +516,15 @@ namespace Hello
             }
             return KColorUtils::mix( color, QColor(colorSymbol), 0.3 );
 
+        } else if( isPressed() && v ) {
+
+            return QColor();
+
         } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove || type() == DecorationButtonType::Shade || type() == DecorationButtonType::OnAllDesktops ) && isChecked() ) {
 
             return d->fontColor();
 
-        } else if ( !c->isActive() ) {
+        } else if ( !c->isActive() && !v ) {
 
             QColor color;
             color = d->titleBarColor();
@@ -500,6 +534,13 @@ namespace Hello
             } else {
                 return color.lighter(145);
             }
+        } else if ( !c->isActive() && v ) {
+
+            return QColor();
+
+        } else if ( c->isActive() && v ) {
+
+            return QColor();
 
         } else {
 
