@@ -71,30 +71,10 @@ HelloShadersEffect::HelloShadersEffect() : KWin::Effect(), m_shader(0)
             m_shader->setUniform(corner, 1);
             m_shader->setUniform(sampler, 0);
             KWin::ShaderManager::instance()->popShader();
-            connect(KWin::effects, &KWin::EffectsHandler::windowMaximizedStateChanged, this, &HelloShadersEffect::windowMaximizedStateChanged);
-            connect(KWin::effects, &KWin::EffectsHandler::windowAdded, this, &HelloShadersEffect::windowMaximizedStart);
         }
     }
     else
         deleteLater();
-}
-
-void HelloShadersEffect::windowMaximizedStart(KWin::EffectWindow *w)
-{
-    // logic:
-    // if isMaximized(){
-    //  applyEffect = NULL;
-    // } else { applyEffect = w; }
-    // problem:
-    // how to construct isMaximized()?
-    // how is it done in the decorations?
-    // can that be copied to the effects?
-}
-
-void HelloShadersEffect::windowMaximizedStateChanged(KWin::EffectWindow *w, bool horizontal, bool vertical)
-{
-    if( ( horizontal == true ) && ( vertical == true ) ) applyEffect = w;
-    else applyEffect = NULL;
 }
 
 HelloShadersEffect::~HelloShadersEffect()

@@ -43,8 +43,6 @@ public:
     void reconfigure(ReconfigureFlags flags);
     void prePaintWindow(KWin::EffectWindow* w, KWin::WindowPrePaintData& data, int time);
     void paintWindow(KWin::EffectWindow* w, int mask, QRegion region, KWin::WindowPaintData& data);
-    void windowMaximizedStart(KWin::EffectWindow *w);
-    void windowMaximizedStateChanged(KWin::EffectWindow *w, bool horizontal, bool vertical);
     virtual int requestedEffectChainPosition() const { return 100; }
 
 private:
