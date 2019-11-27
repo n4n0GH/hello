@@ -20,6 +20,9 @@ Steps to reproduce the behavior, for example:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
+**Bug inheritance**
+If the function or feature is also present on KDE's own Breeze theme, does the same bug occur there as well?
+
 **Additional files**
 If applicable, add screenshots or video to help explain your problem.
 
