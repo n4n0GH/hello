@@ -931,26 +931,26 @@ namespace Hello
             // Dirty hack to draw things inside the frame
             // NOTE: this is currently rendered underneath
             // the window as it is part of the shadow construct
-            const QMargins b_padding = QMargins(
-                boxRect.left() - outerRect.left() - Metrics:: Shadow_Overlap - params.offset.x() + 1,
-                boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y() + 1,
-                outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x() + 1,
-                outerRect.bottom() - boxRect.bottom() - Metrics::Shadow_Overlap + params.offset.y() + 1);
-            const QRect overRect = outerRect - b_padding; // test and see what this draws
+            // const QMargins b_padding = QMargins(
+            //     boxRect.left() - outerRect.left() - Metrics:: Shadow_Overlap - params.offset.x() + 1,
+            //     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y() + 1,
+            //     outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x() + 1,
+            //     outerRect.bottom() - boxRect.bottom() - Metrics::Shadow_Overlap + params.offset.y() + 1);
+            // const QRect overRect = outerRect - b_padding; // test and see what this draws
 
-            // this is the basecolor for the highlight
-            static QColor b_highlight = Qt::white;
-            // setting up the stroke color
-            painter.setPen(withOpacity(b_highlight.lighter(120), 0.2));
-            // setting up brush
-            painter.setBrush(Qt::NoBrush);
-            // setting up composition mode
-            painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
-            // creating area to draw
-            painter.drawRoundedRect(
-                overRect, // responsible for the size of the rect
-                customRadius() - 0.5,
-                customRadius() - 0.5);
+            // // this is the basecolor for the highlight
+            // static QColor b_highlight = Qt::white;
+            // // setting up the stroke color
+            // painter.setPen(withOpacity(b_highlight.lighter(120), 0.2));
+            // // setting up brush
+            // painter.setBrush(Qt::NoBrush);
+            // // setting up composition mode
+            // painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+            // // creating area to draw
+            // painter.drawRoundedRect(
+            //     overRect, // responsible for the size of the rect
+            //     customRadius() - 0.5,
+            //     customRadius() - 0.5);
 
             // Draw outline.
             painter.setPen(withOpacity(g_shadowColor, 0.6 * strength));
