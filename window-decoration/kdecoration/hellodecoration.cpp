@@ -304,7 +304,7 @@ namespace Hello
         connect(c, &KDecoration2::DecoratedClient::maximizedHorizontallyChanged, this, &Decoration::recalculateBorders);
         connect(c, &KDecoration2::DecoratedClient::maximizedVerticallyChanged, this, &Decoration::recalculateBorders);
         connect(c, &KDecoration2::DecoratedClient::shadedChanged, this, &Decoration::recalculateBorders);
-        connect(c, &KDecoration2::DecoratedClient::captionChanged, this,
+        connect(c, &KDecoration2::DecoratedClient::captionChanged, this, 
             [this]()
             {
                 // update the caption area
@@ -334,9 +334,9 @@ namespace Hello
         auto s = settings();
         auto c = client().data();
         const bool maximized = isMaximized();
-        const int width =  maximized ? c->width() : c->width() - 2*s->largeSpacing()*customButtonMargin();
+        const int width =  maximized ? c->width() : c->width() - 2*s->smallSpacing()*customButtonMargin();
         const int height = maximized ? borderTop() : borderTop() - s->smallSpacing()*customTitleBarHeight();
-        const int x = maximized ? 0 : s->largeSpacing()*customButtonMargin();
+        const int x = maximized ? 0 : s->smallSpacing()*customButtonMargin();
         const int y = maximized ? 0 : s->smallSpacing()*customTitleBarHeight();
         setTitleBar(QRect(x, y, width, height));
     }
