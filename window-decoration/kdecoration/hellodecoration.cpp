@@ -323,6 +323,7 @@ namespace Hello
         connect(c, &KDecoration2::DecoratedClient::shadedChanged, this, &Decoration::updateButtonsGeometry);
  
         connect(c, &KDecoration2::DecoratedClient::activeChanged, this, &Decoration::createShadow);
+        connect(c, &KDecoration2::DecoratedClient::shadedChanged, this, &Decoration::createShadow);
 
         createButtons();
         createShadow();
@@ -677,9 +678,6 @@ namespace Hello
             painter->setClipRect(titleRect, Qt::IntersectClip);
 
             // the rect is made a little bit larger to be able to clip away the rounded corners at the bottom and sides
-            // NOTE: this is possibly the reason for the shadow
-            // not properly attaching to the bottom of a titlebar when
-            // collapsing the window and leaving a blank space below it
             painter->drawRoundedRect(titleRect.adjusted(
                 isLeftEdge() ? -customRadius():0,
                 isTopEdge() ? -customRadius():0,
@@ -851,7 +849,7 @@ namespace Hello
         }
 
         if (!sShadow
-                ||g_shadowSizeEnum != m_internalSettings->shadowSize()
+                || g_shadowSizeEnum != m_internalSettings->shadowSize()
                 || g_shadowStrength != m_internalSettings->shadowStrength()
                 || g_shadowColor != m_internalSettings->shadowColor())
         {
@@ -909,7 +907,6 @@ namespace Hello
             QRect boxRect(QPoint(0, 0), boxSize);
             boxRect.moveCenter(outerRect.center());
 
-            const QRect titleRect(QPoint(0, 0), QSize(size().width(), borderTop()));
 
             // Mask out inner rect.
             const QMargins padding = QMargins(
@@ -917,47 +914,43 @@ namespace Hello
                 boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y(),
                 outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x(),
                 outerRect.bottom() - boxRect.bottom() - Metrics::Shadow_Overlap + params.offset.y());
-            const QRect innerRect = outerRect - padding;
+            const QRect innerRect = outerRect - padding;   
+
+            // const int cHeight = c->height();
+            const int cWidth = c->width();
+            const QRect titleRect(
+                QPoint(
+                    boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
+                    boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y()
+                ), 
+                QSize(cWidth, borderTop()));
+
+            // const QMargins shadePad = QMargins(
+            //     boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(),
+            //     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y(),
+            //     outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x(),
+            //     boxRect.bottom() - (0.2 * params.offset.y()) );
+            const QRect shadeRect = titleRect - padding;
+            // const QRect shadeRect(
+            //     QPoint(
+            //         boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
+            //         boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y() ), 
+            //     QSize(cWidth, cHeight));
 
             painter.setPen(Qt::NoPen);
             painter.setBrush(Qt::black);
             painter.setCompositionMode(QPainter::CompositionMode_DestinationOut);
             painter.drawRoundedRect(
-                innerRect,
+                c->isShaded() ? titleRect : innerRect,
                 customRadius() + 0.5,
                 customRadius() + 0.5);
-            
-
-            // Dirty hack to draw things inside the frame
-            // NOTE: this is currently rendered underneath
-            // the window as it is part of the shadow construct
-            // const QMargins b_padding = QMargins(
-            //     boxRect.left() - outerRect.left() - Metrics:: Shadow_Overlap - params.offset.x() + 1,
-            //     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y() + 1,
-            //     outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x() + 1,
-            //     outerRect.bottom() - boxRect.bottom() - Metrics::Shadow_Overlap + params.offset.y() + 1);
-            // const QRect overRect = outerRect - b_padding; // test and see what this draws
-
-            // // this is the basecolor for the highlight
-            // static QColor b_highlight = Qt::white;
-            // // setting up the stroke color
-            // painter.setPen(withOpacity(b_highlight.lighter(120), 0.2));
-            // // setting up brush
-            // painter.setBrush(Qt::NoBrush);
-            // // setting up composition mode
-            // painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
-            // // creating area to draw
-            // painter.drawRoundedRect(
-            //     overRect, // responsible for the size of the rect
-            //     customRadius() - 0.5,
-            //     customRadius() - 0.5);
 
             // Draw outline.
             painter.setPen(withOpacity(g_shadowColor, 0.6 * strength));
             painter.setBrush(Qt::NoBrush);
             painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
             painter.drawRoundedRect(
-                innerRect,
+                c->isShaded() ? titleRect : innerRect,
                 customRadius() - 0.5,
                 customRadius() - 0.5);
 

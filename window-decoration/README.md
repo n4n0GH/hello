@@ -35,6 +35,12 @@ sudo apt install kde-hello
 ```
 Made and maintained by [krisives](https://github.com/krisives)
 
+#### Arch Linux
+```
+yay -S hello-kde-git
+```
+Made and maintained by ToxicSalt
+
 ### Manual Installation
 
 Before proceeding with the actual installation process, make sure you have the following dependencies installed:

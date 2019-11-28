@@ -347,7 +347,7 @@ QImage BoxShadowRenderer::render() const
 QSize BoxShadowRenderer::calculateMinimumBoxSize(int radius)
 {
     const QSize blurExtent = calculateBlurExtent(radius);
-    return 2 * blurExtent + QSize(1, 1);
+    return blurExtent + QSize(1, 1);
 }
 
 QSize BoxShadowRenderer::calculateMinimumShadowTextureSize(const QSize &boxSize, int radius, const QPoint &offset)
