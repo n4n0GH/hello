@@ -8,6 +8,7 @@ set(QT_MIN_VERSION "5.4.0")
 set(KF5_MIN_VERSION "5.9.0")
 
 find_package(ECM REQUIRED NO_MODULE)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
@@ -21,6 +22,9 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Network
     Xml
 )
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(EPOXY REQUIRED epoxy)
 
 include_directories(${Qt5Widgets_INCLUDE_DIRS} ${Qt5X11Extras_INCLUDE_DIRS} ${Qt5Network_INCLUDE_DIRS} ${Qt5OpenGL_INCLUDE_DIRS} ${Qt5Xml_INCLUDE_DIRS})
 add_definitions(${Qt5Widgets_DEFINITIONS})
@@ -88,8 +92,7 @@ target_link_libraries(${HELLOSHADERS}
         Qt5::Gui
         ${KWIN_EFFECTS}
         ${KWIN_GLUTILS}
-        epoxy
-        GL
+	${EPOXY_LINK_LIBRARIES}
     PRIVATE
         KF5::ConfigCore
         KF5::CoreAddons
