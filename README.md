@@ -38,6 +38,9 @@ If your system is not listed above or there are packages missing in this list, p
 
 ### Automated Installation
 
+#### Shell Script
+Give the [hello automagic installer](https://github.com/hello-kde/install-tool) a try. It will fetch the latest stable release from this repository and run all the commands listed down below so you can sit back and watch the terminal do all the work.
+
 #### Gentoo ebuild
 Thanks to [therealfarfetchd](https://github.com/therealfarfetchd) for providing https://github.com/therealfarfetchd/ebuilds/tree/master/kde-misc/hello which includes the entire project.
 
