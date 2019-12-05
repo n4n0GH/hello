@@ -727,25 +727,29 @@ namespace Hello
     //________________________________________________________________
     int Decoration::customButtonMargin() const
     {
-        switch( m_internalSettings->buttonMargin() )
-        {
-            case 0: return Metrics::TitleBar_SideMarginSmall;
-            default:
-            case 1: return Metrics::TitleBar_SideMargin;
-            case 2: return Metrics::TitleBar_SideMarginLarge;
-        }
+        // switch( m_internalSettings->buttonMargin() )
+        // {
+        //     case 0: return Metrics::TitleBar_SideMarginSmall;
+        //     default:
+        //     case 1: return Metrics::TitleBar_SideMargin;
+        //     case 2: return Metrics::TitleBar_SideMarginLarge;
+        // }
+        const int buttonMargin = m_internalSettings->buttonMarginSpin();
+        return buttonMargin;
     }
 
     //________________________________________________________________
     int Decoration::customButtonSpacing() const
     {
-        switch( m_internalSettings->buttonSpacing() )
-        {
-            case 0: return Metrics::TitleBar_ButtonSpacingSmall;
-            default:
-            case 1: return Metrics::TitleBar_ButtonSpacing;
-            case 2: return Metrics::TitleBar_ButtonSpacingLarge;
-        }
+        // switch( m_internalSettings->buttonSpacing() )
+        // {
+        //     case 0: return Metrics::TitleBar_ButtonSpacingSmall;
+        //     default:
+        //     case 1: return Metrics::TitleBar_ButtonSpacing;
+        //     case 2: return Metrics::TitleBar_ButtonSpacingLarge;
+        // }
+        const int buttonSpacing = m_internalSettings->buttonSpacingSpin();
+        return buttonSpacing;
     }
 
     //________________________________________________________________
@@ -764,18 +768,8 @@ namespace Hello
     //________________________________________________________________
     int Decoration::buttonHeight() const
     {
-        const int baseSize = settings()->gridUnit();
-        // baseSize is roughly 8 pixel
-        switch( m_internalSettings->buttonSize() )
-        {
-            case InternalSettings::ButtonTiny: return baseSize;
-            case InternalSettings::ButtonSmall: return baseSize*1.5;
-            default:
-            case InternalSettings::ButtonNormal: return baseSize*2-2;
-            case InternalSettings::ButtonLarge: return baseSize*2.5;
-            case InternalSettings::ButtonVeryLarge: return baseSize*3.5;
-        }
-
+        const int buttonSize = m_internalSettings->buttonSizeSpin();
+        return buttonSize;
     }
 
     //________________________________________________________________

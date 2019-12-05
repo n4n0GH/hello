@@ -31,7 +31,7 @@
 
 #include <QDBusConnection>
 #include <QDBusMessage>
-
+// TODO: clean up the connectors and group them like they appear within the UI
 namespace Hello
 {
 
@@ -47,15 +47,12 @@ namespace Hello
 
         // track ui changes
         connect( m_ui.titleAlignment, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
-        connect( m_ui.buttonSize, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
         // connect( m_ui.outlineCloseButton, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawBorderOnMaximizedWindows, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawSizeGrip, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawBackgroundGradient, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawTitleBarSeparator, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.borderRadius, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
-        connect( m_ui.buttonSpacing, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
-        connect( m_ui.buttonMargin, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
         connect( m_ui.matchTitleBarColor, SIGNAL(currentIndexChanged(int)), SLOT( updateChanged()) );
         connect( m_ui.titleBarHeight, SIGNAL(currentIndexChanged(int)), SLOT(
             updateChanged()) );
@@ -65,6 +62,11 @@ namespace Hello
         connect( m_ui.drawHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawTitleHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.onlyUseIcons, SIGNAL(clicked()), SLOT(updateChanged()) );
+
+        // custom button settings
+        connect( m_ui.buttonSizeSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
+        connect( m_ui.buttonSpacingSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
+        connect( m_ui.buttonMarginSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
 
         // use custom color for buttons or not
         connect( m_ui.buttonCustomColor, SIGNAL(clicked()), SLOT(updateChanged()) );
@@ -98,7 +100,6 @@ namespace Hello
 
         // assign to ui
         m_ui.titleAlignment->setCurrentIndex( m_internalSettings->titleAlignment() );
-        m_ui.buttonSize->setCurrentIndex( m_internalSettings->buttonSize() );
         m_ui.drawBorderOnMaximizedWindows->setChecked( m_internalSettings->drawBorderOnMaximizedWindows() );
         // m_ui.outlineCloseButton->setChecked( m_internalSettings->outlineCloseButton() );
         m_ui.drawSizeGrip->setChecked( m_internalSettings->drawSizeGrip() );
@@ -107,8 +108,6 @@ namespace Hello
         m_ui.animationsDuration->setValue( m_internalSettings->animationsDuration() );
         m_ui.drawTitleBarSeparator->setChecked( m_internalSettings->drawTitleBarSeparator() );
         m_ui.borderRadius->setCurrentIndex( m_internalSettings->borderRadius() );
-        m_ui.buttonSpacing->setCurrentIndex( m_internalSettings->buttonSpacing() );
-        m_ui.buttonMargin->setCurrentIndex( m_internalSettings->buttonMargin() );
         m_ui.matchTitleBarColor->setCurrentIndex( m_internalSettings->matchTitleBarColor() );
         m_ui.titleBarHeight->setCurrentIndex( m_internalSettings->titleBarHeight() );
         m_ui.alwaysShowButtonIcons->setChecked( m_internalSettings->alwaysShowButtonIcons() );
@@ -117,6 +116,9 @@ namespace Hello
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
         m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
         m_ui.onlyUseIcons->setChecked( m_internalSettings->onlyUseIcons() );
+        m_ui.buttonSizeSpin->setValue( qreal(m_internalSettings->buttonSizeSpin()) );
+        m_ui.buttonSpacingSpin->setValue( qreal(m_internalSettings->buttonSpacingSpin()) );
+        m_ui.buttonMarginSpin->setValue( qreal(m_internalSettings->buttonMarginSpin()) );
 
         m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
@@ -151,7 +153,6 @@ namespace Hello
 
         // apply modifications from ui
         m_internalSettings->setTitleAlignment( m_ui.titleAlignment->currentIndex() );
-        m_internalSettings->setButtonSize( m_ui.buttonSize->currentIndex() );
         // m_internalSettings->setOutlineCloseButton( m_ui.outlineCloseButton->isChecked() );
         m_internalSettings->setDrawBorderOnMaximizedWindows( m_ui.drawBorderOnMaximizedWindows->isChecked() );
         m_internalSettings->setDrawSizeGrip( m_ui.drawSizeGrip->isChecked() );
@@ -160,8 +161,6 @@ namespace Hello
         m_internalSettings->setAnimationsDuration( m_ui.animationsDuration->value() );
         m_internalSettings->setDrawTitleBarSeparator(m_ui.drawTitleBarSeparator->isChecked() );
         m_internalSettings->setBorderRadius( m_ui.borderRadius->currentIndex() );
-        m_internalSettings->setButtonSpacing( m_ui.buttonSpacing->currentIndex() );
-        m_internalSettings->setButtonMargin( m_ui.buttonMargin->currentIndex() );
         m_internalSettings->setMatchTitleBarColor( m_ui.matchTitleBarColor->currentIndex() );
         m_internalSettings->setTitleBarHeight( m_ui.titleBarHeight->currentIndex() );
         m_internalSettings->setAlwaysShowButtonIcons( m_ui.alwaysShowButtonIcons->isChecked() );
@@ -170,6 +169,9 @@ namespace Hello
         m_internalSettings->setDrawHighlight( m_ui.drawHighlight->isChecked() );
         m_internalSettings->setDrawTitleHighlight( m_ui.drawTitleHighlight->isChecked() );
         m_internalSettings->setOnlyUseIcons( m_ui.onlyUseIcons->isChecked() );
+        m_internalSettings->setButtonSizeSpin( qreal(m_ui.buttonSizeSpin->value()) );
+        m_internalSettings->setButtonSpacingSpin( qreal(m_ui.buttonSpacingSpin->value()) );
+        m_internalSettings->setButtonMarginSpin( qreal(m_ui.buttonMarginSpin->value()) );
 
         m_internalSettings->setButtonCustomColor( m_ui.buttonCustomColor->isChecked() );
         m_internalSettings->setCustomCloseColor( m_ui.customCloseColor->color() );
@@ -218,7 +220,6 @@ namespace Hello
 
         // assign to ui
         m_ui.titleAlignment->setCurrentIndex( m_internalSettings->titleAlignment() );
-        m_ui.buttonSize->setCurrentIndex( m_internalSettings->buttonSize() );
         m_ui.drawBorderOnMaximizedWindows->setChecked( m_internalSettings->drawBorderOnMaximizedWindows() );
         m_ui.drawSizeGrip->setChecked( m_internalSettings->drawSizeGrip() );
         m_ui.drawBackgroundGradient->setChecked( m_internalSettings->drawBackgroundGradient() );
@@ -226,8 +227,6 @@ namespace Hello
         m_ui.animationsDuration->setValue( m_internalSettings->animationsDuration() );
         m_ui.drawTitleBarSeparator->setChecked( m_internalSettings->drawTitleBarSeparator() );
         m_ui.borderRadius->setCurrentIndex( m_internalSettings->borderRadius() );
-        m_ui.buttonSpacing->setCurrentIndex( m_internalSettings->buttonSpacing() );
-        m_ui.buttonMargin->setCurrentIndex( m_internalSettings->buttonMargin() );
         m_ui.matchTitleBarColor->setCurrentIndex( m_internalSettings->matchTitleBarColor() );
         m_ui.titleBarHeight->setCurrentIndex( m_internalSettings->titleBarHeight() );
         m_ui.alwaysShowButtonIcons->setChecked( m_internalSettings->alwaysShowButtonIcons() );
@@ -236,6 +235,9 @@ namespace Hello
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
         m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
         m_ui.onlyUseIcons->setChecked( m_internalSettings->onlyUseIcons() );
+        m_ui.buttonSizeSpin->setValue( qreal(m_internalSettings->buttonSizeSpin()) );
+        m_ui.buttonSpacingSpin->setValue( qreal(m_internalSettings->buttonSpacingSpin()) );
+        m_ui.buttonMarginSpin->setValue( qreal(m_internalSettings->buttonMarginSpin()) );
 
         m_ui.buttonCustomColor->setChecked( m_internalSettings->buttonCustomColor() );
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
@@ -263,14 +265,11 @@ namespace Hello
 
         if (m_ui.drawTitleBarSeparator->isChecked() != m_internalSettings->drawTitleBarSeparator()) modified = true;
         if( m_ui.titleAlignment->currentIndex() != m_internalSettings->titleAlignment() ) modified = true;
-        else if( m_ui.buttonSize->currentIndex() != m_internalSettings->buttonSize() ) modified = true;
         // else if( m_ui.outlineCloseButton->isChecked() != m_internalSettings->outlineCloseButton() ) modified = true;
         else if( m_ui.drawBorderOnMaximizedWindows->isChecked() !=  m_internalSettings->drawBorderOnMaximizedWindows() ) modified = true;
         else if( m_ui.drawSizeGrip->isChecked() !=  m_internalSettings->drawSizeGrip() ) modified = true;
         else if( m_ui.drawBackgroundGradient->isChecked() !=  m_internalSettings->drawBackgroundGradient() ) modified = true;
         else if( m_ui.borderRadius->currentIndex() != m_internalSettings->borderRadius() ) modified = true;
-        else if( m_ui.buttonSpacing->currentIndex() != m_internalSettings->buttonSpacing() ) modified = true;
-        else if( m_ui.buttonMargin->currentIndex() != m_internalSettings->buttonMargin() ) modified = true;
         else if( m_ui.matchTitleBarColor->currentIndex() != m_internalSettings->matchTitleBarColor() ) modified = true;
         else if( m_ui.titleBarHeight->currentIndex() != m_internalSettings->titleBarHeight() ) modified = true;
         else if( m_ui.alwaysShowButtonIcons->isChecked() != m_internalSettings->alwaysShowButtonIcons() ) modified = true;
@@ -279,6 +278,9 @@ namespace Hello
         else if( m_ui.drawHighlight->isChecked() != m_internalSettings->drawHighlight() ) modified = true;
         else if( m_ui.drawTitleHighlight->isChecked() != m_internalSettings->drawTitleHighlight() ) modified = true;
         else if( m_ui.onlyUseIcons->isChecked() != m_internalSettings->onlyUseIcons() ) modified = true;
+        else if( qreal(m_ui.buttonSizeSpin->value() ) != m_internalSettings->buttonSizeSpin() ) modified = true;
+        else if( qreal(m_ui.buttonSpacingSpin->value() ) != m_internalSettings->buttonSpacingSpin() ) modified = true;
+        else if( qreal(m_ui.buttonMarginSpin->value() ) != m_internalSettings->buttonMarginSpin() ) modified = true;
 
         // custom button colors
         else if( m_ui.buttonCustomColor->isChecked() != m_internalSettings->buttonCustomColor() ) modified = true;

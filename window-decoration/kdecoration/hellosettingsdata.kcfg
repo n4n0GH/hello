@@ -78,15 +78,10 @@
     </entry>
 
     <!-- button size -->
-    <entry name="ButtonSize" type="Enum">
-      <choices>
-          <choice name="ButtonTiny" />
-          <choice name="ButtonSmall" />
-          <choice name="ButtonNormal" />
-          <choice name="ButtonLarge" />
-          <choice name="ButtonVeryLarge" />
-      </choices>
-      <default>ButtonNormal</default>
+    <entry name="ButtonSizeSpin" type = "Int">
+       <default>16</default>
+       <min>1</min>
+       <max>36</max>
     </entry>
 
     <!-- maximized windows -->
@@ -129,23 +124,17 @@
     </entry>
 
     <!-- button spacing -->
-    <entry name="ButtonSpacing" type = "Enum">
-      <choices>
-          <choice name="Smalla"/>
-          <choice name="Regularb"/>
-          <choice name="Widea"/>
-      </choices>
-      <default>Regularb</default>
+    <entry name="ButtonSpacingSpin" type = "Int">
+       <default>4</default>
+       <min>1</min>
+       <max>36</max>
     </entry>
 
     <!-- button margin -->
-    <entry name="ButtonMargin" type = "Enum">
-      <choices>
-          <choice name="Smallb"/>
-          <choice name="Regularc"/>
-          <choice name="Wideb"/>
-      </choices>
-      <default>Regularc</default>
+    <entry name="ButtonMarginSpin" type = "Int">
+       <default>4</default>
+       <min>1</min>
+       <max>36</max>
     </entry>
 
     <!-- toggle button icons to always be visible -->
