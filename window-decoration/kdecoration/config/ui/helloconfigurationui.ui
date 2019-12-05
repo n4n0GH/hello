@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>587</width>
-    <height>489</height>
+    <height>664</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -72,9 +72,9 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-439</y>
+            <y>-258</y>
             <width>547</width>
-            <height>913</height>
+            <height>915</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
@@ -102,278 +102,198 @@
               <string>Titlebar</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
-              <item row="10" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item row="2" column="1">
+               <widget class="QComboBox" name="titleBarHeight">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose the height of the titlebar with this switch."/>
+                </property>
                 <item>
-                 <widget class="QLabel" name="label_7">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Small</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="customColorBox">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Use a custom color for all window's titlebars."/>
-                  </property>
-                  <property name="text">
-                   <string>Use custom color</string>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Regular</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string>Extended</string>
+                 </property>
+                </item>
+               </widget>
               </item>
-              <item row="8" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelTitleBarHeight">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Titlebar height:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="titleBarHeight">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose the height of the titlebar with this switch."/>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Small</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Regular</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Extended</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
+              <item row="1" column="0">
+               <widget class="QLabel" name="labelTitleAlignment">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Tit&amp;le alignment:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+                <property name="buddy">
+                 <cstring>titleAlignment</cstring>
+                </property>
+               </widget>
               </item>
-              <item row="9" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_8">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelMatchTitleBarColor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Match color:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="matchTitleBarColor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Color scheme</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Window (scheme)</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
+              <item row="2" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelTitleBarHeight">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Titlebar height:</string>
+                </property>
+               </widget>
               </item>
-              <item row="11" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <widget class="QLabel" name="label_10">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="KColorButton" name="customColorSelect">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Select the color for all titlebars to use."/>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="3" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelMatchTitleBarColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Match color:</string>
+                </property>
+               </widget>
               </item>
-              <item row="14" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item row="3" column="1">
+               <widget class="QComboBox" name="matchTitleBarColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
+                </property>
                 <item>
-                 <widget class="QLabel" name="label_9">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Color scheme</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="drawTitleBarSeparator">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Draws a dark separator line between the titlebar and the window content. Uses the titlebar color to determine the color of itself."/>
-                  </property>
-                  <property name="text">
-                   <string>Draw separator between titlebar and window</string>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Window (scheme)</string>
+                 </property>
                 </item>
-               </layout>
+               </widget>
               </item>
-              <item row="4" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <widget class="QLabel" name="labelTitleAlignment">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Tit&amp;le alignment:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                  <property name="buddy">
-                   <cstring>titleAlignment</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="titleAlignment">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose where the title inside a titlebar should be displayed."/>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Left</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Center</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Center (Full Width)</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Right</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
+              <item row="7" column="1">
+               <widget class="QCheckBox" name="drawTitleBarSeparator">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Draws a dark separator line between the titlebar and the window content. Uses the titlebar color to determine the color of itself."/>
+                </property>
+                <property name="text">
+                 <string>Draw separator between titlebar and window</string>
+                </property>
+               </widget>
               </item>
-              <item row="12" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item row="5" column="1">
+               <widget class="KColorButton" name="customColorSelect">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Select the color for all titlebars to use."/>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QCheckBox" name="customColorBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Use a custom color for all window's titlebars."/>
+                </property>
+                <property name="text">
+                 <string>Use custom color</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="titleAlignment">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose where the title inside a titlebar should be displayed."/>
+                </property>
                 <item>
-                 <widget class="QLabel" name="label_8">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Left</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="drawBackgroundGradient">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Draw a subtle gradient across the titlebar."/>
-                  </property>
-                  <property name="text">
-                   <string>Draw titlebar background gradient</string>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Center</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string>Center (Full Width)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Right</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QCheckBox" name="drawBackgroundGradient">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Draw a subtle gradient across the titlebar."/>
+                </property>
+                <property name="text">
+                 <string>Draw titlebar background gradient</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -384,461 +304,395 @@
               <string>Buttons</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="9" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_18">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelCustomMax">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Maximize:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="KColorButton" name="customMaxColor">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="color">
-                   <color>
-                    <red>19</red>
-                    <green>209</green>
-                    <blue>61</blue>
-                   </color>
-                  </property>
-                  <property name="defaultColor">
-                   <color>
-                    <red>19</red>
-                    <green>209</green>
-                    <blue>61</blue>
-                   </color>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelButtonSize">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Size:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+                <property name="buddy">
+                 <cstring>buttonSize</cstring>
+                </property>
+               </widget>
               </item>
-              <item row="1" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item row="2" column="1">
+               <widget class="QComboBox" name="buttonSpacing">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose your preferred spacing for the window buttons."/>
+                </property>
+                <property name="currentText">
+                 <string>Small</string>
+                </property>
                 <item>
-                 <widget class="QLabel" name="labelButtonSpacing">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Spacing:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Small</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="buttonSpacing">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose your preferred spacing for the window buttons."/>
-                  </property>
-                  <property name="currentText">
-                   <string>Small</string>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Small</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Regular</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Wide</string>
-                   </property>
-                  </item>
-                 </widget>
+                 <property name="text">
+                  <string>Regular</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string>Wide</string>
+                 </property>
+                </item>
+               </widget>
               </item>
-              <item row="7" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_16">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelCustomClose">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Close:</string>
-                  </property>
-                 </widget>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="buttonSize">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose your preferred size for the window buttons."/>
+                </property>
+                <property name="currentText">
+                 <string>Tiny</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Tiny</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="KColorButton" name="customCloseColor">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="color">
-                   <color>
-                    <red>242</red>
-                    <green>80</green>
-                    <blue>86</blue>
-                   </color>
-                  </property>
-                  <property name="defaultColor">
-                   <color>
-                    <red>242</red>
-                    <green>80</green>
-                    <blue>86</blue>
-                   </color>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string comment="@item:inlistbox Button size:">Small</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string comment="@item:inlistbox Button size:">Normal</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string comment="@item:inlistbox Button size:">Large</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string comment="@item:inlistbox Button size:">Very Large</string>
+                 </property>
+                </item>
+               </widget>
               </item>
-              <item row="2" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
-                <item>
-                 <widget class="QLabel" name="labelButtonMargin">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Outer margin:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="buttonMargin">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose your preferred distance to the window edge for the window buttons."/>
-                  </property>
-                  <property name="currentText">
-                   <string>Small</string>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Small</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Regular</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Wide</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
+              <item row="6" column="1">
+               <widget class="QCheckBox" name="buttonCustomColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Use default button colors</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
               </item>
-              <item row="10" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_19">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelCustomOther">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Other:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="KColorButton" name="customOtherColor">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="color">
-                   <color>
-                    <red>79</red>
-                    <green>186</green>
-                    <blue>244</blue>
-                   </color>
-                  </property>
-                  <property name="defaultColor">
-                   <color>
-                    <red>79</red>
-                    <green>186</green>
-                    <blue>244</blue>
-                   </color>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="9" column="1">
+               <widget class="KColorButton" name="customMaxColor">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="color">
+                 <color>
+                  <red>19</red>
+                  <green>209</green>
+                  <blue>61</blue>
+                 </color>
+                </property>
+                <property name="defaultColor">
+                 <color>
+                  <red>19</red>
+                  <green>209</green>
+                  <blue>61</blue>
+                 </color>
+                </property>
+               </widget>
               </item>
-              <item row="5" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <item row="3" column="1">
+               <widget class="QComboBox" name="buttonMargin">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose your preferred distance to the window edge for the window buttons."/>
+                </property>
+                <property name="currentText">
+                 <string>Small</string>
+                </property>
                 <item>
-                 <widget class="QLabel" name="label_17">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Small</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="buttonCustomColor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Use default button colors</string>
-                  </property>
-                  <property name="checked">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>Regular</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string>Wide</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QCheckBox" name="alwaysShowButtonIcons">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Opt to always show the icons inside the window buttons instead of only showing them on hover."/>
+                </property>
+                <property name="text">
+                 <string>Always show button icons</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomClose">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Close:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomMin">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Minimize:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="KColorButton" name="customOtherColor">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="color">
+                 <color>
+                  <red>79</red>
+                  <green>186</green>
+                  <blue>244</blue>
+                 </color>
+                </property>
+                <property name="defaultColor">
+                 <color>
+                  <red>79</red>
+                  <green>186</green>
+                  <blue>244</blue>
+                 </color>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomMax">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Maximize:</string>
+                </property>
+               </widget>
               </item>
               <item row="3" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_14">
-                <item>
-                 <widget class="QLabel" name="label_11">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="alwaysShowButtonIcons">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Opt to always show the icons inside the window buttons instead of only showing them on hover."/>
-                  </property>
-                  <property name="text">
-                   <string>Always show button icons</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <widget class="QLabel" name="labelButtonMargin">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Outer margin:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
               </item>
-              <item row="0" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <item>
-                 <widget class="QLabel" name="labelButtonSize">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Size:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                  <property name="buddy">
-                   <cstring>buttonSize</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="buttonSize">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Choose your preferred size for the window buttons."/>
-                  </property>
-                  <property name="currentText">
-                   <string>Tiny</string>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Tiny</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string comment="@item:inlistbox Button size:">Small</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string comment="@item:inlistbox Button size:">Normal</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string comment="@item:inlistbox Button size:">Large</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string comment="@item:inlistbox Button size:">Very Large</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
+              <item row="8" column="1">
+               <widget class="KColorButton" name="customMinColor">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="color">
+                 <color>
+                  <red>252</red>
+                  <green>190</green>
+                  <blue>7</blue>
+                 </color>
+                </property>
+                <property name="defaultColor">
+                 <color>
+                  <red>252</red>
+                  <green>190</green>
+                  <blue>7</blue>
+                 </color>
+                </property>
+               </widget>
               </item>
-              <item row="8" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_17">
-                <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelCustomMin">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Minimize:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="KColorButton" name="customMinColor">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="color">
-                   <color>
-                    <red>252</red>
-                    <green>190</green>
-                    <blue>7</blue>
-                   </color>
-                  </property>
-                  <property name="defaultColor">
-                   <color>
-                    <red>252</red>
-                    <green>190</green>
-                    <blue>7</blue>
-                   </color>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="10" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomOther">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Other:</string>
+                </property>
+               </widget>
               </item>
-              <item row="4" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_20">
-                <item>
-                 <widget class="QLabel" name="label_18">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="onlyUseIcons">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Only use button icons</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="2" column="0">
+               <widget class="QLabel" name="labelButtonSpacing">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Spacing:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
+               <widget class="KColorButton" name="customCloseColor">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="color">
+                 <color>
+                  <red>242</red>
+                  <green>80</green>
+                  <blue>86</blue>
+                 </color>
+                </property>
+                <property name="defaultColor">
+                 <color>
+                  <red>242</red>
+                  <green>80</green>
+                  <blue>86</blue>
+                 </color>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QCheckBox" name="onlyUseIcons">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Only use button icons</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QSpinBox" name="buttonSizeSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>24</number>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -865,130 +719,92 @@
               <bool>false</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout_6">
-              <item row="2" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item row="0" column="1">
+               <widget class="QComboBox" name="borderRadius">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Select a custom border radius to use on windows."/>
+                </property>
+                <property name="currentText">
+                 <string>None</string>
+                </property>
                 <item>
-                 <widget class="QLabel" name="labelBorderRadius">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Border radius:</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
+                 <property name="text">
+                  <string>None</string>
+                 </property>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="borderRadius">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="Select a custom border radius to use on windows."/>
-                  </property>
-                  <property name="currentText">
-                   <string>None</string>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>None</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Tiny</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Regular</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Extended</string>
-                   </property>
-                  </item>
-                 </widget>
+                 <property name="text">
+                  <string>Tiny</string>
+                 </property>
                 </item>
-               </layout>
+                <item>
+                 <property name="text">
+                  <string>Regular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Extended</string>
+                 </property>
+                </item>
+               </widget>
               </item>
-              <item row="4" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_13">
-                <item>
-                 <widget class="QLabel" name="label_6">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="drawSizeGrip">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="This adds a easy to click handle to windows that opt to not use borders."/>
-                  </property>
-                  <property name="text">
-                   <string>Add handle to resize windows with no border</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="If selected, maximized windows will use the border radius settings even when maximized."/>
+                </property>
+                <property name="text">
+                 <string>Draw border on maximized windows</string>
+                </property>
+               </widget>
               </item>
-              <item row="3" column="0">
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <item>
-                 <widget class="QLabel" name="label_4">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>1</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>2</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="whatsThis">
-                   <string extracomment="If selected, maximized windows will use the border radius settings even when maximized."/>
-                  </property>
-                  <property name="text">
-                   <string>Draw border on maximized windows</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelBorderRadius">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Border radius:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QCheckBox" name="drawSizeGrip">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="This adds a easy to click handle to windows that opt to not use borders."/>
+                </property>
+                <property name="text">
+                 <string>Add handle to resize windows with no border</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -1409,25 +1225,6 @@ p, li { white-space: pre-wrap; }
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>borderRadius</tabstop>
-  <tabstop>drawBorderOnMaximizedWindows</tabstop>
-  <tabstop>drawSizeGrip</tabstop>
-  <tabstop>titleAlignment</tabstop>
-  <tabstop>titleBarHeight</tabstop>
-  <tabstop>matchTitleBarColor</tabstop>
-  <tabstop>customColorBox</tabstop>
-  <tabstop>customColorSelect</tabstop>
-  <tabstop>drawBackgroundGradient</tabstop>
-  <tabstop>drawTitleBarSeparator</tabstop>
-  <tabstop>buttonSize</tabstop>
-  <tabstop>buttonSpacing</tabstop>
-  <tabstop>buttonMargin</tabstop>
-  <tabstop>alwaysShowButtonIcons</tabstop>
-  <tabstop>buttonCustomColor</tabstop>
-  <tabstop>customCloseColor</tabstop>
-  <tabstop>customMinColor</tabstop>
-  <tabstop>customMaxColor</tabstop>
-  <tabstop>customOtherColor</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>animationsEnabled</tabstop>
   <tabstop>animationsDuration</tabstop>

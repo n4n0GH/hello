@@ -201,7 +201,7 @@ HelloShadersEffect::reconfigure(ReconfigureFlags flags)
 {
     Q_UNUSED(flags)
     m_alpha = 63;
-    setRoundness(5);    // TODO: make this dynamic through settings
+    setRoundness(5);    // TODO: make this dynamic by fetching the corner radius from hello window decorations if available
 }
 
 void

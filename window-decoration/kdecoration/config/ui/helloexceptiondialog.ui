@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>419</width>
+    <width>430</width>
     <height>579</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>419</width>
+    <width>430</width>
     <height>579</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>419</width>
+    <width>430</width>
     <height>579</height>
    </size>
   </property>
@@ -109,7 +109,8 @@
          <string>Detect Window Properties</string>
         </property>
         <property name="icon">
-         <iconset theme="search"/>
+         <iconset theme="search">
+          <normaloff>.</normaloff>.</iconset>
         </property>
        </widget>
       </item>
@@ -264,7 +265,7 @@
          <string extracomment="Enable a custom border size override."/>
         </property>
         <property name="text">
-         <string>Custom border size</string>
+         <string>Custom border settings</string>
         </property>
        </widget>
       </item>
