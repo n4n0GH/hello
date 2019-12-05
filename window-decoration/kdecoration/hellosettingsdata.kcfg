@@ -79,7 +79,7 @@
 
     <!-- button size -->
     <entry name="ButtonSizeSpin" type = "Int">
-       <default>16</default>
+       <default>14</default>
        <min>1</min>
        <max>36</max>
     </entry>
@@ -125,14 +125,14 @@
 
     <!-- button spacing -->
     <entry name="ButtonSpacingSpin" type = "Int">
-       <default>4</default>
+       <default>3</default>
        <min>1</min>
        <max>36</max>
     </entry>
 
     <!-- button margin -->
     <entry name="ButtonMarginSpin" type = "Int">
-       <default>4</default>
+       <default>3</default>
        <min>1</min>
        <max>36</max>
     </entry>
