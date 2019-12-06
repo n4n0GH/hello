@@ -72,7 +72,7 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-240</y>
+            <y>0</y>
             <width>547</width>
             <height>873</height>
            </rect>
@@ -102,53 +102,6 @@
               <string>Titlebar</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
-              <item row="2" column="1">
-               <widget class="QComboBox" name="titleBarHeight">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Choose the height of the titlebar with this switch."/>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Small</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Regular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Extended</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="labelTitleAlignment">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>1</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Tit&amp;le alignment:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-                <property name="buddy">
-                 <cstring>titleAlignment</cstring>
-                </property>
-               </widget>
-              </item>
               <item row="2" column="0" alignment="Qt::AlignRight">
                <widget class="QLabel" name="labelTitleBarHeight">
                 <property name="sizePolicy">
@@ -158,91 +111,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Titlebar height:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0" alignment="Qt::AlignRight">
-               <widget class="QLabel" name="labelMatchTitleBarColor">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>1</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Match color:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QComboBox" name="matchTitleBarColor">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Color scheme</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Window (scheme)</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="7" column="1">
-               <widget class="QCheckBox" name="drawTitleBarSeparator">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Draws a dark separator line between the titlebar and the window content. Uses the titlebar color to determine the color of itself."/>
-                </property>
-                <property name="text">
-                 <string>Draw separator between titlebar and window</string>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="1">
-               <widget class="KColorButton" name="customColorSelect">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Select the color for all titlebars to use."/>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QCheckBox" name="customColorBox">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Use a custom color for all window's titlebars."/>
-                </property>
-                <property name="text">
-                 <string>Use custom color</string>
+                 <string>Titlebar margin:</string>
                 </property>
                </widget>
               </item>
@@ -279,7 +148,23 @@
                 </item>
                </widget>
               </item>
-              <item row="6" column="1">
+              <item row="8" column="1">
+               <widget class="QCheckBox" name="drawTitleBarSeparator">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Draws a dark separator line between the titlebar and the window content. Uses the titlebar color to determine the color of itself."/>
+                </property>
+                <property name="text">
+                 <string>Draw separator between titlebar and window</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1">
                <widget class="QCheckBox" name="drawBackgroundGradient">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -292,6 +177,103 @@
                 </property>
                 <property name="text">
                  <string>Draw titlebar background gradient</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="KColorButton" name="customColorSelect">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Select the color for all titlebars to use."/>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QComboBox" name="matchTitleBarColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Choose a color matching method. Please note that the last entry is highly unstable and experimental. If you want to color titlebars individually, please check out the window specific overrides section."/>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Color scheme</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Window (scheme)</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="labelTitleAlignment">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Tit&amp;le alignment:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+                <property name="buddy">
+                 <cstring>titleAlignment</cstring>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QCheckBox" name="customColorBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="Use a custom color for all window's titlebars."/>
+                </property>
+                <property name="text">
+                 <string>Use custom color</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelMatchTitleBarColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Match color:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QSpinBox" name="titleBarHeightSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
                 </property>
                </widget>
               </item>
@@ -633,46 +615,7 @@
               <bool>false</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="1">
-               <widget class="QComboBox" name="borderRadius">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="whatsThis">
-                 <string extracomment="Select a custom border radius to use on windows."/>
-                </property>
-                <property name="currentText">
-                 <string>None</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>None</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Tiny</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Regular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Extended</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="1" column="1">
+              <item row="2" column="2">
                <widget class="QCheckBox" name="drawBorderOnMaximizedWindows">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -685,6 +628,22 @@
                 </property>
                 <property name="text">
                  <string>Draw border on maximized windows</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QCheckBox" name="drawSizeGrip">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="whatsThis">
+                 <string extracomment="This adds a easy to click handle to windows that opt to not use borders."/>
+                </property>
+                <property name="text">
+                 <string>Add handle to resize windows with no border</string>
                 </property>
                </widget>
               </item>
@@ -704,19 +663,16 @@
                 </property>
                </widget>
               </item>
-              <item row="2" column="1">
-               <widget class="QCheckBox" name="drawSizeGrip">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
+              <item row="0" column="2">
+               <widget class="QSpinBox" name="borderRadiusSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
                 </property>
-                <property name="whatsThis">
-                 <string extracomment="This adds a easy to click handle to windows that opt to not use borders."/>
+                <property name="minimum">
+                 <number>1</number>
                 </property>
-                <property name="text">
-                 <string>Add handle to resize windows with no border</string>
+                <property name="maximum">
+                 <number>32</number>
                 </property>
                </widget>
               </item>

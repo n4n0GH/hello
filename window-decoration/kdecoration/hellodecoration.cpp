@@ -715,25 +715,13 @@ namespace Hello
     //________________________________________________________________
     int Decoration::customTitleBarHeight() const
     {
-        switch( m_internalSettings->titleBarHeight() )
-        {
-            case 0: return Metrics::TitleBar_MarginSmall;
-            default:
-            case 1: return Metrics::TitleBar_Margin;
-            case 2: return Metrics::TitleBar_MarginLarge;
-        }
+        const int titleBarHeight = m_internalSettings->titleBarHeightSpin();
+        return titleBarHeight;
     }
 
     //________________________________________________________________
     int Decoration::customButtonMargin() const
     {
-        // switch( m_internalSettings->buttonMargin() )
-        // {
-        //     case 0: return Metrics::TitleBar_SideMarginSmall;
-        //     default:
-        //     case 1: return Metrics::TitleBar_SideMargin;
-        //     case 2: return Metrics::TitleBar_SideMarginLarge;
-        // }
         const int buttonMargin = m_internalSettings->buttonMarginSpin();
         return buttonMargin;
     }
@@ -741,13 +729,6 @@ namespace Hello
     //________________________________________________________________
     int Decoration::customButtonSpacing() const
     {
-        // switch( m_internalSettings->buttonSpacing() )
-        // {
-        //     case 0: return Metrics::TitleBar_ButtonSpacingSmall;
-        //     default:
-        //     case 1: return Metrics::TitleBar_ButtonSpacing;
-        //     case 2: return Metrics::TitleBar_ButtonSpacingLarge;
-        // }
         const int buttonSpacing = m_internalSettings->buttonSpacingSpin();
         return buttonSpacing;
     }
@@ -755,14 +736,8 @@ namespace Hello
     //________________________________________________________________
     int Decoration::customRadius() const
     {
-        switch( m_internalSettings->borderRadius() )
-        {
-            case 0: return Metrics::Frame_FrameRadiusNone;
-            case 1: return Metrics::Frame_FrameRadiusTiny;
-            default:
-            case 2: return Metrics::Frame_FrameRadius;
-            case 3: return Metrics::Frame_FrameRadiusExtended;
-        }
+        const int radius = m_internalSettings->borderRadiusSpin();
+        return radius;
     }
 
     //________________________________________________________________

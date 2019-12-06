@@ -113,14 +113,10 @@
     </entry>
 
     <!-- border radius -->
-    <entry name="BorderRadius" type = "Enum">
-      <choices>
-          <choice name="None"/>
-          <choice name="Tiny"/>
-          <choice name="Regular"/>
-          <choice name="Extended" />
-      </choices>
-      <default>Regular</default>
+    <entry name="BorderRadiusSpin" type = "Int">
+      <default>5</default>
+      <min>1</min>
+      <max>32</max>
     </entry>
 
     <!-- button spacing -->
@@ -143,13 +139,10 @@
     </entry>
 
     <!-- title height -->
-    <entry name="TitleBarHeight" type = "Enum">
-      <choices>
-        <choice name="Smallc"/>
-        <choice name="Regulard"/>
-        <choice name="Widec"/>
-      </choices>
-      <default>Regulard</default>
+    <entry name="TitleBarHeightSpin" type = "Int">
+      <default>3</default>
+      <min>1</min>
+      <max>99</max>
     </entry>
 
     <!-- match color -->
