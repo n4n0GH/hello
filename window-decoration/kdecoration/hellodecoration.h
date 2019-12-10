@@ -33,6 +33,8 @@
 #include <QPropertyAnimation>
 #include <QVariant>
 
+#include <xcb/xcb.h>
+
 namespace KDecoration2
 {
     class DecorationButton;
@@ -42,6 +44,7 @@ namespace KDecoration2
 namespace Hello
 {
     class SizeGrip;
+    class Button;
     class Decoration : public KDecoration2::Decoration
     {
         Q_OBJECT
@@ -118,6 +121,24 @@ namespace Hello
         inline bool invertSeparator() const;
         inline bool drawHighlight() const;
         inline bool borderColors() const;
+        //@}
+        
+        //* check for button hover to aid unison hovering
+        //  taken from trmdi's patch for SierraBreezeEnhanced
+        //  https://github.com/kupiqu/SierraBreezeEnhanced/commit/a920c8585fe18c3fc10866eee72171a0a3894ff2
+        //@{
+        bool m_buttonHovered = false;
+        bool buttonHovered() const
+        { return m_buttonHovered; }
+
+        signals:
+        void buttonHoveredChanged  ();
+
+        public Q_SLOTS:
+        void setButtonHovered ( bool value);
+
+        protected:
+        void hoverMoveEvent (QHoverEvent *event) override;
         //@}
 
         public Q_SLOTS:

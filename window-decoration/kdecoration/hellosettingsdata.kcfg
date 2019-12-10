@@ -84,6 +84,17 @@
        <max>36</max>
     </entry>
 
+    <!-- button icons -->
+    <entry name="ButtonIconsBox" type = "Enum">
+      <choices>
+        <choice name="OnHoverSingle" />
+        <choice name="OnHoverUnison" />
+        <choice name="Always" />
+        <choice name="Only" />
+      </choices>
+      <default>OnHoverUnison</default>
+    </entry>
+
     <!-- maximized windows -->
     <entry name="DrawBorderOnMaximizedWindows" type = "Bool">
         <default>false</default>
@@ -133,11 +144,6 @@
        <max>36</max>
     </entry>
 
-    <!-- toggle button icons to always be visible -->
-    <entry name="AlwaysShowButtonIcons" type = "Bool">
-      <default>false</default>
-    </entry>
-
     <!-- title height -->
     <entry name="TitleBarHeightSpin" type = "Int">
       <default>3</default>
@@ -175,11 +181,6 @@
 
     <entry name="DrawTitleHighlight" type = "Bool">
       <default>true</default>
-    </entry>
-
-    <!-- only draw button icon glyphs -->
-    <entry name="OnlyUseIcons" type = "Bool">
-      <default>false</default>
     </entry>
 
     <!-- custom button colors -->

@@ -74,7 +74,7 @@
             <x>0</x>
             <y>0</y>
             <width>547</width>
-            <height>873</height>
+            <height>851</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
@@ -144,6 +144,11 @@
                 <item>
                  <property name="text">
                   <string>Right</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Hidden</string>
                  </property>
                 </item>
                </widget>
@@ -286,24 +291,21 @@
               <string>Buttons</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="6" column="1">
-               <widget class="QCheckBox" name="alwaysShowButtonIcons">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
+              <item row="2" column="2">
+               <widget class="QSpinBox" name="buttonSpacingSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
                 </property>
-                <property name="whatsThis">
-                 <string extracomment="Opt to always show the icons inside the window buttons instead of only showing them on hover."/>
+                <property name="minimum">
+                 <number>1</number>
                 </property>
-                <property name="text">
-                 <string>Always show button icons</string>
+                <property name="maximum">
+                 <number>36</number>
                 </property>
                </widget>
               </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="labelButtonSize">
+              <item row="2" column="0">
+               <widget class="QLabel" name="labelButtonSpacing">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>1</horstretch>
@@ -311,14 +313,14 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Size:</string>
+                 <string>Spacing:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="9" column="0" alignment="Qt::AlignRight">
+              <item row="8" column="0" alignment="Qt::AlignRight">
                <widget class="QLabel" name="labelCustomClose">
                 <property name="enabled">
                  <bool>false</bool>
@@ -334,8 +336,8 @@
                 </property>
                </widget>
               </item>
-              <item row="10" column="0" alignment="Qt::AlignRight">
-               <widget class="QLabel" name="labelCustomMin">
+              <item row="11" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomOther">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -346,11 +348,40 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Minimize:</string>
+                 <string>Other:</string>
                 </property>
                </widget>
               </item>
-              <item row="10" column="1">
+              <item row="7" column="2">
+               <widget class="QCheckBox" name="buttonCustomColor">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>2</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Use default button colors</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QSpinBox" name="buttonSizeSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>36</number>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="2">
                <widget class="KColorButton" name="customMinColor">
                 <property name="enabled">
                  <bool>false</bool>
@@ -377,7 +408,68 @@
                 </property>
                </widget>
               </item>
-              <item row="9" column="1">
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelButtonSize">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Size:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomMax">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Maximize:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="labelCustomMin">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Minimize:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QSpinBox" name="buttonMarginSpin">
+                <property name="suffix">
+                 <string> Pixel</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>36</number>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="2">
                <widget class="KColorButton" name="customCloseColor">
                 <property name="enabled">
                  <bool>false</bool>
@@ -404,23 +496,38 @@
                 </property>
                </widget>
               </item>
-              <item row="11" column="0" alignment="Qt::AlignRight">
-               <widget class="QLabel" name="labelCustomMax">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>1</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
+              <item row="5" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_4">
                 <property name="text">
-                 <string>Maximize:</string>
+                 <string>Icons:</string>
                 </property>
                </widget>
               </item>
-              <item row="12" column="1">
+              <item row="5" column="2">
+               <widget class="QComboBox" name="buttonIconsBox">
+                <item>
+                 <property name="text">
+                  <string>On hover (single)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>On hover (unison)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Always</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Only</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="11" column="2">
                <widget class="KColorButton" name="customOtherColor">
                 <property name="enabled">
                  <bool>false</bool>
@@ -447,11 +554,8 @@
                 </property>
                </widget>
               </item>
-              <item row="12" column="0" alignment="Qt::AlignRight">
-               <widget class="QLabel" name="labelCustomOther">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
+              <item row="4" column="0">
+               <widget class="QLabel" name="labelButtonMargin">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>1</horstretch>
@@ -459,24 +563,14 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Other:</string>
+                 <string>Outer margin:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
-               <widget class="QSpinBox" name="buttonSizeSpin">
-                <property name="suffix">
-                 <string> Pixel</string>
-                </property>
-                <property name="minimum">
-                 <number>1</number>
-                </property>
-                <property name="maximum">
-                 <number>36</number>
-                </property>
-               </widget>
-              </item>
-              <item row="11" column="1">
+              <item row="10" column="2">
                <widget class="KColorButton" name="customMaxColor">
                 <property name="enabled">
                  <bool>false</bool>
@@ -500,93 +594,6 @@
                   <green>209</green>
                   <blue>61</blue>
                  </color>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="1">
-               <widget class="QCheckBox" name="onlyUseIcons">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Only use button icons</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="labelButtonMargin">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>1</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Outer margin:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="labelButtonSpacing">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>1</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Spacing:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="1">
-               <widget class="QCheckBox" name="buttonCustomColor">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                  <horstretch>2</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Use default button colors</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QSpinBox" name="buttonSpacingSpin">
-                <property name="suffix">
-                 <string> Pixel</string>
-                </property>
-                <property name="minimum">
-                 <number>1</number>
-                </property>
-                <property name="maximum">
-                 <number>36</number>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QSpinBox" name="buttonMarginSpin">
-                <property name="suffix">
-                 <string> Pixel</string>
-                </property>
-                <property name="minimum">
-                 <number>1</number>
-                </property>
-                <property name="maximum">
-                 <number>36</number>
                 </property>
                </widget>
               </item>
@@ -1282,22 +1289,6 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>192</x>
      <y>497</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>onlyUseIcons</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>alwaysShowButtonIcons</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>294</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>279</x>
-     <y>261</y>
     </hint>
    </hints>
   </connection>

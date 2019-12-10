@@ -46,6 +46,7 @@
 #include <QPainter>
 #include <QTextStream>
 #include <QTimer>
+#include <QDebug>
 
 #if HELLO_HAVE_X11
 #include <QX11Info>
@@ -60,6 +61,8 @@ K_PLUGIN_FACTORY_WITH_JSON(
     registerPlugin<Hello::Button>(QStringLiteral("button"));
     registerPlugin<Hello::ConfigWidget>(QStringLiteral("kcmodule"));
 )
+
+
 
 namespace
 {
@@ -228,6 +231,7 @@ namespace Hello
     //________________________________________________________________
     QColor Decoration::outlineColor() const
     {
+        // despite the function's name, this is the titlebar separator
         auto c( client().data() );
         if( ( !m_internalSettings->drawTitleBarSeparator() && invertSeparator() ) || ( m_internalSettings->drawTitleBarSeparator() && !invertSeparator() ) ){
             if( c->isActive() ) return titleBarColor().lighter(70);
@@ -330,6 +334,32 @@ namespace Hello
     }
 
     //________________________________________________________________
+    void Decoration::setButtonHovered( bool value )
+    {
+        if ( m_buttonHovered == value ) return;
+        m_buttonHovered = value;
+        emit buttonHoveredChanged();
+    }
+
+    //________________________________________________________________
+    void Decoration::hoverMoveEvent(QHoverEvent *event)
+    {
+        const bool groupContains = m_leftButtons->geometry().contains(event->posF()) || m_rightButtons->geometry().contains(event->posF());
+        bool buttonContains = m_buttonHovered;
+
+        if (groupContains && !m_buttonHovered){
+            for (KDecoration2::DecorationButton *button: m_leftButtons->buttons()+m_rightButtons->buttons()) {
+                buttonContains = true;
+                break;
+            }
+        }
+
+        setButtonHovered(groupContains && buttonContains);
+
+        KDecoration2::Decoration::hoverMoveEvent(event);
+    }
+
+    //________________________________________________________________
     void Decoration::updateTitleBar()
     {
         auto s = settings();
@@ -375,8 +405,8 @@ namespace Hello
         {
             switch (m_internalSettings->borderSize()) {
                 case InternalSettings::BorderNone: return 0;
-                case InternalSettings::BorderNoSides: return bottom ? qMax(4, baseSize) : 0;
                 default:
+                case InternalSettings::BorderNoSides: return bottom ? qMax(4, baseSize) : 0;
                 case InternalSettings::BorderTiny: return bottom ? qMax(4, baseSize) : baseSize;
                 case InternalSettings::BorderNormal: return baseSize*2;
                 case InternalSettings::BorderLarge: return baseSize*3;
@@ -390,8 +420,8 @@ namespace Hello
 
             switch (settings()->borderSize()) {
                 case KDecoration2::BorderSize::None: return 0;
-                case KDecoration2::BorderSize::NoSides: return bottom ? qMax(4, baseSize) : 0;
                 default:
+                case KDecoration2::BorderSize::NoSides: return bottom ? qMax(4, baseSize) : 0;
                 case KDecoration2::BorderSize::Tiny: return bottom ? qMax(4, baseSize) : baseSize;
                 case KDecoration2::BorderSize::Normal: return baseSize*2;
                 case KDecoration2::BorderSize::Large: return baseSize*3;
@@ -495,6 +525,8 @@ namespace Hello
         const int bHeight = captionHeight() + (isTopEdge() ? s->smallSpacing()*customTitleBarHeight():0);
         const int bWidth = buttonHeight();
         const int verticalOffset = (isTopEdge() ? s->smallSpacing()*customTitleBarHeight():0) + (captionHeight()-buttonHeight())/2;
+        const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*customTitleBarHeight();
+        const int hPadding = s->smallSpacing()*customButtonMargin();
         foreach( const QPointer<KDecoration2::DecorationButton>& button, m_leftButtons->buttons() + m_rightButtons->buttons() )
         {
             button.data()->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth, bHeight ) ) );
@@ -510,11 +542,9 @@ namespace Hello
             m_leftButtons->setSpacing(s->smallSpacing()*customButtonSpacing());
 
             // padding
-            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*customTitleBarHeight();
-            const int hPadding = s->smallSpacing()*customButtonMargin();
             if( isLeftEdge() )
             {
-                // add offsets on the side buttons, to preserve padding, but satisfy Fitts law
+                // add offsets on the side buttons, to preserve padding, but satisfy Fitts's law
                 auto button = static_cast<Button*>( m_leftButtons->buttons().front().data() );
                 button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding, bHeight ) ) );
                 button->setFlag( Button::FlagFirstInList );
@@ -534,8 +564,6 @@ namespace Hello
             m_rightButtons->setSpacing(s->smallSpacing()*customButtonSpacing());
 
             // padding
-            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*customTitleBarHeight();
-            const int hPadding = s->smallSpacing()*customButtonMargin();
             if( isRightEdge() )
             {
 
@@ -605,6 +633,8 @@ namespace Hello
         // overlayed by the content of a window -> if 'no borders'
         // setting is used, this will make the line stop after
         // the titlebar, making it look unfinished
+        // TODO: make this behave like the size grip which is drawn above any
+        // content inside the window frame
         if( drawHighlight() ){
             const QColor titleBarColor = (  this->titleBarColor() );
             const QRect windowRect( 
@@ -614,7 +644,7 @@ namespace Hello
             sharpColor.setAlpha(102);
             painter->setBrush( Qt::NoBrush );
             painter->setPen( sharpColor );
-            painter->drawRoundedRect(windowRect, customRadius(), customRadius());
+            painter->drawRoundedRect(windowRect, customRadius(), customRadius());            
         }
     }
 
@@ -632,7 +662,8 @@ namespace Hello
         painter->setPen(Qt::NoPen);
 
         // render a linear gradient on titlebar including highlight area
-        if( ( m_internalSettings->drawBackgroundGradient() && !invertGradient() ) || ( !m_internalSettings->drawBackgroundGradient() && invertGradient() ) )
+        if( ( m_internalSettings->drawBackgroundGradient() && !invertGradient() ) 
+            || ( !m_internalSettings->drawBackgroundGradient() && invertGradient() ) )
         {
             QColor color = ( this->titleBarColor() );
             int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
@@ -700,15 +731,22 @@ namespace Hello
         painter->restore();
 
         // draw caption
-        painter->setFont(s->font());
-        painter->setPen( fontColor() );
-        const auto cR = captionRect();
-        const QString caption = painter->fontMetrics().elidedText(c->caption(), Qt::ElideMiddle, cR.first.width());
-        painter->drawText(cR.first, cR.second | Qt::TextSingleLine, caption);
+        if ( m_internalSettings->titleAlignment() != 4){
+            painter->setFont(s->font());
+            painter->setPen( fontColor() );
+            const auto cR = captionRect();
+            const QString caption = painter->fontMetrics().elidedText(c->caption(), Qt::ElideMiddle, cR.first.width());
+            painter->drawText(cR.first, cR.second | Qt::TextSingleLine, caption);
+        }
 
         // draw all buttons
         m_leftButtons->paint(painter, repaintRegion);
         m_rightButtons->paint(painter, repaintRegion);
+
+        // if (isHovered())
+        // {
+        //     emit buttonHoveredChanged(b);
+        // }
 
     }
 
@@ -899,7 +937,7 @@ namespace Hello
             //     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y(),
             //     outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x(),
             //     boxRect.bottom() - (0.2 * params.offset.y()) );
-            const QRect shadeRect = titleRect - padding;
+            // const QRect shadeRect = titleRect - padding;
             // const QRect shadeRect(
             //     QPoint(
             //         boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
@@ -915,6 +953,9 @@ namespace Hello
                 customRadius() + 0.5);
 
             // Draw outline.
+            // TODO: outline is too weak when windows are inactive,
+            // making it sometimes almost disappear and not providing the
+            // wanted differentiation between windows
             painter.setPen(withOpacity(g_shadowColor, 0.6 * strength));
             painter.setBrush(Qt::NoBrush);
             painter.setCompositionMode(QPainter::CompositionMode_SourceOver);

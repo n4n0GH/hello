@@ -53,12 +53,10 @@ namespace Hello
         connect( m_ui.drawBackgroundGradient, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawTitleBarSeparator, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.matchTitleBarColor, SIGNAL(currentIndexChanged(int)), SLOT( updateChanged()) );
-        connect( m_ui.alwaysShowButtonIcons, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.customColorBox, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.customColorSelect, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.drawHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
         connect( m_ui.drawTitleHighlight, SIGNAL(clicked()), SLOT(updateChanged()) );
-        connect( m_ui.onlyUseIcons, SIGNAL(clicked()), SLOT(updateChanged()) );
 
         // titlebar settings
         connect( m_ui.titleBarHeightSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
@@ -70,6 +68,7 @@ namespace Hello
         connect( m_ui.buttonSizeSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
         connect( m_ui.buttonSpacingSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
         connect( m_ui.buttonMarginSpin, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
+        connect( m_ui.buttonIconsBox, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
 
         // use custom color for buttons or not
         connect( m_ui.buttonCustomColor, SIGNAL(clicked()), SLOT(updateChanged()) );
@@ -111,12 +110,10 @@ namespace Hello
         m_ui.animationsDuration->setValue( m_internalSettings->animationsDuration() );
         m_ui.drawTitleBarSeparator->setChecked( m_internalSettings->drawTitleBarSeparator() );
         m_ui.matchTitleBarColor->setCurrentIndex( m_internalSettings->matchTitleBarColor() );
-        m_ui.alwaysShowButtonIcons->setChecked( m_internalSettings->alwaysShowButtonIcons() );
         m_ui.customColorBox->setChecked( m_internalSettings->customColorBox() );
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
         m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
-        m_ui.onlyUseIcons->setChecked( m_internalSettings->onlyUseIcons() );
         m_ui.buttonSizeSpin->setValue( qreal(m_internalSettings->buttonSizeSpin()) );
         m_ui.buttonSpacingSpin->setValue( qreal(m_internalSettings->buttonSpacingSpin()) );
         m_ui.buttonMarginSpin->setValue( qreal(m_internalSettings->buttonMarginSpin()) );
@@ -128,6 +125,7 @@ namespace Hello
         m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
+        m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
         // load shadows
         if( m_internalSettings->shadowSize() <= InternalSettings::ShadowVeryLarge ) m_ui.shadowSize->setCurrentIndex( m_internalSettings->shadowSize() );
@@ -164,12 +162,10 @@ namespace Hello
         m_internalSettings->setAnimationsDuration( m_ui.animationsDuration->value() );
         m_internalSettings->setDrawTitleBarSeparator(m_ui.drawTitleBarSeparator->isChecked() );
         m_internalSettings->setMatchTitleBarColor( m_ui.matchTitleBarColor->currentIndex() );
-        m_internalSettings->setAlwaysShowButtonIcons( m_ui.alwaysShowButtonIcons->isChecked() );
         m_internalSettings->setCustomColorBox( m_ui.customColorBox->isChecked() );
         m_internalSettings->setCustomColorSelect( m_ui.customColorSelect->color() );
         m_internalSettings->setDrawHighlight( m_ui.drawHighlight->isChecked() );
         m_internalSettings->setDrawTitleHighlight( m_ui.drawTitleHighlight->isChecked() );
-        m_internalSettings->setOnlyUseIcons( m_ui.onlyUseIcons->isChecked() );
         m_internalSettings->setButtonSizeSpin( qreal(m_ui.buttonSizeSpin->value()) );
         m_internalSettings->setButtonSpacingSpin( qreal(m_ui.buttonSpacingSpin->value()) );
         m_internalSettings->setButtonMarginSpin( qreal(m_ui.buttonMarginSpin->value()) );
@@ -181,6 +177,7 @@ namespace Hello
         m_internalSettings->setCustomMinColor( m_ui.customMinColor->color() );
         m_internalSettings->setCustomMaxColor( m_ui.customMaxColor->color() );
         m_internalSettings->setCustomOtherColor( m_ui.customOtherColor->color() );
+        m_internalSettings->setButtonIconsBox( m_ui.buttonIconsBox->currentIndex() );
 
         m_internalSettings->setShadowSize( m_ui.shadowSize->currentIndex() );
         m_internalSettings->setShadowStrength( qRound( qreal(m_ui.shadowStrength->value()*255)/100 ) );
@@ -230,12 +227,10 @@ namespace Hello
         m_ui.animationsDuration->setValue( m_internalSettings->animationsDuration() );
         m_ui.drawTitleBarSeparator->setChecked( m_internalSettings->drawTitleBarSeparator() );
         m_ui.matchTitleBarColor->setCurrentIndex( m_internalSettings->matchTitleBarColor() );
-        m_ui.alwaysShowButtonIcons->setChecked( m_internalSettings->alwaysShowButtonIcons() );
         m_ui.customColorBox->setChecked( m_internalSettings->customColorBox() );
         m_ui.customColorSelect->setColor( m_internalSettings->customColorSelect() );
         m_ui.drawHighlight->setChecked( m_internalSettings->drawHighlight() );
         m_ui.drawTitleHighlight->setChecked( m_internalSettings->drawTitleHighlight() );
-        m_ui.onlyUseIcons->setChecked( m_internalSettings->onlyUseIcons() );
         m_ui.buttonSizeSpin->setValue( qreal(m_internalSettings->buttonSizeSpin()) );
         m_ui.buttonSpacingSpin->setValue( qreal(m_internalSettings->buttonSpacingSpin()) );
         m_ui.buttonMarginSpin->setValue( qreal(m_internalSettings->buttonMarginSpin()) );
@@ -247,6 +242,7 @@ namespace Hello
         m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
+        m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
         m_ui.shadowSize->setCurrentIndex( m_internalSettings->shadowSize() );
         m_ui.shadowStrength->setValue( qRound(qreal(m_internalSettings->shadowStrength()*100)/255 ) );
@@ -273,12 +269,10 @@ namespace Hello
         else if( m_ui.drawSizeGrip->isChecked() !=  m_internalSettings->drawSizeGrip() ) modified = true;
         else if( m_ui.drawBackgroundGradient->isChecked() !=  m_internalSettings->drawBackgroundGradient() ) modified = true;
         else if( m_ui.matchTitleBarColor->currentIndex() != m_internalSettings->matchTitleBarColor() ) modified = true;
-        else if( m_ui.alwaysShowButtonIcons->isChecked() != m_internalSettings->alwaysShowButtonIcons() ) modified = true;
         else if( m_ui.customColorBox->isChecked() != m_internalSettings->customColorBox() ) modified = true;
         else if( m_ui.customColorSelect->color() != m_internalSettings->customColorSelect() ) modified = true;
         else if( m_ui.drawHighlight->isChecked() != m_internalSettings->drawHighlight() ) modified = true;
         else if( m_ui.drawTitleHighlight->isChecked() != m_internalSettings->drawTitleHighlight() ) modified = true;
-        else if( m_ui.onlyUseIcons->isChecked() != m_internalSettings->onlyUseIcons() ) modified = true;
         else if( qreal(m_ui.buttonSizeSpin->value() ) != m_internalSettings->buttonSizeSpin() ) modified = true;
         else if( qreal(m_ui.buttonSpacingSpin->value() ) != m_internalSettings->buttonSpacingSpin() ) modified = true;
         else if( qreal(m_ui.buttonMarginSpin->value() ) != m_internalSettings->buttonMarginSpin() ) modified = true;
@@ -290,7 +284,8 @@ namespace Hello
         else if( m_ui.customCloseColor->color() != m_internalSettings->customCloseColor() ) modified = true;
         else if( m_ui.customMinColor->color() != m_internalSettings->customMinColor() ) modified = true;
         else if( m_ui.customMaxColor->color() != m_internalSettings->customMaxColor() ) modified = true;
-        else if( m_ui.customOtherColor->color() != m_internalSettings->customOtherColor() ) modified = true; 
+        else if( m_ui.customOtherColor->color() != m_internalSettings->customOtherColor() ) modified = true;
+        else if( m_ui.buttonIconsBox->currentIndex() != m_internalSettings->buttonIconsBox() ) modified = true;
 
         // animations
         else if( m_ui.animationsEnabled->isChecked() !=  m_internalSettings->animationsEnabled() ) modified = true;
