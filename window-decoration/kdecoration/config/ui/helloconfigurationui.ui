@@ -72,7 +72,7 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-236</y>
             <width>547</width>
             <height>851</height>
            </rect>
@@ -523,6 +523,11 @@
                 <item>
                  <property name="text">
                   <string>Only</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Never</string>
                  </property>
                 </item>
                </widget>

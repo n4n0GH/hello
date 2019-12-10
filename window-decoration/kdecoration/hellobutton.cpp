@@ -56,7 +56,9 @@ namespace Hello
         connect(decoration->client().data(), SIGNAL(iconChanged(QIcon)), this, SLOT(update()));
         connect(decoration->settings().data(), &KDecoration2::DecorationSettings::reconfigured, this, &Button::reconfigure);
         connect( this, &KDecoration2::DecorationButton::hoveredChanged, this, &Button::updateAnimationState );
-        connect(decoration, &Decoration::buttonHoveredChanged, [&](){ update(); });
+        connect(decoration, &Decoration::buttonHoveredChanged, [&](){ 
+            update();
+        });
 
         reconfigure();
 
@@ -379,14 +381,13 @@ namespace Hello
         auto buttonIcons = d->internalSettings()->buttonIconsBox();
         bool hovered = isHovered() || d->buttonHovered();
 
-        if( !d ) {
+        if( !d || buttonIcons == 4 ) {
 
             return QColor();
 
-        } else if( isPressed() ) {
+        } else if( isPressed() && buttonIcons != 4 ) {
 
             return QColor(colorSymbol);
-
         } else if( 
             ( 
                 type() == DecorationButtonType::KeepBelow 
@@ -398,10 +399,9 @@ namespace Hello
             return d->titleBarColor();
 
         } else if( 
-            // we're checking for the icon settings and conclude with spaghetti which doesn't work atm kek sue me :^)
-            buttonIcons == 2 || 
+            (buttonIcons == 2 || 
             buttonIcons == 3 || 
-            ( buttonIcons == 0 ? isHovered() : ( c->isCloseable() || c->isMinimizeable() || c->isMaximizeable() ? hovered : isHovered() ) ) ){
+            ( buttonIcons == 0 ? isHovered() : hovered )) && buttonIcons != 4 ){
 
             if ( c->isActive() && buttonIcons != 3 ){
                 QColor color;
@@ -483,7 +483,6 @@ namespace Hello
 
         // } 
         else {
-
 
             return backgroundColor();
 
