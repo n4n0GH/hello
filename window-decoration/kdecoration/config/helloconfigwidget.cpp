@@ -75,6 +75,7 @@ namespace Hello
         connect( m_ui.customCloseColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.customMinColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.customMaxColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customShadeColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.customOtherColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
 
         // track animations changes
@@ -124,6 +125,7 @@ namespace Hello
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
         m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
+        m_ui.customShadeColor->setColor( m_internalSettings->customShadeColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
         m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
@@ -176,6 +178,7 @@ namespace Hello
         m_internalSettings->setCustomCloseColor( m_ui.customCloseColor->color() );
         m_internalSettings->setCustomMinColor( m_ui.customMinColor->color() );
         m_internalSettings->setCustomMaxColor( m_ui.customMaxColor->color() );
+        m_internalSettings->setCustomShadeColor( m_ui.customShadeColor->color() );
         m_internalSettings->setCustomOtherColor( m_ui.customOtherColor->color() );
         m_internalSettings->setButtonIconsBox( m_ui.buttonIconsBox->currentIndex() );
 
@@ -241,6 +244,7 @@ namespace Hello
         m_ui.customCloseColor->setColor( m_internalSettings->customCloseColor() );
         m_ui.customMinColor->setColor( m_internalSettings->customMinColor() );
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
+        m_ui.customShadeColor->setColor( m_internalSettings->customShadeColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
         m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
@@ -284,6 +288,7 @@ namespace Hello
         else if( m_ui.customCloseColor->color() != m_internalSettings->customCloseColor() ) modified = true;
         else if( m_ui.customMinColor->color() != m_internalSettings->customMinColor() ) modified = true;
         else if( m_ui.customMaxColor->color() != m_internalSettings->customMaxColor() ) modified = true;
+        else if( m_ui.customShadeColor->color() != m_internalSettings->customShadeColor() ) modified = true;
         else if( m_ui.customOtherColor->color() != m_internalSettings->customOtherColor() ) modified = true;
         else if( m_ui.buttonIconsBox->currentIndex() != m_internalSettings->buttonIconsBox() ) modified = true;
 
