@@ -375,6 +375,7 @@ namespace Hello
         QColor customCloseColor = d->internalSettings()->customCloseColor();
         QColor customMinColor = d->internalSettings()->customMinColor();
         QColor customMaxColor = d->internalSettings()->customMaxColor();
+        QColor customShadeColor = d->internalSettings()->customShadeColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
 
         auto f = d->internalSettings()->forceBrightFonts();
@@ -470,7 +471,10 @@ namespace Hello
             } else if( type() == DecorationButtonType::Minimize ) {
                 if(s){ color.setRgb(colorMinimize);
                 } else { color = customMinColor; }
-            } else {
+            } else if( type() == DecorationButtonType::Shade ) {
+                if(s){ color.setRgb(colorShade);
+                } else { color = customShadeColor; }
+            }else {
                 if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
@@ -508,6 +512,7 @@ namespace Hello
         QColor customCloseColor = d->internalSettings()->customCloseColor();
         QColor customMinColor = d->internalSettings()->customMinColor();
         QColor customMaxColor = d->internalSettings()->customMaxColor();
+        QColor customShadeColor = d->internalSettings()->customShadeColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
 
         if( isPressed() && buttonIcons != 3 ) {
@@ -522,7 +527,10 @@ namespace Hello
             } else if( type() == DecorationButtonType::Minimize ) {
                 if(s){ color.setRgb(colorMinimize);
                 } else { color = customMinColor; }
-            } else {
+            } else if( type() == DecorationButtonType::Shade ) {
+                if(s){ color.setRgb(colorShade);
+                } else { color = customShadeColor; }
+            }else {
                 if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
@@ -599,8 +607,22 @@ namespace Hello
                     if(s){ color.setRgb(colorMinimize);
                     } else { color = customMinColor; }
                 }
-            } else {
-                if(s){ color.setRgb(colorOther);
+            } else if( type() == DecorationButtonType::Shade ) {
+                if(!c->isShadeable()){
+                    QColor color;
+                    color = d->titleBarColor();
+                    int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
+                    if(y > 128) {
+                        return color.lighter(85);
+                    } else {
+                        return color.lighter(145);
+                    } 
+                } else {
+                    if(s){ color.setRgb(colorShade);
+                    } else { color = customShadeColor; }
+                }
+                } else {
+                	if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
             return color;
