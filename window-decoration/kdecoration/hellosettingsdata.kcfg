@@ -200,6 +200,10 @@
       <default>19, 209, 61</default>
     </entry>
 
+    <entry name="CustomShadeColor" type = "Color">
+      <default>204, 176, 213</default>
+    </entry>
+
     <entry name="CustomOtherColor" type = "Color">
       <default>79, 186, 244</default>
     </entry>

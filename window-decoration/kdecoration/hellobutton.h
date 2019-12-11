@@ -139,6 +139,7 @@ namespace Hello
         const QRgb colorClose = 0xFFF25056;
         const QRgb colorMaximize = 0xFF13D13D;
         const QRgb colorMinimize = 0xFFFCBE07;
+        const QRgb colorShade = 0xFFCCB0D5;
         const QRgb colorSymbol = 0xFF505050;
         const QRgb colorOther = 0xFF4FBAF4;
     };
