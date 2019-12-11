@@ -56,6 +56,11 @@ namespace Hello
         connect(decoration->client().data(), SIGNAL(iconChanged(QIcon)), this, SLOT(update()));
         connect(decoration->settings().data(), &KDecoration2::DecorationSettings::reconfigured, this, &Button::reconfigure);
         connect( this, &KDecoration2::DecorationButton::hoveredChanged, this, &Button::updateAnimationState );
+        if (decoration->objectName() == "applet-window-buttons") {
+            connect(this, &Button::hoveredChanged, [=](bool hovered){
+                decoration->setButtonHovered(hovered);
+            });
+        }
         connect(decoration, &Decoration::buttonHoveredChanged, [&](){ 
             update();
         });
