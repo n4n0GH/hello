@@ -77,6 +77,10 @@ namespace Hello
         connect( m_ui.customMaxColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.customShadeColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
         connect( m_ui.customOtherColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customAboveColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customBelowColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customPinColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
+        connect( m_ui.customMenuColor, SIGNAL(changed(QColor)), SLOT(updateChanged()) );
 
         // track animations changes
         connect( m_ui.animationsEnabled, SIGNAL(clicked()), SLOT(updateChanged()) );
@@ -127,6 +131,11 @@ namespace Hello
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
         m_ui.customShadeColor->setColor( m_internalSettings->customShadeColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
+        m_ui.customAboveColor->setColor( m_internalSettings->customAboveColor() );
+        m_ui.customBelowColor->setColor( m_internalSettings->customBelowColor() );
+        m_ui.customPinColor->setColor( m_internalSettings->customPinColor() );
+        m_ui.customMenuColor->setColor( m_internalSettings->customMenuColor() );
+
         m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
         // load shadows
@@ -180,6 +189,11 @@ namespace Hello
         m_internalSettings->setCustomMaxColor( m_ui.customMaxColor->color() );
         m_internalSettings->setCustomShadeColor( m_ui.customShadeColor->color() );
         m_internalSettings->setCustomOtherColor( m_ui.customOtherColor->color() );
+        m_internalSettings->setCustomBelowColor( m_ui.customBelowColor->color() );
+        m_internalSettings->setCustomAboveColor( m_ui.customAboveColor->color() );
+        m_internalSettings->setCustomPinColor( m_ui.customPinColor->color() );
+        m_internalSettings->setCustomMenuColor( m_ui.customMenuColor->color() );
+
         m_internalSettings->setButtonIconsBox( m_ui.buttonIconsBox->currentIndex() );
 
         m_internalSettings->setShadowSize( m_ui.shadowSize->currentIndex() );
@@ -246,6 +260,11 @@ namespace Hello
         m_ui.customMaxColor->setColor( m_internalSettings->customMaxColor() );
         m_ui.customShadeColor->setColor( m_internalSettings->customShadeColor() );
         m_ui.customOtherColor->setColor( m_internalSettings->customOtherColor() );
+        m_ui.customAboveColor->setColor( m_internalSettings->customAboveColor() );
+        m_ui.customBelowColor->setColor( m_internalSettings->customBelowColor() );
+        m_ui.customPinColor->setColor( m_internalSettings->customPinColor() );
+        m_ui.customMenuColor->setColor( m_internalSettings->customMenuColor() );
+
         m_ui.buttonIconsBox->setCurrentIndex( m_internalSettings->buttonIconsBox() );
 
         m_ui.shadowSize->setCurrentIndex( m_internalSettings->shadowSize() );
@@ -290,6 +309,11 @@ namespace Hello
         else if( m_ui.customMaxColor->color() != m_internalSettings->customMaxColor() ) modified = true;
         else if( m_ui.customShadeColor->color() != m_internalSettings->customShadeColor() ) modified = true;
         else if( m_ui.customOtherColor->color() != m_internalSettings->customOtherColor() ) modified = true;
+        else if( m_ui.customAboveColor->color() != m_internalSettings->customAboveColor() ) modified = true;
+        else if( m_ui.customBelowColor->color() != m_internalSettings->customBelowColor() ) modified = true;
+        else if( m_ui.customPinColor->color() != m_internalSettings->customPinColor() ) modified = true;
+        else if( m_ui.customMenuColor->color() != m_internalSettings->customMenuColor() ) modified = true;
+
         else if( m_ui.buttonIconsBox->currentIndex() != m_internalSettings->buttonIconsBox() ) modified = true;
 
         // animations

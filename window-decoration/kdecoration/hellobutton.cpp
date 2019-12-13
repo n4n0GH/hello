@@ -382,6 +382,10 @@ namespace Hello
         QColor customMaxColor = d->internalSettings()->customMaxColor();
         QColor customShadeColor = d->internalSettings()->customShadeColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
+        QColor customAboveColor = d->internalSettings()->customAboveColor();
+        QColor customBelowColor = d->internalSettings()->customBelowColor();
+        QColor customMenuColor = d->internalSettings()->customMenuColor();
+        QColor customPinColor = d->internalSettings()->customPinColor();
 
         auto f = d->internalSettings()->forceBrightFonts();
         auto buttonIcons = d->internalSettings()->buttonIconsBox();
@@ -420,6 +424,21 @@ namespace Hello
                 } else if( type() == DecorationButtonType::Minimize ) {
                     if(s){ color.setRgb(colorMinimize);
                     } else { color = customMinColor; }
+                } else if( type() == DecorationButtonType::Shade ) {
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customShadeColor; }
+                } else if( type() == DecorationButtonType::KeepBelow ) {
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customBelowColor; }
+                } else if( type() == DecorationButtonType::KeepAbove ) {
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customAboveColor; }
+                } else if( type() == DecorationButtonType::OnAllDesktops ) {
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customPinColor; }
+                } else if( type() == DecorationButtonType::ApplicationMenu ) {
+                    if(s){ color.setRgb(colorOther);
+                    } else { color = customMenuColor; }
                 } else {
                     if(s){ color.setRgb(colorOther);
                     } else { color = customOtherColor; }
@@ -477,9 +496,21 @@ namespace Hello
                 if(s){ color.setRgb(colorMinimize);
                 } else { color = customMinColor; }
             } else if( type() == DecorationButtonType::Shade ) {
-                if(s){ color.setRgb(colorShade);
+                if(s){ color.setRgb(colorOther);
                 } else { color = customShadeColor; }
-            }else {
+            } else if( type() == DecorationButtonType::KeepBelow ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customBelowColor; }
+            } else if( type() == DecorationButtonType::KeepAbove ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customAboveColor; }
+            } else if( type() == DecorationButtonType::OnAllDesktops ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customPinColor; }
+            } else if( type() == DecorationButtonType::ApplicationMenu ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customMenuColor; }
+            } else {
                 if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
@@ -519,6 +550,20 @@ namespace Hello
         QColor customMaxColor = d->internalSettings()->customMaxColor();
         QColor customShadeColor = d->internalSettings()->customShadeColor();
         QColor customOtherColor = d->internalSettings()->customOtherColor();
+        QColor customAboveColor = d->internalSettings()->customAboveColor();
+        QColor customBelowColor = d->internalSettings()->customBelowColor();
+        QColor customMenuColor = d->internalSettings()->customMenuColor();
+        QColor customPinColor = d->internalSettings()->customPinColor();
+
+        QColor luma;
+        QColor color;
+        color = d->titleBarColor();
+        int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
+        if(y > 128) {
+            luma = color.lighter(85);
+        } else {
+            luma = color.lighter(145);
+        }
 
         if( isPressed() && buttonIcons != 3 ) {
 
@@ -533,9 +578,21 @@ namespace Hello
                 if(s){ color.setRgb(colorMinimize);
                 } else { color = customMinColor; }
             } else if( type() == DecorationButtonType::Shade ) {
-                if(s){ color.setRgb(colorShade);
+                if(s){ color.setRgb(colorOther);
                 } else { color = customShadeColor; }
-            }else {
+            } else if( type() == DecorationButtonType::KeepBelow ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customBelowColor; }
+            } else if( type() == DecorationButtonType::KeepAbove ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customAboveColor; }
+            } else if( type() == DecorationButtonType::OnAllDesktops ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customPinColor; }
+            } else if( type() == DecorationButtonType::ApplicationMenu ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customMenuColor; }
+            } else {
                 if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
@@ -551,14 +608,8 @@ namespace Hello
 
         } else if ( !c->isActive() && buttonIcons != 3 ) {
 
-            QColor color;
-            color = d->titleBarColor();
-            int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
-            if(y > 128) {
-                return color.lighter(85);
-            } else {
-                return color.lighter(145);
-            }
+            return luma;
+
         } else if ( !c->isActive() && buttonIcons == 3 ) {
 
             return QColor();
@@ -572,62 +623,49 @@ namespace Hello
             QColor color;
             if( type() == DecorationButtonType::Close ) {
                 if(!c->isCloseable()){
-                    QColor color;
-                    color = d->titleBarColor();
-                    int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
-                    if(y > 128) {
-                        return color.lighter(85);
-                    } else {
-                        return color.lighter(145);
-                    }
+                    return luma;
                 } else {
                     if(s) { color.setRgb(colorClose);
                     } else { color = customCloseColor; }
                 }
             } else if( type() == DecorationButtonType::Maximize ) {
                 if(!c->isMaximizeable()){
-                    QColor color;
-                    color = d->titleBarColor();
-                    int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
-                    if(y > 128) {
-                        return color.lighter(85);
-                    } else {
-                        return color.lighter(145);
-                    }
+                    return luma;
                 } else {
                     if(s){ color.setRgb(colorMaximize);                  
                     } else { color = customMaxColor; }
                 }
             } else if( type() == DecorationButtonType::Minimize ) {
                 if(!c->isMinimizeable()){
-                    QColor color;
-                    color = d->titleBarColor();
-                    int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
-                    if(y > 128) {
-                        return color.lighter(85);
-                    } else {
-                        return color.lighter(145);
-                    } 
+                    return luma;
                 } else {
                     if(s){ color.setRgb(colorMinimize);
                     } else { color = customMinColor; }
                 }
+            // we can stop checking if the buttons are xable, because these will
+            // not be rendered if the functionality doesn't apply to the window
             } else if( type() == DecorationButtonType::Shade ) {
-                if(!c->isShadeable()){
-                    QColor color;
-                    color = d->titleBarColor();
-                    int y = 0.2126*color.red()+0.7152*color.green()+0.0722*color.blue();
-                    if(y > 128) {
-                        return color.lighter(85);
-                    } else {
-                        return color.lighter(145);
-                    } 
-                } else {
-                    if(s){ color.setRgb(colorShade);
-                    } else { color = customShadeColor; }
-                }
-                } else {
-                	if(s){ color.setRgb(colorOther);
+                if(s){ color.setRgb(colorOther);
+                } else { color = customShadeColor; }
+            }
+            else if( type() == DecorationButtonType::KeepAbove ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customAboveColor; }
+            }
+            else if( type() == DecorationButtonType::KeepBelow ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customBelowColor; }
+            }
+            else if( type() == DecorationButtonType::OnAllDesktops ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customPinColor; }
+            }
+            else if( type() == DecorationButtonType::ApplicationMenu ) {
+                if(s){ color.setRgb(colorOther);
+                } else { color = customMenuColor; }
+            }
+            else if( type() == DecorationButtonType::ContextHelp ) {
+                if(s){ color.setRgb(colorOther);
                 } else { color = customOtherColor; }
             }
             return color;

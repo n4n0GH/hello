@@ -201,10 +201,26 @@
     </entry>
 
     <entry name="CustomShadeColor" type = "Color">
-      <default>204, 176, 213</default>
+      <default>79, 186, 244</default>
     </entry>
 
     <entry name="CustomOtherColor" type = "Color">
+      <default>79, 186, 244</default>
+    </entry>
+
+    <entry name="CustomAboveColor" type = "Color">
+      <default>79, 186, 244</default>
+    </entry>
+
+    <entry name="CustomBelowColor" type = "Color">
+      <default>79, 186, 244</default>
+    </entry>
+
+    <entry name="CustomMenuColor" type = "Color">
+      <default>79, 186, 244</default>
+    </entry>
+
+    <entry name="CustomPinColor" type = "Color">
       <default>79, 186, 244</default>
     </entry>
 
