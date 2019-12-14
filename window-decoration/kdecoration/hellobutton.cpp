@@ -416,14 +416,20 @@ namespace Hello
             if ( c->isActive() && buttonIcons != 3 ){
                 QColor color;
                 if( type() == DecorationButtonType::Close ) {
-                    if(s){ color.setRgb(colorClose);
-                    } else { color = customCloseColor; }
+                    if(c->isCloseable() ){
+                        if(s){ color.setRgb(colorClose);
+                        } else { color = customCloseColor; }
+                    }
                 } else if( type() == DecorationButtonType::Maximize ) {
-                    if(s){ color.setRgb(colorMaximize);
-                    } else { color = customMaxColor; }
+                    if(c->isMaximizeable() ){
+                        if(s){ color.setRgb(colorMaximize);
+                        } else { color = customMaxColor; }
+                    }
                 } else if( type() == DecorationButtonType::Minimize ) {
-                    if(s){ color.setRgb(colorMinimize);
-                    } else { color = customMinColor; }
+                    if(c->isMinimizeable() ){
+                        if(s){ color.setRgb(colorMinimize);
+                        } else { color = customMinColor; }
+                    }
                 } else if( type() == DecorationButtonType::Shade ) {
                     if(s){ color.setRgb(colorOther);
                     } else { color = customShadeColor; }
