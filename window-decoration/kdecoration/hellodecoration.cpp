@@ -940,7 +940,7 @@ namespace Hello
                     boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
                     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y()
                 ), 
-                QSize(cWidth, borderTop()));
+                QSize(boxRect.width() + (outerRect.left() + Metrics::Shadow_Overlap + params.offset.x())*2, borderTop()));
 
             // const QMargins shadePad = QMargins(
             //     boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(),
