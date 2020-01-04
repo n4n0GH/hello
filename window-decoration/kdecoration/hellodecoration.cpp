@@ -636,14 +636,24 @@ namespace Hello
         // TODO: make this behave like the size grip which is drawn above any
         // content inside the window frame
         if( drawHighlight() ){
+            const QRect titleRect(QPoint(0, 0), QSize(size().width(), borderTop()));
             const QColor titleBarColor = (  this->titleBarColor() );
             const QRect windowRect( 
                 QPoint(0, 0), 
                 QSize( size().width(), size().height() ) );
+            QLinearGradient gradient( 0, 0, 0, titleRect.height() );
+            gradient.setColorAt(0.0, titleBarColor.lighter(200));
+            gradient.setColorAt(0.7, titleBarColor);
+            auto g = QPen ( gradient, 1.0 );
             QColor sharpColor = titleBarColor.lighter(200);
             sharpColor.setAlpha(102);
             painter->setBrush( Qt::NoBrush );
-            painter->setPen( sharpColor );
+            // check if window has side borders or no borders at all and use a smooth gradient if no border to draw the highlight on is present
+            if( hasNoSideBorders() || hasNoBorders() ){
+                painter->setPen( g );
+            } else {
+                painter->setPen( sharpColor );
+            }
             painter->drawRoundedRect(windowRect, customRadius(), customRadius());            
         }
     }
