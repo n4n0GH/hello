@@ -31,7 +31,7 @@ sudo pacman -S cmake extra-cmake-modules kdecoration qt5-declarative qt5-x11extr
 
 #### Fedora
 ```
-sudo dnf install cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "cmake(Qt5DBus)" "cmake(Qt5X11Extras)" "cmake(KF5GuiAddons)" "cmake(KF5WindowSystem)" "cmake(KF5I18n)" "cmake(KDecoration2)" "cmake(KF5CoreAddons)" "cmake(KF5ConfigWidgets)" cmake(Qt5UiTools)" "cmake(KF5GlobalAccel)" kwin-devel libepoxy-devel
+sudo dnf install cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "cmake(Qt5DBus)" "cmake(Qt5X11Extras)" "cmake(KF5GuiAddons)" "cmake(KF5WindowSystem)" "cmake(KF5I18n)" "cmake(KDecoration2)" "cmake(KF5CoreAddons)" "cmake(KF5ConfigWidgets)" "cmake(Qt5UiTools)" "cmake(KF5GlobalAccel)" kwin-devel libepoxy-devel
 ```
 
 If your system is not listed above or there are packages missing in this list, please open an issue or pull request so it can be fixed.
