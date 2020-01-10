@@ -629,12 +629,7 @@ namespace Hello
         }
 
         // draw highlight box
-        // NOTE: box is drawn correctly along the edges but is
-        // overlayed by the content of a window -> if 'no borders'
-        // setting is used, this will make the line stop after
-        // the titlebar, making it look unfinished
-        // TODO: make this behave like the size grip which is drawn above any
-        // content inside the window frame
+        // TODO: make this behave like the size grip which is drawn above any content inside the window frame
         if( drawHighlight() ){
             const QRect titleRect(QPoint(0, 0), QSize(size().width(), borderTop()));
             const QColor titleBarColor = (  this->titleBarColor() );
@@ -690,9 +685,8 @@ namespace Hello
             gradient.setColorAt(0.8, titleBarColor.lighter(gv));
             painter->setBrush(gradient);
 
-        // if user doesn't want a gradient, we only paint highlight line
-        // and titlebar color
         } else {
+            // if user doesn't want a gradient, we only paint highlight line and titlebar color
             QLinearGradient gradient(0, 0, 0, titleRect.height());
             if(l){
                 gradient.setColorAt(0.0, titleBarColor.lighter(185));
@@ -934,7 +928,7 @@ namespace Hello
             const QRect innerRect = outerRect - padding;   
 
             // const int cHeight = c->height();
-            const int cWidth = c->width();
+            // const int cWidth = c->width();
             const QRect titleRect(
                 QPoint(
                     boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
@@ -942,33 +936,30 @@ namespace Hello
                 ), 
                 QSize(boxRect.width() + (outerRect.left() + Metrics::Shadow_Overlap + params.offset.x())*2, borderTop()));
 
-            // const QMargins shadePad = QMargins(
-            //     boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(),
-            //     boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y(),
-            //     outerRect.right() - boxRect.right() - Metrics::Shadow_Overlap + params.offset.x(),
-            //     boxRect.bottom() - (0.2 * params.offset.y()) );
-            // const QRect shadeRect = titleRect - padding;
-            // const QRect shadeRect(
-            //     QPoint(
-            //         boxRect.left() - outerRect.left() - Metrics::Shadow_Overlap - params.offset.x(), 
-            //         boxRect.top() - outerRect.top() - Metrics::Shadow_Overlap - params.offset.y() ), 
-            //     QSize(cWidth, cHeight));
-
+            QColor windowColor = c->palette().color(QPalette::Window);
+            int y = 0.2126*windowColor.red()+0.7152*windowColor.green()+0.0722*windowColor.blue();
             painter.setPen(Qt::NoPen);
             painter.setBrush(Qt::black);
-            painter.setCompositionMode(QPainter::CompositionMode_DestinationOut);
+            if(y < 180){
+                painter.setCompositionMode(QPainter::CompositionMode_Darken);
+            } else {
+                painter.setCompositionMode(QPainter::CompositionMode_DestinationOut);
+
+            }
             painter.drawRoundedRect(
                 c->isShaded() ? titleRect : innerRect,
                 customRadius() + 0.5,
                 customRadius() + 0.5);
 
-            // Draw outline.
-            // TODO: outline is too weak when windows are inactive,
-            // making it sometimes almost disappear and not providing the
-            // wanted differentiation between windows
-            painter.setPen(withOpacity(g_shadowColor, 0.6 * strength));
+            // Draw outline            
+            if(y < 180){
+                painter.setPen(g_shadowColor);
+                painter.setCompositionMode(QPainter::CompositionMode_Darken);
+            } else {
+                painter.setPen(withOpacity(g_shadowColor, 0.6 * strength));
+                painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+            }
             painter.setBrush(Qt::NoBrush);
-            painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
             painter.drawRoundedRect(
                 c->isShaded() ? titleRect : innerRect,
                 customRadius() - 0.5,
