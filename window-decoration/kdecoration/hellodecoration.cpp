@@ -638,7 +638,7 @@ namespace Hello
                 QSize( size().width(), size().height() ) );
             QLinearGradient gradient( 0, 0, 0, titleRect.height() );
             gradient.setColorAt(0.0, titleBarColor.lighter(200));
-            gradient.setColorAt(0.7, titleBarColor);
+            gradient.setColorAt(0.25, titleBarColor);
             auto g = QPen ( gradient, 1.0 );
             QColor sharpColor = titleBarColor.lighter(200);
             sharpColor.setAlpha(102);
