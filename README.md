@@ -3,6 +3,13 @@
 
 hello. is a compilation of various color-schemes, themes, icons and more for the KDE Plasma desktop. It is unopinionated, putting _you_ in charge.
 
+# NOT ACTIVELY MAINTAINED!
+Since I moved on to a different hardware setup and KDE is just throwing too many bullshit things at me like SDDM insisting on mirroring the login screen unrotated to every monitor I have active as well as marking new input for overwriting for some reason, forcing me to double every character of my password and other silly quirks of Plasma I moved over to Gnome which for some reason works a ton better once basic configuration was done.
+
+I will still work on getting some bugs fixed whenever I feel like it (probably never, let's face it).
+
+Sorry!
+
 ## Content
 
 | Package | WIP Status |
@@ -31,7 +38,7 @@ sudo pacman -S cmake extra-cmake-modules kdecoration qt5-declarative qt5-x11extr
 
 #### Fedora
 ```
-sudo dnf install cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "cmake(Qt5DBus)" "cmake(Qt5X11Extras)" "cmake(KF5GuiAddons)" "cmake(KF5WindowSystem)" "cmake(KF5I18n)" "cmake(KDecoration2)" "cmake(KF5CoreAddons)" "cmake(KF5ConfigWidgets)" "cmake(Qt5UiTools)" "cmake(KF5GlobalAccel)" kwin-devel libepoxy-devel "cmake(KF5Init)" "cmake(KF5Crash)" "cmake(KF5KIO)" "cmake(KF5Notifications)" kf5-kpackage-devel 
+sudo dnf install cmake extra-cmake-modules "cmake(Qt5Core)" "cmake(Qt5Gui)" "cmake(Qt5DBus)" "cmake(Qt5X11Extras)" "cmake(KF5GuiAddons)" "cmake(KF5WindowSystem)" "cmake(KF5I18n)" "cmake(KDecoration2)" "cmake(KF5CoreAddons)" "cmake(KF5ConfigWidgets)" "cmake(Qt5UiTools)" "cmake(KF5GlobalAccel)" kwin-devel libepoxy-devel "cmake(KF5Init)" "cmake(KF5Crash)" "cmake(KF5KIO)" "cmake(KF5Notifications)" kf5-kpackage-devel
 ```
 
 #### openSUSE
