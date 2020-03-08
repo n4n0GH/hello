@@ -92,7 +92,7 @@ target_link_libraries(${HELLOSHADERS}
         Qt5::Gui
         ${KWIN_EFFECTS}
         ${KWIN_GLUTILS}
-    ${EPOXY_LIBRARIES}
+	${EPOXY_LINK_LIBRARIES}
     PRIVATE
         KF5::ConfigCore
         KF5::CoreAddons
