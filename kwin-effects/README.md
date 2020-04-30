@@ -15,7 +15,7 @@ sudo dnf install git cmake gcc-c++ extra-cmake-modules qt5-qttools-devel qt5-qtt
 # Installation
 Clone the repository and change into the new directory:
 ```
-git clone https://github.com/n4n0GH/hello/ && cd kwin-effects
+git clone https://github.com/n4n0GH/hello/ && cd hello/kwin-effects
 ```
 Run all necessary commands to prepare the compilation:
 ```
