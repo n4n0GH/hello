@@ -5,7 +5,7 @@ This KWin effect is the perfect companion for the "hello." KWin window decoratio
 # Dependencies
 Debian based (Ubuntu, Kubuntu, KDE Neon):
 ```
-sudo apt install git cmake g++ gettext extra-cmake-modules qttools5-dev libqt5x11extras5-dev libkf5configwidgets-dev libkf5crash-dev libkf5globalaccel-dev libkf5kio-dev libkf5notifications-dev kinit-dev kwin-dev 
+sudo apt install git pkg-config cmake g++ gettext extra-cmake-modules qttools5-dev libqt5x11extras5-dev libkf5configwidgets-dev libkf5crash-dev libkf5globalaccel-dev libkf5kio-dev libkf5notifications-dev kinit-dev kwin-dev 
 ```
 Fedora based:
 ```
