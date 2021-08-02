@@ -59,7 +59,7 @@ Thanks to [therealfarfetchd](https://github.com/therealfarfetchd) for providing 
 ### Manual Installation
 Clone the repository and create the build directory:
 ```
-git clone https://github.com/n4n0GH/hello
+git clone https://github.com/n4n0GH/hello.git
 cd hello && mkdir build && cd build
 ```
 
